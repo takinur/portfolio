@@ -345,9 +345,7 @@
         </div>
         <section id="intro">
             <!-- hero -->
-            <div
-                class="hero bg-gray-100 py-16 h-[700px] md:h-[500px]"
-            >
+            <div class="hero bg-[#7510F7] py-16 h-[700px] md:h-[500px]">
                 <!-- container -->
                 <div class="container px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
                     <!-- hero wrapper -->
@@ -359,12 +357,12 @@
                             class="hero-text text-center col-span-12 items-center content-center md:w-2/3"
                         >
                             <h1
-                                class="font-bold text-4xl md:text-3xl text-gray-900 leading-tight"
+                                class="font-bold text-4xl md:text-3xl text-white leading-tight"
                             >
                                 Hi, I’m Takinur. Nice to meet you.
                             </h1>
                             <p
-                                class="text-gray-800 text-lg text-center leading-relaxed mt-8 font-semibold"
+                                class="text-white text-lg text-center leading-relaxed mt-8 font-semibold"
                             >
                                 Since beginning my journey as a freelance
                                 webdeveloper nearly 3 years ago, I've done
@@ -381,78 +379,141 @@
             </div>
             <!-- end hero -->
         </section>
-        <section id="skills" class=" border-blue-500 border-2 md:-mt-56 -mt-48">
-            <div class="container px-6 py-10 mx-auto">
-        <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore our <br> awesome <span class="underline decoration-blue-500">Components</span></h1>
+        <!--Skills Section-->
+        <section id="skills" class="md:-mt-56 -mt-48">
+            <div
+                class="container px-6 py-10 mx-auto md:mt-11 bg-gray-200 rounded-2xl w-4/5"
+            >
+                <h1 class="text-dark text-3xl text-center">
+                    PROFEESIONAL SKILLS
+                </h1>
+                <!-- CARD BODY-->
+                <div
+                    class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3 content-center"
+                >
+                    <!--Card Item-->
+                    <div class="p-8 space-y-3 rounded-xl">
+                        <div class="bg-cover h-18 w-11 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'php.svg'"
+                                alt=""
+                            />
+                        </div>
 
-        <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus
-        </p>
+                        <h1
+                            class="text-2xl text-center font-semibold text-gray-900 uppercase dark:text-white"
+                        >
+                            PHP
+                        </h1>
 
-        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
-            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
-                <span class="inline-block text-blue-500 dark:text-blue-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
-                    </svg>
-                </span>
+                        <p class="text-gray-500 dark:text-gray-300 text-center">
+                            I use PHP 7 language to develop web applications
+                        </p>
+                    </div>
+                    <!--end Card Item -->
+                    <!--Card Item-->
+                    <div class="p-8 space-y-3 rounded-xl">
+                        <div class="bg-cover h-18 w-11 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'html.svg'"
+                                alt=""
+                            />
+                        </div>
 
-                <h1 class="text-2xl font-semibold text-gray-700 capitalize dark:text-white">elegant Dark Mode</h1>
+                        <h1
+                            class="text-2xl text-center font-semibold text-gray-900 uppercase dark:text-white"
+                        >
+                            html
+                        </h1>
 
-                <p class="text-gray-500 dark:text-gray-300">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
-                </p>
+                        <p class="text-gray-500 dark:text-gray-300 text-center">
+                            I use HTML 5 markup language to show data in the browser
+                        </p>
+                    </div>
+                    <!--end Card Item -->
+                    <!--Card Item-->
+                    <div class="p-8 space-y-3 rounded-xl">
+                        <div class="bg-cover h-18 w-11 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'css.svg'"
+                                alt=""
+                            />
+                        </div>
 
-                <a href="#" class="inline-flex p-2 text-blue-500 capitalize transition-colors duration-200 transform bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </a>
+                        <h1
+                            class="text-2xl text-center font-semibold text-gray-900 uppercase dark:text-white"
+                        >
+                            css
+                        </h1>
+
+                        <p class="text-gray-500 dark:text-gray-300 text-center">
+                            I use CSS to make look and feel better
+                        </p>
+                    </div>
+                    <!--end Card Item -->
+                    <!--Card Item-->
+                    <div class="p-8 space-y-3 rounded-xl">
+                        <div class="bg-cover h-18 w-11 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'javascript.svg'"
+                                alt=""
+                            />
+                        </div>
+
+                        <h1
+                            class="text-2xl text-center font-semibold text-gray-900 dark:text-white"
+                        >
+                            JavaScript
+                        </h1>
+
+                        <p class="text-gray-500 dark:text-gray-300 text-center">
+                            I use JavaScript to make user experience better
+                        </p>
+                    </div>
+                    <!--end Card Item -->
+                    <!--Card Item-->
+                    <div class="p-8 space-y-3 rounded-xl">
+                        <div class="bg-cover h-18 w-11 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'database.svg'"
+                                alt=""
+                            />
+                        </div>
+
+                        <h1
+                            class="text-2xl text-center font-semibold text-gray-900 dark:text-white"
+                        >
+                            Database
+                        </h1>
+
+                        <p class="text-gray-500 dark:text-gray-300 text-center">
+                            I use relational databases MySQL and MariaDB to store data
+                        </p>
+                    </div>
+                    <!--end Card Item -->
+                    <!--Card Item-->
+                    <div class="p-8 space-y-3 rounded-xl">
+                        <div class="bg-cover h-18 w-11 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'apache.svg'"
+                                alt=""
+                            />
+                        </div>
+
+                        <h1
+                            class="text-2xl text-center font-semibold text-gray-900 uppercase dark:text-white"
+                        >
+                            Apache Server
+                        </h1>
+
+                        <p class="text-gray-500 dark:text-gray-300 text-center">
+                            I use Apache server to serve sites
+                        </p>
+                    </div>
+                    <!--end Card Item -->
+                </div>
+                <!--End Card Body -->
             </div>
-
-            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
-                <span class="inline-block text-blue-500 dark:text-blue-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-                    </svg>
-                </span>
-
-                <h1 class="text-2xl font-semibold text-gray-700 capitalize dark:text-white">Easy to customiztions</h1>
-
-                <p class="text-gray-500 dark:text-gray-300">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
-                </p>
-
-                <a href="#" class="inline-flex p-2 text-blue-500 capitalize transition-colors duration-200 transform bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </a>
-            </div>
-
-            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
-                <span class="inline-block text-blue-500 dark:text-blue-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                    </svg>
-                </span>
-
-                <h1 class="text-2xl font-semibold text-gray-700 capitalize dark:text-white">Simple & clean designs</h1>
-
-                <p class="text-gray-500 dark:text-gray-300">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
-                </p>
-
-                <a href="#" class="inline-flex p-2 text-blue-500 capitalize transition-colors duration-200 transform bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-
         </section>
     </div>
     <!-- end Main Wrapper -->
