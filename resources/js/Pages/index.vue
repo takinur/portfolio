@@ -1,7 +1,8 @@
 <template>
     <Head title="Hi there" />
 
-    <div class="wrapper">
+    <div class="wrapper pb-40">
+        <!--Remove padding Later-->
         <!-- header -->
         <header class="header my-8">
             <!-- container -->
@@ -382,7 +383,7 @@
         <!--Skills Section-->
         <section id="skills" class="md:-mt-56 -mt-48">
             <div
-                class="container px-6 py-10 mx-auto md:mt-11 bg-gray-200 rounded-2xl w-4/5"
+                class="container px-6 py-10 mx-auto md:mt-11 bg-gray-50 rounded-2xl w-4/5 pb-9"
             >
                 <h1 class="text-dark text-3xl text-center">
                     PROFEESIONAL SKILLS
@@ -427,7 +428,8 @@
                         </h1>
 
                         <p class="text-gray-500 dark:text-gray-300 text-center">
-                            I use HTML 5 markup language to show data in the browser
+                            I use HTML 5 markup language to show data in the
+                            browser
                         </p>
                     </div>
                     <!--end Card Item -->
@@ -487,7 +489,8 @@
                         </h1>
 
                         <p class="text-gray-500 dark:text-gray-300 text-center">
-                            I use relational databases MySQL and MariaDB to store data
+                            I use relational databases MySQL and MariaDB to
+                            store data
                         </p>
                     </div>
                     <!--end Card Item -->
@@ -511,6 +514,499 @@
                         </p>
                     </div>
                     <!--end Card Item -->
+                </div>
+                <!--End Card Body -->
+            </div>
+        </section>
+        <!--Project Section-->
+        <section id="projects" class="py-24 bg-gray-200">
+            <div
+                class="container px-2 py-10 mx-auto md:mt-11 bg-gray-200 rounded-2xl w-4/5 pb-9"
+            >
+                <h1 class="text-dark text-3xl text-center mb-7">
+                    MY RECENT WORKS
+                </h1>
+
+                <div
+                    class="bg-white rounded-lg shadow-2xl transform transition hover:translate-x-3 md:flex cursor-pointer"
+                >
+                    <img
+                        src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8"
+                        alt="Laptop on Desk"
+                        class="md:w-1/3 rounded-t-lg md:rounded-l-lg md:rounded-t-none"
+                    />
+                    <div class="p-6">
+                        <h2
+                            class="font-bold text-xl md:text-3xl mb-2 text-gray-700"
+                        >
+                            E-Courier Web Application
+                        </h2>
+                        <p class="text-gray-700">
+                            Developed an Courier application with advanced
+                            functionality !
+                        </p>
+                    </div>
+                    <div
+                        class="p-8 pr-2 pl-2 relative overflow-hidden rounded-b-lg md:rounded-t-lg"
+                    >
+                        <div
+                            width="80"
+                            height="77"
+                            class="absolute md:-top-10 md:-right-10 top-24 right-60 text-green-500"
+                        >
+                            <svg
+                                width="120"
+                                height="119"
+                                viewBox="0 0 120 119"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    opacity="0.3"
+                                    d="M6.38128 49.1539C3.20326 32.893 13.809 17.1346 30.0699 13.9566L70.3846 6.07751C86.6455 2.89948 102.404 13.5052 105.582 29.7661L113.461 70.0808C116.639 86.3417 106.033 102.1 89.7724 105.278L49.4577 113.157C33.1968 116.335 17.4384 105.729 14.2604 89.4686L6.38128 49.1539Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                        </div>
+                        <div
+                            class="grid grid-cols-1 gap-4 w-full bg-white p-6 rounded-sm z-10"
+                        >
+                            <div class="text-left">
+                                <span
+                                    class="inline-block rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-xs font-bold mr-3"
+                                    >Default</span
+                                >
+                                <span
+                                    class="inline-block rounded-full text-white bg-purple-500 px-2 py-1 text-xs font-bold mr-3"
+                                    >Primary</span
+                                >
+
+                                <span
+                                    class="inline-block rounded-full text-white bg-blue-500 px-2 py-1 text-xs font-bold mr-3"
+                                    >Info</span
+                                >
+                                <span
+                                    class="inline-block rounded-full text-white bg-yellow-500 px-2 py-1 text-xs font-bold mr-3"
+                                    >Warning</span
+                                >
+                                <span
+                                    class="inline-block rounded-full text-white bg-red-500 px-2 py-2 text-xs font-bold mr-3"
+                                    >Danger</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Frameworks Section-->
+        <section id="frameworks" class="pb-24 bg-gray-100">
+            <div
+                class="container px-6 py-10 mx-auto md:mt-11 bg-gray-100 rounded-2xl w-4/5 pb-9"
+            >
+                <h1 class="text-dark text-3xl text-center">FRAMEWORKS</h1>
+                <h4 class="text-gray-600 text-center">
+                    On the shoulders of giants
+                </h4>
+                <!-- CARD BODY-->
+                <div
+                    class="grid grid-cols-2 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-4 xl:grid-cols-6 content-center"
+                >
+                    <!--Card Item-->
+                    <div class="py-2 rounded-xl bg-white shadow-2xl">
+                        <div
+                            class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto md:grayscale hover:grayscale-0"
+                        >
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            Laravel
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            PHP Framework
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2 rounded-xl bg-white shadow-2xl">
+                        <div
+                            class="bg-cover h-18 w-28 mx-auto md:mt-3 md:grayscale hover:grayscale-0"
+                        >
+                            <img
+                                v-bind:src="
+                                    '/images/icons/' + 'tailwindcss.svg'
+                                "
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            Tailwind CSS
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            CSS Framework
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2 rounded-xl bg-white shadow-2xl">
+                        <div
+                            class="bg-cover h-18 w-20 md:w-20 mx-auto md:mt-2 md:grayscale hover:grayscale-0"
+                        >
+                            <img
+                                v-bind:src="
+                                    '/images/icons/' + 'bootstrap-icon.svg'
+                                "
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            Bootstrap
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            HTML, CSS and JS library
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2 rounded-xl bg-white shadow-2xl">
+                        <div
+                            class="bg-cover mt-2 h-18 w-20 md:w-16 mx-auto md:grayscale hover:grayscale-0"
+                        >
+                            <img
+                                v-bind:src="'/images/icons/' + 'jquery.png'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-7 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            JQuery
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            JavaScript library
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2 rounded-xl bg-white shadow-2xl">
+                        <div
+                            class="bg-cover h-18 w-20 md:mt-4 mx-auto md:grayscale hover:grayscale-0"
+                        >
+                            <img
+                                v-bind:src="'/images/icons/' + 'vue-js-1.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            VUE JS
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            JavaScript Framework
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+
+                    <!--Card Item-->
+                    <div class="py-2 rounded-xl bg-white shadow-2xl">
+                        <div
+                            class="bg-cover mt-5 h-18 w-28 md:w-32 mx-auto md:grayscale hover:grayscale-0"
+                        >
+                            <img
+                                v-bind:src="
+                                    '/images/icons/' + 'laravel-livewire.png'
+                                "
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-7 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            Livewire
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Laravel library
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                </div>
+                <!--End Card Body -->
+            </div>
+        </section>
+        <!-- TOOls Section-->
+        <section id="tools" class="pb-24 bg-gray-200">
+            <div class="container px-6 py-10 mx-auto md:mt-1 w-4/5 pb-9">
+                <h1 class="text-dark text-3xl text-center">
+                    TOOLS AND PRINCIPLES
+                </h1>
+                <h4 class="text-gray-600 text-center">I use daily</h4>
+                <!-- CARD BODY-->
+                <div
+                    class="grid grid-cols-3 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-4 xl:grid-cols-6 content-center"
+                >
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            VScode IDE
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Development Environment
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            Terminal
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Command Line Interface
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            Chrome
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Web Browser and Devtools
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            OOP
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Think in objects
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            MVC
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                           Design Pattern
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            Composer
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Dependency Manager for PHP
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            NPM
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                             Dependency Manager for JavaScript
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            XAAMP
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                             Virtual APACHE server with MYSQL
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            GIT
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                             Version control system
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            PHP Unit
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                             Unit tests
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            MAIL TRAP
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                             Test mailing Platform
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            DRY
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                             Don't repeat yourself
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+
                 </div>
                 <!--End Card Body -->
             </div>
