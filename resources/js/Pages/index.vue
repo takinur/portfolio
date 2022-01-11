@@ -3,15 +3,20 @@
 
     <div class="wrapper pb-40">
         <!--Remove padding Later-->
+
         <!-- header -->
-        <header class="header my-8">
+        <header
+            class="header py-8 h-16 top-0 z-50 bg-gray-200 opacity-100 dark:bg-slate-800"
+        >
             <!-- container -->
             <div class="container px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
                 <!-- header wrapper -->
                 <div class="header-wrapper flex items-center justify-between">
                     <!-- header logo -->
                     <div class="header-logo">
-                        <h1 class="font-semibold text-black leading-relaxed">
+                        <h1
+                            class="font-semibold text-black leading-relaxed dark:text-white"
+                        >
                             <a href="">TAKINUR</a>
                         </h1>
                     </div>
@@ -34,35 +39,75 @@
                     </div>
 
                     <!-- Navbar -->
-                    <navbar class="navbar hidden md:block">
+                    <nav class="navbar hidden md:block">
                         <ul class="flex space-x-8 text-sm font-semibold">
                             <li>
-                                <a
-                                    href="#"
-                                    class="active border-b-2 border-gray-500 pb-2"
-                                    >Reviews</a
+                                <!-- Toggle Dark -->
+                                <div
+                                    class="flex items-center justify-center w-full"
                                 >
-                            </li>
-                            <li>
-                                <a href="#" class="hover:text-orange-500"
-                                    >People</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#" class="hover:text-orange-500"
-                                    >Partners</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#" class="hover:text-orange-500"
-                                    >Feedback</a
-                                >
+                                    <span class="mr-2">
+                                        <svg
+                                            class="h-6 w-6 text-gray-400"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                                            />
+                                        </svg>
+                                    </span>
+                                    <label
+                                        for="toggleDark"
+                                        class="flex items-center cursor-pointer"
+                                    >
+                                        <!-- toggle -->
+                                        <div class="relative">
+                                            <!-- input -->
+                                            <input
+                                                type="checkbox"
+                                                id="toggleDark"
+                                                class="sr-only"
+                                            />
+                                            <!-- line -->
+                                            <div
+                                                class="block bg-gray-700 w-16 h-7 rounded-full"
+                                            ></div>
+                                            <!-- dot -->
+                                            <div
+                                                class="dot absolute left-1 top-1 bg-white w-5 h-5 rounded-full transition"
+                                            ></div>
+                                        </div>
+                                        <!-- label -->
+
+                                        <span class="ml-2">
+                                            <svg
+                                                class="h-6 w-6 text-gray-500"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                                                />
+                                            </svg>
+                                        </span>
+                                    </label>
+                                </div>
                             </li>
                             <li>
                                 <a href="#" class="hover:text-orange-500"
                                     >Pricing</a
                                 >
                             </li>
+
                             <li>
                                 <a
                                     href="#"
@@ -71,13 +116,13 @@
                                 >
                             </li>
                         </ul>
-                    </navbar>
+                    </nav>
                 </div>
             </div>
         </header>
         <!-- end header -->
         <!-- hero -->
-        <div class="hero bg-gray-200 pb-24 pt-28 h-screen">
+        <div class="hero bg-gray-200 pb-24 pt-28 h-screen dark:bg-slate-800">
             <!-- container -->
             <div class="container px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
                 <!-- hero wrapper -->
@@ -87,7 +132,7 @@
                     <!-- hero text -->
                     <div class="hero-text col-span-6">
                         <h1
-                            class="font-bold uppercase text-4xl md:text-5xl max-w-xl text-gray-900 leading-tight"
+                            class="font-bold uppercase text-4xl md:text-5xl max-w-xl text-gray-900 leading-tight dark:text-gray-300"
                         >
                             Full-Stack PHP Web Developer
                         </h1>
@@ -381,7 +426,7 @@
             <!-- end hero -->
         </section>
         <!--Skills Section-->
-        <section id="skills" class="md:-mt-56 -mt-48">
+        <section class="md:-mt-56 -mt-48">
             <div
                 class="container px-6 py-10 mx-auto md:mt-11 bg-gray-50 rounded-2xl w-4/5 pb-9"
             >
@@ -768,9 +813,11 @@
                 >
                     <!--Card Item-->
                     <div class="py-2">
-                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                        <div
+                            class="bg-cover grayscale h-18 w-16 md:w-16 md:mt-3 mx-auto"
+                        >
                             <img
-                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                v-bind:src="'/images/icons/' + 'vscode.svg'"
                                 alt=""
                             />
                         </div>
@@ -790,7 +837,7 @@
                     <div class="py-2">
                         <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
                             <img
-                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                v-bind:src="'/images/icons/' + 'terminal.svg'"
                                 alt=""
                             />
                         </div>
@@ -810,7 +857,7 @@
                     <div class="py-2">
                         <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
                             <img
-                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                v-bind:src="'/images/icons/' + 'chrome.svg'"
                                 alt=""
                             />
                         </div>
@@ -830,7 +877,7 @@
                     <div class="py-2">
                         <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
                             <img
-                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                v-bind:src="'/images/icons/' + 'oop.svg'"
                                 alt=""
                             />
                         </div>
@@ -848,9 +895,11 @@
                     <!-- END card ITEM -->
                     <!--Card Item-->
                     <div class="py-2">
-                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                        <div
+                            class="bg-cover grayscale h-18 w-16 md:w-16 md:mt-3 mx-auto"
+                        >
                             <img
-                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                v-bind:src="'/images/icons/' + 'mvc.svg'"
                                 alt=""
                             />
                         </div>
@@ -862,7 +911,7 @@
                         <p
                             class="text-gray-500 dark:text-gray-300 text-center text-sm"
                         >
-                           Design Pattern
+                            Design Pattern
                         </p>
                     </div>
                     <!-- END card ITEM -->
@@ -870,7 +919,7 @@
                     <div class="py-2">
                         <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
                             <img
-                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                v-bind:src="'/images/icons/' + 'composer.svg'"
                                 alt=""
                             />
                         </div>
@@ -890,7 +939,7 @@
                     <div class="py-2">
                         <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
                             <img
-                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                v-bind:src="'/images/icons/' + 'npm.svg'"
                                 alt=""
                             />
                         </div>
@@ -902,27 +951,29 @@
                         <p
                             class="text-gray-500 dark:text-gray-300 text-center text-sm"
                         >
-                             Dependency Manager for JavaScript
+                            Dependency Manager for JavaScript
                         </p>
                     </div>
                     <!-- END card ITEM -->
                     <!--Card Item-->
                     <div class="py-2">
-                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                        <div
+                            class="bg-cover grayscale h-18 w-16 md:w-16 md:mt-3 mx-auto"
+                        >
                             <img
-                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                v-bind:src="'/images/icons/' + 'xampp.png'"
                                 alt=""
                             />
                         </div>
                         <h1
                             class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
                         >
-                            XAAMP
+                            XAMPP
                         </h1>
                         <p
                             class="text-gray-500 dark:text-gray-300 text-center text-sm"
                         >
-                             Virtual APACHE server with MYSQL
+                            Virtual APACHE server with MYSQL
                         </p>
                     </div>
                     <!-- END card ITEM -->
@@ -930,7 +981,7 @@
                     <div class="py-2">
                         <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
                             <img
-                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                v-bind:src="'/images/icons/' + 'git.svg'"
                                 alt=""
                             />
                         </div>
@@ -942,7 +993,7 @@
                         <p
                             class="text-gray-500 dark:text-gray-300 text-center text-sm"
                         >
-                             Version control system
+                            Version control system
                         </p>
                     </div>
                     <!-- END card ITEM -->
@@ -950,7 +1001,7 @@
                     <div class="py-2">
                         <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
                             <img
-                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                v-bind:src="'/images/icons/' + 'phpunit.svg'"
                                 alt=""
                             />
                         </div>
@@ -962,15 +1013,17 @@
                         <p
                             class="text-gray-500 dark:text-gray-300 text-center text-sm"
                         >
-                             Unit tests
+                            Unit tests
                         </p>
                     </div>
                     <!-- END card ITEM -->
                     <!--Card Item-->
                     <div class="py-2">
-                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                        <div
+                            class="bg-cover grayscale h-18 w-16 md:w-16 md:mt-3 mx-auto"
+                        >
                             <img
-                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                v-bind:src="'/images/icons/' + 'mailtrap.png'"
                                 alt=""
                             />
                         </div>
@@ -982,7 +1035,7 @@
                         <p
                             class="text-gray-500 dark:text-gray-300 text-center text-sm"
                         >
-                             Test mailing Platform
+                            Test mailing Platform
                         </p>
                     </div>
                     <!-- END card ITEM -->
@@ -990,7 +1043,7 @@
                     <div class="py-2">
                         <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
                             <img
-                                v-bind:src="'/images/icons/' + 'laravel.svg'"
+                                v-bind:src="'/images/icons/' + 'dry.svg'"
                                 alt=""
                             />
                         </div>
@@ -1002,11 +1055,273 @@
                         <p
                             class="text-gray-500 dark:text-gray-300 text-center text-sm"
                         >
-                             Don't repeat yourself
+                            Don't repeat yourself
                         </p>
                     </div>
                     <!-- END card ITEM -->
-
+                </div>
+                <!--End Card Body -->
+            </div>
+        </section>
+        <!-- other Section-->
+        <section id="other" class="pb-24 bg-gray-200">
+            <div class="container px-6 py-10 mx-auto md:mt-1 w-4/5 pb-9">
+                <h1 class="text-dark text-3xl text-center">
+                    TOOLS AND PRINCIPLES
+                </h1>
+                <h4 class="text-gray-600 text-center">I use daily</h4>
+                <!-- CARD BODY-->
+                <div
+                    class="grid grid-cols-3 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-4 xl:grid-cols-6 content-center"
+                >
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div
+                            class="bg-cover grayscale h-18 w-16 md:w-16 md:mt-3 mx-auto"
+                        >
+                            <img
+                                v-bind:src="'/images/icons/' + 'vscode.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            VScode IDE
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Development Environment
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'terminal.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            Terminal
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Command Line Interface
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'chrome.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            Chrome
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Web Browser and Devtools
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'oop.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            OOP
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Think in objects
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div
+                            class="bg-cover grayscale h-18 w-16 md:w-16 md:mt-3 mx-auto"
+                        >
+                            <img
+                                v-bind:src="'/images/icons/' + 'mvc.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            MVC
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Design Pattern
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'composer.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            Composer
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Dependency Manager for PHP
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'npm.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            NPM
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Dependency Manager for JavaScript
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div
+                            class="bg-cover grayscale h-18 w-16 md:w-16 md:mt-3 mx-auto"
+                        >
+                            <img
+                                v-bind:src="'/images/icons/' + 'xampp.png'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            XAMPP
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Virtual APACHE server with MYSQL
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'git.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            GIT
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Version control system
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'phpunit.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            PHP Unit
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Unit tests
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div
+                            class="bg-cover grayscale h-18 w-16 md:w-16 md:mt-3 mx-auto"
+                        >
+                            <img
+                                v-bind:src="'/images/icons/' + 'mailtrap.png'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            MAIL TRAP
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Test mailing Platform
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
+                    <!--Card Item-->
+                    <div class="py-2">
+                        <div class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto">
+                            <img
+                                v-bind:src="'/images/icons/' + 'dry.svg'"
+                                alt=""
+                            />
+                        </div>
+                        <h1
+                            class="mt-5 md:mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                        >
+                            DRY
+                        </h1>
+                        <p
+                            class="text-gray-500 dark:text-gray-300 text-center text-sm"
+                        >
+                            Don't repeat yourself
+                        </p>
+                    </div>
+                    <!-- END card ITEM -->
                 </div>
                 <!--End Card Body -->
             </div>
@@ -1032,6 +1347,13 @@
     transform: translate3d(-100%, 0px, 0px);
     opacity: 0;
 }
+
+/* Toggle DARK MODE */
+input:checked ~ .dot {
+    transform: translateX(36px);
+    background-color: #48bb78;
+    transition: transform 0.3s linear;
+}
 </style>
 
 <script>
@@ -1054,12 +1376,22 @@ export default defineComponent({
         };
     },
     mounted() {
-        //JS
+        //Vanila JS
+        // Dark Mode Toggler
+        const checkbox = document.querySelector("#toggleDark");
+        const html = document.querySelector("html");
+        const toggleDarkMode = function () {
+            checkbox.checked
+                ? html.classList.add("dark")
+                : html.classList.remove("dark");
+        };
+        //calling the function directly
+        toggleDarkMode();
+        checkbox.addEventListener("click", toggleDarkMode);
     },
     methods: {
         toggleNav: function () {
             this.showNav = !this.showNav;
-            console.log("nave Toggle to: " + this.showNav);
         },
     },
 });
