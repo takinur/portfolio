@@ -23,7 +23,7 @@
                     <div class="toggle md:hidden">
                         <button @click="toggleNav">
                             <svg
-                                class="h-6 w-6 fill-current text-black"
+                                class="h-6 w-6 fill-current text-black dark:text-white"
                                 fill="none"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
@@ -99,18 +99,13 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="#" class="hover:text-orange-500"
-                                    >Pricing</a
-                                >
+                                <a href="#"
+                                class="-mt-1 py-2 px-6 text-[#7510F7] dark:text-white rounded-full border-2 border-[#7510F7] shadow-lg block hover:text-white md:inline-block hover:bg-[#7510F7]"
+                            >
+                                Say Hello
+                            </a>
                             </li>
 
-                            <li>
-                                <a
-                                    href="#"
-                                    class="cta bg-orange-500 hover:bg-orange-600 px-3 py-2 rounded text-white font-normal"
-                                    >Get the App</a
-                                >
-                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -249,17 +244,18 @@
                 >
                     <div class="close">
                         <button
-                            class="absolute top-0 right-0 mt-4 mr-4"
+                            class="absolute top-0 right-0 mt-4 mr-4 "
                             @click="toggleNav"
                         >
                             <svg
-                                class="w-6 h-6"
+                                class="w-6 h-6 "
                                 fill="none"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                                 stroke-width="2"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
+
                             >
                                 <path d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
@@ -268,50 +264,103 @@
                     <ul class="divide-y">
                         <li>
                             <a
-                                href="#"
+                                href="#intro"
                                 class="my-4 inline-block active font-bold"
-                                >Reviews</a
+                                >Introduction</a
                             >
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="#projects"
                                 class="my-4 inline-block hover:text-orange-500"
-                                >People</a
+                                >Porfolio</a
                             >
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="#frameworks"
                                 class="my-4 inline-block hover:text-orange-500"
-                                >Partners</a
+                                >Frameworks</a
                             >
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="#tools"
                                 class="my-4 inline-block hover:text-orange-500"
-                                >Feedback</a
+                                >Tools</a
                             >
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="#other"
                                 class="my-4 inline-block hover:text-orange-500"
-                                >Pricing</a
+                                >Other</a
                             >
                         </li>
                         <li>
-                            <a
-                                href="#"
-                                class="my-8 w-full text-center font-semibold cta inline-block bg-orange-500 hover:bg-orange-600 px-3 py-2 rounded text-white"
-                                >Get the App</a
-                            >
+                             <!-- Toggle Dark -->
+                                <div
+                                    class="flex items-center justify-center w-full mt-4"
+                                >
+                                    <label
+                                        for="toggleDark"
+                                        class="flex items-center cursor-pointer"
+                                    >
+                                        <span class="mr-2">
+                                            <svg
+                                                class="h-6 w-6 text-yellow-600 dark:text-white"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                                                />
+                                            </svg>
+                                        </span>
+                                        <!-- toggle -->
+                                        <div class="relative">
+                                            <!-- input -->
+                                            <input
+                                                type="checkbox"
+                                                id="toggleDark"
+                                                class="sr-only"
+                                            />
+                                            <!-- line -->
+                                            <div
+                                                class="block bg-gray-700 w-16 h-7 rounded-full"
+                                            ></div>
+                                            <!-- dot -->
+                                            <div
+                                                class="dot absolute left-1 top-1 bg-white w-5 h-5 rounded-full transition"
+                                            ></div>
+                                        </div>
+                                        <span class="ml-2">
+                                            <svg
+                                                class="h-6 w-6 text-gray-500 dark:text-cyan-400"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                                                />
+                                            </svg>
+                                        </span>
+                                    </label>
+                                    <!-- label -->
+                                </div>
                         </li>
                     </ul>
 
                     <!-- follow us -->
-                    <div class="follow">
+                    <!-- <div class="follow">
                         <p class="italic font-semibold">follow us:</p>
                         <div class="social flex space-x-5 mt-4">
                             <a href="#">
@@ -383,7 +432,7 @@
                                 </svg>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </transition>
         </div>
@@ -696,6 +745,7 @@
                 <!--End Card Body -->
             </div>
         </section>
+
         <!--Project Section-->
         <section id="projects" class="py-24 bg-gray-200 dark:bg-slate-800">
             <div
@@ -707,74 +757,99 @@
                     MY RECENT WORKS
                 </h1>
 
-                <div
-                    class="bg-white rounded-lg shadow-2xl transform transition hover:translate-x-3 md:flex cursor-pointer dark:bg-[#214559]"
-                >
-                    <img
-                        src=""
-                        alt="Laptop on Desk"
-                        class="md:w-1/3 rounded-t-lg md:rounded-l-lg md:rounded-t-none"
-                    />
-                    <div class="p-6">
-                        <h2
-                            class="font-bold text-xl md:text-3xl mb-2 text-gray-700 dark:text-gray-100"
-                        >
-                            E-Courier Web Application
-                        </h2>
-                        <p class="text-gray-700">
-                            Developed an Courier application with advanced
-                            functionality !
-                        </p>
-                    </div>
-                    <div
-                        class="p-8 pr-2 pl-2 relative overflow-hidden rounded-b-lg md:rounded-t-lg"
-                    >
-                        <div
-                            width="80"
-                            height="77"
-                            class="absolute md:-top-10 md:-right-10 top-24 right-60 text-green-500"
-                        >
-                            <svg
-                                width="120"
-                                height="119"
-                                viewBox="0 0 120 119"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    opacity="0.3"
-                                    d="M6.38128 49.1539C3.20326 32.893 13.809 17.1346 30.0699 13.9566L70.3846 6.07751C86.6455 2.89948 102.404 13.5052 105.582 29.7661L113.461 70.0808C116.639 86.3417 106.033 102.1 89.7724 105.278L49.4577 113.157C33.1968 116.335 17.4384 105.729 14.2604 89.4686L6.38128 49.1539Z"
-                                    fill="currentColor"
-                                />
-                            </svg>
-                        </div>
-                        <div
-                            class="grid grid-cols-1 gap-4 w-full bg-white p-6 rounded-sm z-10"
-                        >
-                            <div class="text-left">
-                                <span
-                                    class="inline-block rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-xs font-bold mr-3"
-                                    >Default</span
-                                >
-                                <span
-                                    class="inline-block rounded-full text-white bg-purple-500 px-2 py-1 text-xs font-bold mr-3"
-                                    >Primary</span
-                                >
+                <div class="flex flex-wrap -mx-4">
+                    <div class="w-full md:w-1/2 xl:w-1/3 px-4">
 
-                                <span
-                                    class="inline-block rounded-full text-white bg-blue-500 px-2 py-1 text-xs font-bold mr-3"
-                                    >Info</span
+                        <div class="bg-white rounded-lg overflow-hidden mb-10">
+                            <img
+                                v-bind:src="
+                                    '/images/projects/' + 'driverless01.png'
+                                "
+                                alt="image"
+                                class="w-full"
+                            />
+                            <div
+                                class="p-8 sm:p-9 md:p-7 xl:p-9 text-center cursor-default mt-2"
+                            >
+                                <h3>
+                                    <p
+                                        class="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
+                                    >
+                                        Dynamic Website For Driverless Company
+                                    </p>
+                                </h3>
+
+                                <a
+                                    href="javascript:void(0)"
+                                    class="disabled:cursor-default mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
                                 >
-                                <span
-                                    class="inline-block rounded-full text-white bg-yellow-500 px-2 py-1 text-xs font-bold mr-3"
-                                    >Warning</span
-                                >
-                                <span
-                                    class="inline-block rounded-full text-white bg-red-500 px-2 py-2 text-xs font-bold mr-3"
-                                    >Danger</span
-                                >
+                                    Visit Website
+                                    <i class="fas fa-chevron-right ml-2"></i>
+                                </a>
                             </div>
                         </div>
+                    </div>
+                    <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+                        <div class="bg-white rounded-lg overflow-hidden mb-10">
+                            <img
+                                v-bind:src="
+                                    '/images/projects/' + 'axietech.png'
+                                "
+                                alt="image"
+                                class="w-full"
+                            />
+                            <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
+                                <h3>
+                                    <p
+                                        href="https://www.axietech.com/"
+                                        target="_blank"
+                                        class="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
+                                    >
+                                        Developed a Complete E-Commerce Website
+                                        with Advance SEO
+                                    </p>
+                                </h3>
+                                <a
+                                    href="https://www.axietech.com/"
+                                    target="_blank"
+                                    class="mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
+                                >
+                                    Visit Website
+                                    <i class="fas fa-chevron-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+                        <div class="bg-white rounded-lg overflow-hidden mb-10">
+                            <img
+                                v-bind:src="
+                                    '/images/projects/' + 'job-platform.png'
+                                "
+                                alt="image"
+                                class="w-full"
+                            />
+                            <div
+                                class="p-8 sm:p-9 md:p-7 xl:p-9 text-center cursor-default mt-2"
+                            >
+                                <h3>
+                                    <p
+                                        class="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
+                                    >
+                                        A job platform for an consultancy
+                                        company
+                                    </p>
+                                </h3>
+                                <a
+                                    href="javascript:void(0)"
+                                    class="disabled:cursor-default mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
+                                >
+                                    Visit Website
+                                    <i class="fas fa-chevron-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
