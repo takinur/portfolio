@@ -125,6 +125,11 @@
                     <!-- hero text -->
                     <div class="hero-text col-span-6">
                         <h1
+                            data-aos="zoom-in-left"
+                            data-aos-once="false"
+                            data-aos-delay="50"
+                            data-aos-duration="600"
+                            data-aos-easing="ease-in-out"
                             class="font-bold uppercase text-4xl md:text-5xl max-w-xl text-gray-900 leading-tight dark:text-gray-300"
                         >
                             Full-Stack PHP Web Developer
@@ -133,6 +138,7 @@
                             class="w-12 h-1 bg-gray-500 rounded-full mt-8 dark:bg-white"
                         />
                         <p
+                            data-aos="zoom-out-up"
                             class="text-gray-800 text-base leading-relaxed mt-8 font-semibold dark:text-gray-100"
                         >
                             I develop Modern, Responsive and SEO Friendly
@@ -141,7 +147,10 @@
                     </div>
 
                     <!-- hero image -->
-                    <div class="hero-image col-span-6">
+                    <div
+                        class="hero-image col-span-6"
+                        data-aos="fade-down-left"
+                    >
                         <img
                             v-bind:src="'/images/' + 'hero.svg'"
                             alt=""
@@ -373,6 +382,7 @@
                     >
                         <!-- hero text -->
                         <div
+                            data-aos="fade-up"
                             class="hero-text text-center col-span-12 items-center content-center md:w-2/3"
                         >
                             <h1
@@ -401,6 +411,11 @@
         <!--Skills Section-->
         <section class="md:-mt-56 -mt-48">
             <div
+                data-aos="fade-up"
+                data-aos-once="false"
+                data-aos-delay="50"
+                data-aos-duration="600"
+                Fdata-aos-easing="ease-in-out"
                 class="container px-6 py-10 mx-auto md:mt-11 bg-gray-50 rounded-2xl w-4/5 pb-9 dark:bg-gray-800"
             >
                 <h1 class="text-dark text-3xl text-center dark:text-gray-100">
@@ -680,9 +695,52 @@
                 >
                     MY RECENT WORKS
                 </h1>
-
                 <div class="flex flex-wrap -mx-4">
-                    <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+                    <div
+                        class="w-full md:w-1/2 xl:w-1/3 px-4"
+                        data-aos="zoom-in-left"
+                        data-aos-once="false"
+                        data-aos-delay="50"
+                        data-aos-duration="600"
+                        Fdata-aos-easing="ease-in-out"
+                    >
+                        <div class="bg-white rounded-lg overflow-hidden mb-10">
+                            <img
+                                v-bind:src="
+                                    '/images/projects/' + 'portfolio.png'
+                                "
+                                alt="image"
+                                class="w-full"
+                            />
+                            <div
+                                class="p-8 sm:p-9 md:p-7 xl:p-9 text-center cursor-default mt-1"
+                            >
+                                <h3>
+                                    <p
+                                        class="capitalize font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
+                                    >
+                                        A portfolio website with dark mode
+                                    </p>
+                                </h3>
+
+                                <a
+                                    href="https://www.takinur.com/"
+                                    class="disabled:cursor-default mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
+                                >
+                                    Visit Website
+                                    <i class="fas fa-chevron-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="w-full md:w-1/2 xl:w-1/3 px-4"
+                        data-aos="zoom-in-left"
+                        data-aos-once="false"
+                        data-aos-delay="50"
+                        data-aos-duration="600"
+                        Fdata-aos-easing="ease-in-out"
+                    >
                         <div class="bg-white rounded-lg overflow-hidden mb-10">
                             <img
                                 v-bind:src="
@@ -713,7 +771,14 @@
                         </div>
                     </div>
                     <div class="w-full md:w-1/2 xl:w-1/3 px-4">
-                        <div class="bg-white rounded-lg overflow-hidden mb-10">
+                        <div
+                            class="bg-white rounded-lg overflow-hidden mb-10"
+                            data-aos="zoom-in-left"
+                            data-aos-once="false"
+                            data-aos-delay="50"
+                            data-aos-duration="600"
+                            Fdata-aos-easing="ease-in-out"
+                        >
                             <img
                                 v-bind:src="
                                     '/images/projects/' + 'axietech.png'
@@ -744,10 +809,53 @@
                         </div>
                     </div>
                     <div class="w-full md:w-1/2 xl:w-1/3 px-4">
-                        <div class="bg-white rounded-lg overflow-hidden mb-10">
+                        <div
+                            class="bg-white rounded-lg overflow-hidden mb-10"
+                            data-aos="zoom-in-left"
+                            data-aos-once="false"
+                            data-aos-delay="50"
+                            data-aos-duration="600"
+                            Fdata-aos-easing="ease-in-out"
+                        >
                             <img
                                 v-bind:src="
                                     '/images/projects/' + 'job-platform.png'
+                                "
+                                alt="image"
+                                class="w-full"
+                            />
+                            <div
+                                class="p-8 sm:p-9 md:p-7 xl:p-9 text-center cursor-default mt-6"
+                            >
+                                <h3>
+                                    <p
+                                        class="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
+                                    >
+                                        A job platform for an consultancy farm
+                                    </p>
+                                </h3>
+                                <a
+                                    href="javascript:void(0)"
+                                    class="disabled:cursor-default mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
+                                >
+                                    Visit Website
+                                    <i class="fas fa-chevron-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+                        <div
+                            class="bg-white rounded-lg overflow-hidden mb-10"
+                            data-aos="zoom-in-left"
+                            data-aos-once="false"
+                            data-aos-delay="50"
+                            data-aos-duration="600"
+                            Fdata-aos-easing="ease-in-out"
+                        >
+                            <img
+                                v-bind:src="
+                                    '/images/projects/' + 'art_site.png'
                                 "
                                 alt="image"
                                 class="w-full"
@@ -759,11 +867,48 @@
                                     <p
                                         class="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
                                     >
-                                        A job platform for an consultancy farm
+                                        Art Website with wordpress CMS
                                     </p>
                                 </h3>
                                 <a
-                                    href="javascript:void(0)"
+                                    href="https://originalpaintingsoilcanvas.com/"
+                                    target="_blank"
+                                    class="disabled:cursor-default mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
+                                >
+                                    Visit Website
+                                    <i class="fas fa-chevron-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+                        <div
+                            class="bg-white rounded-lg overflow-hidden mb-10"
+                            data-aos="zoom-in-left"
+                            data-aos-once="false"
+                            data-aos-delay="50"
+                            data-aos-duration="600"
+                            Fdata-aos-easing="ease-in-out"
+                        >
+                            <img
+                                v-bind:src="'/images/projects/' + 'Courier.png'"
+                                alt="image"
+                                class="w-full"
+                            />
+                            <div
+                                class="p-8 sm:p-9 md:p-7 xl:p-9 text-center cursor-default mt-2"
+                            >
+                                <h3>
+                                    <p
+                                        class="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
+                                    >
+                                        E-courier Web application with booking
+                                        and payments
+                                    </p>
+                                </h3>
+                                <a
+                                    href="http://courierinmoscow.com/"
+                                    target="_blank"
                                     class="disabled:cursor-default mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
                                 >
                                     Visit Website
