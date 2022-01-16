@@ -1,8 +1,7 @@
 <template>
-    <Head title="Hi there" />
+    <Head title="Takinur -PHP Web Developer" />
 
     <div class="wrapper">
-        <!--Remove padding Later-->
         <!-- header -->
         <header
             class="header py-4 h-16 md:sticky md:top-0 md:z-50 bg-gray-200 opacity-100 dark:bg-slate-800"
@@ -13,11 +12,13 @@
                 <div class="header-wrapper flex items-center justify-between">
                     <!-- header logo -->
                     <div class="header-logo w-12">
-                        <img
-                            v-bind:src="'/images/' + 'LOGO_T_256.png'"
-                            alt="Logo of Takinur"
-                            class="bg-cover"
-                        />
+                        <a href="/">
+                            <img
+                                v-bind:src="'/images/' + 'LOGO_T_256.png'"
+                                alt="Logo of Takinur"
+                                class="bg-cover"
+                            />
+                        </a>
                     </div>
                     <!-- mobile toggle -->
                     <div class="toggle md:hidden">
@@ -41,6 +42,7 @@
                             <li>
                                 <!-- Toggle Dark -->
                                 <div
+                                    v-if="!isMobile()"
                                     class="flex items-center justify-center w-full"
                                 >
                                     <label
@@ -99,13 +101,13 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="#"
-                                class="-mt-1 py-2 px-6 text-[#7510F7] dark:text-white rounded-full border-2 border-[#7510F7] shadow-lg block hover:text-white md:inline-block hover:bg-[#7510F7]"
-                            >
-                                Say Hello
-                            </a>
+                                <button
+                                    @click="sayHello"
+                                    class="-mt-1 py-2 px-6 text-[#7510F7] dark:text-white rounded-full border-2 border-[#7510F7] shadow-lg block hover:text-white md:inline-block hover:bg-[#7510F7]"
+                                >
+                                    Say Hello
+                                </button>
                             </li>
-
                         </ul>
                     </nav>
                 </div>
@@ -136,90 +138,6 @@
                             I develop Modern, Responsive and SEO Friendly
                             Websites with clean code, and I love what I do.
                         </p>
-                        <!-- <div
-                            class="get-app flex space-x-5 mt-10 justify-center md:justify-start"
-                        >
-                            <button
-                                class="apple bg-white shadow-md px-3 py-2 rounded-lg flex items-center space-x-4"
-                            >
-                                <div class="logo">
-                                    <svg
-                                        class="w-6 h-6"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="419.955"
-                                        height="512"
-                                        viewBox="0 0 419.955 512"
-                                    >
-                                        <g transform="translate(-46.022)">
-                                            <path
-                                                d="M185.255,512c-76.2-.439-139.233-155.991-139.233-235.21,0-129.4,97.075-157.734,134.487-157.734,16.86,0,34.863,6.621,50.742,12.48,11.1,4.087,22.588,8.306,28.975,8.306,3.823,0,12.832-3.589,20.786-6.738,16.963-6.753,38.071-15.146,62.651-15.146h.146c18.354,0,74,4.028,107.461,54.272l7.837,11.777-11.279,8.511c-16.113,12.158-45.513,34.336-45.513,78.267,0,52.031,33.3,72.041,49.292,81.665,7.061,4.248,14.37,8.628,14.37,18.208,0,6.255-49.922,140.566-122.417,140.566-17.739,0-30.278-5.332-41.338-10.034-11.191-4.761-20.845-8.862-36.8-8.862-8.086,0-18.311,3.823-29.136,7.881C221.5,505.73,204.752,512,185.753,512Z"
-                                            />
-                                            <path
-                                                d="M351.343,0c1.888,68.076-46.8,115.3-95.425,112.342C247.9,58.015,304.54,0,351.343,0Z"
-                                            />
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="text">
-                                    <p
-                                        class="text-xs text-gray-600"
-                                        style="font-size: 0.5rem"
-                                    >
-                                        Download on the
-                                    </p>
-                                    <p
-                                        class="text-xs font-semibold text-gray-900"
-                                    >
-                                        Apple Store
-                                    </p>
-                                </div>
-                            </button>
-                            <button
-                                class="google bg-white shadow-md px-3 py-2 rounded-lg flex items-center space-x-4"
-                            >
-                                <div class="image">
-                                    <svg
-                                        class="w-6 h-6"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="436.057"
-                                        height="469.847"
-                                        viewBox="0 0 436.057 469.847"
-                                    >
-                                        <g transform="translate(-16.896)">
-                                            <path
-                                                d="M270.336,234.965,34.39,462.165A40.146,40.146,0,0,1,16.9,428.672V41.258A40.146,40.146,0,0,1,34.39,7.765Z"
-                                                fill="#2196f3"
-                                            />
-                                            <path
-                                                d="M352.9,155.6l-82.56,79.36L34.39,7.765a31.446,31.446,0,0,1,2.773-1.92A40.363,40.363,0,0,1,77.91,5.2Z"
-                                                fill="#4caf50"
-                                            />
-                                            <path
-                                                d="M452.95,234.965a40.791,40.791,0,0,1-21.333,36.267L352.9,314.325l-82.56-79.36L352.9,155.6l78.72,43.093A40.791,40.791,0,0,1,452.95,234.965Z"
-                                                fill="#ffc107"
-                                            />
-                                            <path
-                                                d="M352.9,314.325,77.91,464.725a40.9,40.9,0,0,1-40.747-.64,31.44,31.44,0,0,1-2.773-1.92l235.947-227.2Z"
-                                                fill="#f44336"
-                                            />
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="text">
-                                    <p
-                                        class="text-xs text-gray-600"
-                                        style="font-size: 0.5rem"
-                                    >
-                                        Download it from
-                                    </p>
-                                    <p
-                                        class="text-xs font-semibold text-gray-900"
-                                    >
-                                        Google play
-                                    </p>
-                                </div>
-                            </button>
-                        </div> -->
                     </div>
 
                     <!-- hero image -->
@@ -244,18 +162,17 @@
                 >
                     <div class="close">
                         <button
-                            class="absolute top-0 right-0 mt-4 mr-4 "
+                            class="absolute top-0 right-0 mt-4 mr-4"
                             @click="toggleNav"
                         >
                             <svg
-                                class="w-6 h-6 "
+                                class="w-6 h-6"
                                 fill="none"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                                 stroke-width="2"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
-
                             >
                                 <path d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
@@ -263,9 +180,15 @@
                     </div>
                     <ul class="divide-y">
                         <li>
+                            <button
+                                @click="sayHello"
+                                class="-mt-2 py-1 px-6 text-[#7510F7] rounded-full border-2 border-[#7510F7] shadow-lg block hover:text-white md:inline-block hover:bg-[#7510F7]"
+                            >
+                                Say Hello
+                            </button>
                             <a
                                 href="#intro"
-                                class="my-4 inline-block active font-bold"
+                                class="my-4 inline-block active font-bold mt-8"
                                 >Introduction</a
                             >
                         </li>
@@ -298,64 +221,65 @@
                             >
                         </li>
                         <li>
-                             <!-- Toggle Dark -->
-                                <div
-                                    class="flex items-center justify-center w-full mt-4"
+                            <!-- Toggle Dark -->
+                            <div
+                                class="flex items-center justify-center w-full mt-4"
+                            >
+                                <label
+                                    for="toggleDark"
+                                    class="flex items-center cursor-pointer"
                                 >
-                                    <label
-                                        for="toggleDark"
-                                        class="flex items-center cursor-pointer"
-                                    >
-                                        <span class="mr-2">
-                                            <svg
-                                                class="h-6 w-6 text-yellow-600 dark:text-white"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                                                />
-                                            </svg>
-                                        </span>
-                                        <!-- toggle -->
-                                        <div class="relative">
-                                            <!-- input -->
-                                            <input
-                                                type="checkbox"
-                                                id="toggleDark"
-                                                class="sr-only"
+                                    <span class="mr-2">
+                                        <svg
+                                            class="h-6 w-6 text-yellow-600 dark:text-gray-400"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
                                             />
-                                            <!-- line -->
-                                            <div
-                                                class="block bg-gray-700 w-16 h-7 rounded-full"
-                                            ></div>
-                                            <!-- dot -->
-                                            <div
-                                                class="dot absolute left-1 top-1 bg-white w-5 h-5 rounded-full transition"
-                                            ></div>
-                                        </div>
-                                        <span class="ml-2">
-                                            <svg
-                                                class="h-6 w-6 text-gray-500 dark:text-cyan-400"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </label>
-                                    <!-- label -->
-                                </div>
+                                        </svg>
+                                    </span>
+                                    <!-- toggle -->
+                                    <div class="relative">
+                                        <!-- input -->
+                                        <input
+                                            type="checkbox"
+                                            id="toggleDark"
+                                            class="sr-only"
+                                        />
+                                        <!-- line -->
+                                        <div
+                                            class="block bg-gray-700 w-16 h-7 rounded-full"
+                                        ></div>
+                                        <!-- dot -->
+                                        <div
+                                            id="mobileDot"
+                                            class="dot absolute left-1 top-1 bg-white w-5 h-5 rounded-full transition"
+                                        ></div>
+                                    </div>
+                                    <span class="ml-2">
+                                        <svg
+                                            class="h-6 w-6 text-gray-500 dark:text-cyan-400"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                                            />
+                                        </svg>
+                                    </span>
+                                </label>
+                                <!-- label -->
+                            </div>
                         </li>
                     </ul>
 
@@ -759,7 +683,6 @@
 
                 <div class="flex flex-wrap -mx-4">
                     <div class="w-full md:w-1/2 xl:w-1/3 px-4">
-
                         <div class="bg-white rounded-lg overflow-hidden mb-10">
                             <img
                                 v-bind:src="
@@ -836,8 +759,7 @@
                                     <p
                                         class="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
                                     >
-                                        A job platform for an consultancy
-                                        company
+                                        A job platform for an consultancy farm
                                     </p>
                                 </h3>
                                 <a
@@ -849,7 +771,6 @@
                                 </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -2350,6 +2271,7 @@
                             class="md:space-x-20 space-y-10 md:space-y-0 mx-auto items-center"
                         >
                             <button
+                                @click="sayHello"
                                 class="py-3 px-6 text-white rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7]"
                             >
                                 Let's do this
@@ -2392,6 +2314,103 @@
                 </div>
             </div>
         </footer>
+        <!-- Modal for Contact -->
+        <!-- component -->
+        <div
+            v-show="contactModal"
+            @close="closeModal"
+            class="min-w-screen h-screen transition-all animated fadeIn faster fixed left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover"
+            style="
+                transition-duration: 500ms;
+                background-image: url(https://images.unsplash.com/photo-1623600989906-6aae5aa131d4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1582&q=80);
+            "
+            id="modal-id"
+        >
+            <div
+                @click="closeModal"
+                class="absolute bg-black opacity-80 inset-0 z-0"
+            ></div>
+            <div
+                class="w-full max-w-2xl p-5 relative mx-auto my-auto rounded-xl shadow-lg bg-white"
+            >
+                <!--content-->
+                <div class="">
+                    <!--body-->
+                    <div class="p-5 justify-center">
+                        <h2 class="text-3xl font-bold py-2 text-center">
+                            Thanks for taking the time to reach out. How can I
+                            help you today?
+                        </h2>
+                        <div class="mt-8">
+                            <div class="">
+                                <jet-label for="name" value="Name" />
+                                <jet-input
+                                    id="name"
+                                    type="text"
+                                    class="mt-1 block w-full"
+                                    v-model="form.name"
+                                    required
+                                    autofocus
+                                    autocomplete="name"
+                                />
+                                <jet-input-error
+                                    :message="form.errors.name"
+                                    class="mt-2"
+                                />
+                            </div>
+
+                            <div class="mt-4">
+                                <jet-label for="email" value="Email" />
+                                <jet-input
+                                    id="email"
+                                    type="email"
+                                    class="mt-1 block w-full"
+                                    v-model="form.email"
+                                    required
+                                />
+                                <jet-input-error
+                                    :message="form.errors.email"
+                                    class="mt-2"
+                                />
+                            </div>
+                            <div>
+                                <div class="w-full flex flex-col mt-8">
+                                    <label
+                                        class="font-medium text-sm text-gray-700 leading-none"
+                                        >Message</label
+                                    >
+                                    <textarea
+                                        type="text"
+                                        v-model="form.message"
+                                        required
+                                        class="h-40 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                                    ></textarea>
+                                    <jet-input-error
+                                        :message="form.errors.message"
+                                        class="mt-2"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--footer-->
+                    <div class="p-3 mt-2 text-center space-x-4 md:block">
+                        <button
+                            @click="closeModal"
+                            class="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-gray-600 rounded-full hover:shadow-lg hover:bg-gray-100"
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            @click="saveContact"
+                            class="mb-2 md:mb-0 bg-white border border-[#7510F7] px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-[#7510F7] rounded-full hover:shadow-lg hover:bg-[#7510F7] hover:text-white"
+                        >
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- end Main Wrapper -->
 </template>
@@ -2415,7 +2434,7 @@
 }
 
 /* Toggle DARK MODE */
-input:checked ~ .dot {
+#toggleDark:checked ~ .dot {
     transform: translateX(36px);
     background-color: #48bb78;
     transition: transform 0.3s linear;
@@ -2425,40 +2444,50 @@ input:checked ~ .dot {
 <script>
 import { defineComponent } from "vue";
 import { Head } from "@inertiajs/inertia-vue3";
+import JetInput from "@/Jetstream/Input.vue";
+import JetInputError from "@/Jetstream/InputError.vue";
+import JetLabel from "@/Jetstream/Label.vue";
 
 export default defineComponent({
     components: {
         Head,
+        JetInput,
+        JetInputError,
+        JetLabel,
     },
 
     props: {
         // canLogin: Boolean,
         // canRegister: Boolean,
         // isOpen: Boolean,
+        errors: Object,
     },
     data() {
         return {
             showNav: false,
+            isDark: false,
+            isSucceed: false,
+
+            contactModal: false,
+            form: this.$inertia.form({
+                name: "",
+                email: "",
+                message: "",
+            }),
         };
     },
     mounted() {
         //Vanila JS
 
-        // Dark Mode Toggler
+        // // Dark Mode Toggler
         const checkbox = document.querySelector("#toggleDark");
         const html = document.querySelector("html");
         const toggleDarkMode = function () {
             if (checkbox.checked) {
-                // console.log('checked')
                 html.classList.add("dark");
-                // localStorage.theme = "dark";
             } else {
-                // console.log('nope')
                 html.classList.remove("dark");
-                // localStorage.theme = "light";
             }
-            // ? html.classList.add("dark") ;
-            // : html.classList.remove("dark");
         };
         //calling the function directly
         toggleDarkMode();
@@ -2467,6 +2496,34 @@ export default defineComponent({
     methods: {
         toggleNav: function () {
             this.showNav = !this.showNav;
+        },
+        isMobile() {
+            if (
+                /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                    navigator.userAgent
+                )
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        sayHello() {
+            this.contactModal = true;
+            // setTimeout(() => this.$refs.email.focus(), 250);
+        },
+        saveContact() {
+            this.form.post(route("saveContact"), {
+                preserveScroll: true,
+                onSuccess: () => this.closeModal(),
+                // onError: () => this.$refs.email.focus(),
+                // onFinish: () => this.form.reset(),
+            });
+        },
+        closeModal() {
+            this.contactModal = false;
+
+            // this.form.reset();
         },
     },
 });
