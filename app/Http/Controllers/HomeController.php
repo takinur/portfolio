@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Mail\EmailContact;
 use App\Models\Contact;
 use App\Models\User;
-use Dotenv\Exception\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;

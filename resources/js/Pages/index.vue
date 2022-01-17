@@ -522,23 +522,11 @@
                     <!--end Card Item -->
                     <!--Card Item-->
                     <div class="p-8 space-y-3 rounded-xl">
-                        <svg
-                            class="fill-current h-16 w-12 mx-auto"
-                            viewBox="0 0 100 100"
+                        <div
+                            class="text-gray-700 dark:text-cyan-400 w-12 mx-auto"
                         >
-                            <path
-                                class="cls-1 text-white"
-                                d="M40.42,92.17c8.29,0,14-4.44,14-14.17h-.09V45.92h-9.4v32c0,4.71-1.92,5.92-5,5.92s-4.53-2.21-6-4.82l-7.62,4.58C28.55,88.29,32.9,92.17,40.42,92.17Z"
-                            />
-                            <path
-                                class="cls-1 text-white"
-                                d="M76.45,83.86c-4.62,0-7.26-2.43-9.26-5.71l-7.66,4.42c2.75,5.45,8.39,9.6,17.12,9.6l.07,0c8.91,0,15.56-4.64,15.56-13.08,0-7.86-4.48-11.36-12.48-14.78l-2.34-1c-4-1.71-5.78-2.9-5.78-5.71,0-2.26,1.84-4,4.49-4s4.39,1.12,6,4l7.32-4.69c-3.08-5.44-7.35-7.52-13.35-7.52-8.37,0-13.75,5.36-13.75,12.41,0,7.65,4.48,11.29,11.27,14.17L76,73c4.29,1.87,6.83,3,6.83,6.22C82.83,81.92,80.33,83.86,76.45,83.86Z"
-                            />
-                            <path
-                                class="cls-2 text-gray-700 dark:text-cyan-700"
-                                d="M0,100H100V0H0ZM76,73l-2.34-1c-6.79-2.88-11.27-6.52-11.27-14.17,0-7.05,5.38-12.41,13.75-12.41,6,0,10.27,2.08,13.35,7.52l-7.32,4.69c-1.61-2.88-3.35-4-6-4s-4.49,1.74-4.49,4c0,2.81,1.74,4,5.78,5.71l2.34,1c8,3.42,12.48,6.92,12.48,14.78,0,8.44-6.65,13.08-15.56,13.08l-.07,0c-8.73,0-14.37-4.15-17.12-9.6l7.66-4.42c2,3.28,4.64,5.71,9.26,5.71,3.88,0,6.38-1.94,6.38-4.64C82.83,76,80.29,74.87,76,73ZM33.93,79c1.47,2.61,2.81,4.82,6,4.82s5-1.21,5-5.92v-32h9.4V78h.09c0,9.73-5.71,14.17-14,14.17-7.52,0-11.87-3.88-14.11-8.59Z"
-                            />
-                        </svg>
+                            <i class="fab fa-js-square fa-3x"></i>
+                        </div>
 
                         <h1
                             class="text-2xl text-center font-semibold text-gray-900 dark:text-white"
@@ -553,31 +541,11 @@
                     <!--end Card Item -->
                     <!--Card Item-->
                     <div class="p-8 space-y-3 rounded-xl">
-                        <svg
-                            class="text-gray-900 fill-current h-16 w-12 mx-auto dark:text-cyan-500"
-                            viewBox="0 0 100 100"
+                        <div
+                            class="text-gray-700 dark:text-cyan-400 w-12 mx-auto"
                         >
-                            <path
-                                class="cls-1 text-white"
-                                d="M12.5,54.2v8.3C12.5,69.38,29.3,75,50,75s37.5-5.62,37.5-12.5V54.2c-8.06,5.66-22.8,8.3-37.5,8.3S20.56,59.86,12.5,54.2Z"
-                            />
-                            <path
-                                class="cls-1 text-white"
-                                d="M50,6.25c-20.7,0-37.5,5.62-37.5,12.5V25c0,6.88,16.8,12.5,37.5,12.5S87.5,31.88,87.5,25V18.75C87.5,11.87,70.7,6.25,50,6.25Z"
-                            />
-                            <path
-                                class="cls-1 text-white"
-                                d="M12.5,72.95v8.3c0,6.88,16.8,12.5,37.5,12.5s37.5-5.62,37.5-12.5v-8.3c-8.06,5.66-22.8,8.3-37.5,8.3S20.56,78.61,12.5,72.95Z"
-                            />
-                            <path
-                                class="cls-1 text-white"
-                                d="M12.5,35.45v8.3c0,6.88,16.8,12.5,37.5,12.5s37.5-5.62,37.5-12.5v-8.3c-8.06,5.66-22.8,8.3-37.5,8.3S20.56,41.11,12.5,35.45Z"
-                            />
-                            <path
-                                class="cls-2"
-                                d="M50,0C34.74,0,6.25,3.67,6.25,18.75v62.5C6.25,96.36,34.78,100,50,100s43.75-3.67,43.75-18.75V18.75C93.75,3.64,65.22,0,50,0ZM87.5,81.25c0,6.88-16.8,12.5-37.5,12.5s-37.5-5.62-37.5-12.5v-8.3c8.06,5.66,22.8,8.3,37.5,8.3s29.44-2.64,37.5-8.3Zm0-18.75C87.5,69.38,70.7,75,50,75S12.5,69.38,12.5,62.5V54.2c8.06,5.66,22.8,8.3,37.5,8.3s29.44-2.64,37.5-8.3Zm0-18.75c0,6.88-16.8,12.5-37.5,12.5s-37.5-5.62-37.5-12.5v-8.3c8.06,5.66,22.8,8.3,37.5,8.3s29.44-2.64,37.5-8.3ZM87.5,25c0,6.88-16.8,12.5-37.5,12.5S12.5,31.88,12.5,25V18.75c0-6.88,16.8-12.5,37.5-12.5s37.5,5.62,37.5,12.5Z"
-                            />
-                        </svg>
+                            <i class="fas fa-database fa-3x"></i>
+                        </div>
 
                         <h1
                             class="text-2xl text-center font-semibold text-gray-900 dark:text-white"
@@ -592,7 +560,7 @@
                     </div>
                     <!--end Card Item -->
                     <!--Card Item-->
-                    <div class="p-8 space-y-3 rounded-xl">
+                    <div class="p-8 pt-3 space-y-3 rounded-xl">
                         <svg
                             class="text-gray-900 fill-current h-16 w-12 mx-auto dark:text-cyan-500"
                             viewBox="0 0 100 100"
@@ -684,7 +652,6 @@
                 <!--End Card Body -->
             </div>
         </section>
-
         <!--Project Section-->
         <section id="projects" class="py-24 bg-gray-200 dark:bg-slate-800">
             <div
@@ -707,7 +674,7 @@
                         <div class="bg-white rounded-lg overflow-hidden mb-10">
                             <img
                                 v-bind:src="
-                                    '/images/projects/' + 'portfolio.png'
+                                    '/images/projects/' + 'portfolio.webp'
                                 "
                                 alt="image"
                                 class="w-full"
@@ -744,7 +711,7 @@
                         <div class="bg-white rounded-lg overflow-hidden mb-10">
                             <img
                                 v-bind:src="
-                                    '/images/projects/' + 'driverless01.png'
+                                    '/images/projects/' + 'driverless01.webp'
                                 "
                                 alt="image"
                                 class="w-full"
@@ -781,7 +748,7 @@
                         >
                             <img
                                 v-bind:src="
-                                    '/images/projects/' + 'axietech.png'
+                                    '/images/projects/' + 'axietech.webp'
                                 "
                                 alt="image"
                                 class="w-full"
@@ -819,7 +786,7 @@
                         >
                             <img
                                 v-bind:src="
-                                    '/images/projects/' + 'job-platform.png'
+                                    '/images/projects/' + 'job-platform.webp'
                                 "
                                 alt="image"
                                 class="w-full"
@@ -855,7 +822,7 @@
                         >
                             <img
                                 v-bind:src="
-                                    '/images/projects/' + 'art_site.png'
+                                    '/images/projects/' + 'art_site.webp'
                                 "
                                 alt="image"
                                 class="w-full"
@@ -891,7 +858,7 @@
                             Fdata-aos-easing="ease-in-out"
                         >
                             <img
-                                v-bind:src="'/images/projects/' + 'Courier.png'"
+                                v-bind:src="'/images/projects/' + 'Courier.webp'"
                                 alt="image"
                                 class="w-full"
                             />
@@ -2460,7 +2427,6 @@
             </div>
         </footer>
         <!-- Modal for Contact -->
-        <!-- component -->
         <div
             v-show="contactModal"
             @close="closeModal"
