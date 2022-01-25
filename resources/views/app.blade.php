@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>{{ config('app.name', 'Portfolio') }}</title>
-
+        <title inertia>{{ config('app.name', 'Takinur -PHP Web Developer') }}</title>
+        <meta name="description" content="A Personal portfolio of takinur">
+        <link rel="canonical" href="https://www.takinur.com/" />
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 

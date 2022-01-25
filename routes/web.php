@@ -16,11 +16,15 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Home
 Route::get('/', [HomeController::class , 'index']);
 
-
+//Store Contact Message
 Route::post('/contact', [HomeController::class , 'store'])->name('saveContact');
+
+
+//Sitemap
+Route::get('sitemap.xml', [HomeController::class, 'sitemap']);
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return Inertia::render('Dashboard');

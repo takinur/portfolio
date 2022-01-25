@@ -45,15 +45,28 @@ class HomeController extends Controller
         $contact->save();
 
         //Send by Mail
-        $admin = User::first();
-        $mailData = [
-            'title' => 'Contact Message!',
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'message' => $request['message'],
-        ];
-        Mail::to($admin->email)->send(new EmailContact($mailData));
+        // $admin = User::first();
+        // $mailData = [
+        //     'title' => 'Contact Message!',
+        //     'name' => $request['name'],
+        //     'email' => $request['email'],
+        //     'message' => $request['message'],
+        // ];
+        // Mail::to($admin->email)->send(new EmailContact($mailData));
 
         return back(303);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sitemap()
+    {
+        $data = null;
+
+        return response()->view('sitemap', compact('data'))
+            ->header('Content-Type', 'text/xml');
     }
 }

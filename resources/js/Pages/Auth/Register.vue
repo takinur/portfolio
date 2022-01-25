@@ -6,9 +6,9 @@
             <jet-authentication-card-logo />
         </template>
 
-        <jet-validation-errors class="mb-4" />
-
-        <form @submit.prevent="submit">
+        <!-- <jet-validation-errors class="mb-4" /> -->
+                <h1 class="text-gray-600"> This feature is not available yet! </h1>
+        <!-- <form @submit.prevent="submit">
             <div>
                 <jet-label for="name" value="Name" />
                 <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
@@ -50,7 +50,7 @@
                     Register
                 </jet-button>
             </div>
-        </form>
+        </form> -->
     </jet-authentication-card>
 </template>
 
