@@ -4,7 +4,7 @@
     <div class="wrapper">
         <!-- header -->
         <header
-            class="header py-4 h-16 md:sticky md:top-0 md:z-50 bg-gray-200 opacity-100 dark:bg-slate-800"
+            class="header py-4 h-16 md:top-0 md:z-50 bg-gray-200 opacity-100 dark:bg-slate-800"
         >
             <!-- container -->
             <div class="container px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
@@ -115,7 +115,7 @@
         </header>
         <!-- end header -->
         <!-- hero -->
-        <div class="hero bg-gray-200 pb-24 pt-28 md:h-screen dark:bg-slate-800">
+        <div class="hero bg-gray-200 pb-24 pt-28 md:h-screen dark:bg-slate-800 relative">
             <!-- container -->
             <div class="container px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
                 <!-- hero wrapper -->
@@ -159,7 +159,15 @@
                     </div>
                 </div>
             </div>
-            <a href="#intro" class="scroll-down" address="true"> </a>
+            <!--Scroll to button -->
+            <button
+                class="scroll-down absolute md:bottom-28 bottom-3 left-1/2 block w-8 h-8 -ml-3
+                border-2 border-[#7510f7] bg-auto rounded-full "
+                @click="scrollToElement('intro')"
+                address="true"
+            >
+            </button>
+            <div ref="myDiv"> </div>
         </div>
         <!-- end hero -->
         <!-- mobile navbar -->
@@ -370,7 +378,7 @@
                 </div>
             </transition>
         </div>
-        <section id="intro">
+        <section id="intro" ref="intro">
             <!-- hero -->
             <div
                 class="hero bg-[#7510F7] py-16 h-[700px] md:h-[500px] dark:bg-gray-900"
@@ -394,15 +402,15 @@
                             <p
                                 class="text-white text-lg text-center leading-relaxed mt-8 font-semibold"
                             >
-                                Since beginning my journey as a freelance
-                                web developer nearly 2 years ago, I've done
-                                remote work for agencies, consulted for
-                                startups, and collaborated with talented people
-                                to create digital products for both business and
-                                consumer use. I'm a quiet confident person who
-                                is naturally curious and is constantly working
-                                on improving my skills one development problem
-                                at a time.
+                                Since beginning my journey as a freelance web
+                                developer nearly 2 years ago, I've done remote
+                                work for agencies, consulted for startups, and
+                                collaborated with talented people to create
+                                digital products for both business and consumer
+                                use. I'm a quiet confident person who is
+                                naturally curious and is constantly working on
+                                improving my skills one development problem at a
+                                time.
                             </p>
                         </div>
                     </div>
@@ -909,6 +917,11 @@
                     <!--Card Item-->
                     <div
                         class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
+                        data-aos="flip-left"
+                        data-aos-once="false"
+                        data-aos-delay="50"
+                        data-aos-duration="2000"
+                        Fdata-aos-easing="ease-in-out"
                     >
                         <div
                             class="bg-cover h-18 w-16 md:w-16 md:mt-3 mx-auto md:grayscale hover:grayscale-0 dark:grayscale-0"
@@ -932,7 +945,11 @@
                     <!-- END card ITEM -->
                     <!--Card Item-->
                     <div
-                        class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
+                        class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900" data-aos="flip-left"
+                        data-aos-once="false"
+                        data-aos-delay="50"
+                        data-aos-duration="2000"
+                        Fdata-aos-easing="ease-in-out"
                     >
                         <div
                             class="bg-cover h-18 w-28 mx-auto md:mt-3 md:grayscale hover:grayscale-0 dark:grayscale-0"
@@ -958,7 +975,11 @@
                     <!-- END card ITEM -->
                     <!--Card Item-->
                     <div
-                        class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
+                        class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900" data-aos="flip-left"
+                        data-aos-once="false"
+                        data-aos-delay="50"
+                        data-aos-duration="2000"
+                        Fdata-aos-easing="ease-in-out"
                     >
                         <div
                             class="bg-cover h-18 w-20 md:w-20 mx-auto md:mt-2 md:grayscale hover:grayscale-0 dark:grayscale-0"
@@ -984,7 +1005,11 @@
                     <!-- END card ITEM -->
                     <!--Card Item-->
                     <div
-                        class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
+                        class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900" data-aos="flip-left"
+                        data-aos-once="false"
+                        data-aos-delay="50"
+                        data-aos-duration="2000"
+                        Fdata-aos-easing="ease-in-out"
                     >
                         <div
                             class="bg-cover mt-2 h-18 w-20 md:w-16 mx-auto md:grayscale hover:grayscale-0 dark:grayscale-0"
@@ -1008,7 +1033,11 @@
                     <!-- END card ITEM -->
                     <!--Card Item-->
                     <div
-                        class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
+                        class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900" data-aos="flip-left"
+                        data-aos-once="false"
+                        data-aos-delay="50"
+                        data-aos-duration="2000"
+                        Fdata-aos-easing="ease-in-out"
                     >
                         <div
                             class="bg-cover h-18 w-20 md:mt-4 mx-auto md:grayscale hover:grayscale-0 dark:grayscale-0"
@@ -1033,7 +1062,11 @@
 
                     <!--Card Item-->
                     <div
-                        class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
+                        class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900" data-aos="flip-left"
+                        data-aos-once="false"
+                        data-aos-delay="50"
+                        data-aos-duration="2000"
+                        Fdata-aos-easing="ease-in-out"
                     >
                         <div
                             class="bg-cover mt-5 h-18 w-28 md:w-32 mx-auto md:grayscale hover:grayscale-0 dark:grayscale-0"
@@ -2559,31 +2592,22 @@
 /* Scroll down */
 
 .scroll-down {
-  opacity: 1;
-  -webkit-transition: all .5s ease-in 3s;
-  transition: all .5s ease-in 3s;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease-in 3s;
+    transition: all 0.5s ease-in 3s;
 }
 
 .scroll-down {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  margin-left: -16px;
-  display: block;
-  width: 32px;
-  height: 32px;
-  border: 2px solid #FFF;
-  background-size: 14px auto;
-  border-radius: 50%;
-  z-index: 2;
-  -webkit-animation: bounce 2s infinite 2s;
-  animation: bounce 2s infinite 2s;
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in;
-  transform: scale(1)
+    /* border-radius: 50%; */
+    z-index: 2;
+    -webkit-animation: bounce 2s infinite 2s;
+    animation: bounce 2s infinite 2s;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    transform: scale(1);
 }
 
-.scroll-down:before {
+.scroll-down::before {
     position: absolute;
     top: calc(50% - 8px);
     left: calc(50% - 6px);
@@ -2592,30 +2616,30 @@
     width: 12px;
     height: 12px;
     content: "";
-    border: 2px solid white;
+    border: 2px solid #7510f7;
     border-width: 0px 0 2px 2px;
 }
 
 @keyframes bounce {
-  0%,
-  100%,
-  20%,
-  50%,
-  80% {
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-  60% {
-    -webkit-transform: translateY(-5px);
-    -ms-transform: translateY(-5px);
-    transform: translateY(-5px);
-  }
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    60% {
+        -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
 }
 </style>
 
@@ -2672,6 +2696,9 @@ export default defineComponent({
         //calling the function directly
         toggleDarkMode();
         checkbox.addEventListener("click", toggleDarkMode);
+
+        //
+
     },
     methods: {
         toggleNav: function () {
@@ -2702,8 +2729,14 @@ export default defineComponent({
         },
         closeModal() {
             this.contactModal = false;
-
             // this.form.reset();
+        },
+        scrollToElement(section) {
+            let el = this.$refs[section];
+            if (el) {
+                // Smooth scroll to the element
+                el.scrollIntoView({ behavior: "smooth" });
+            }
         },
     },
 });
