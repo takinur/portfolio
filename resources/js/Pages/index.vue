@@ -115,7 +115,7 @@
         </header>
         <!-- end header -->
         <!-- hero -->
-        <div class="hero bg-gray-200 pb-24 pt-28 h-screen dark:bg-slate-800">
+        <div class="hero bg-gray-200 pb-24 pt-28 md:h-screen dark:bg-slate-800">
             <!-- container -->
             <div class="container px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
                 <!-- hero wrapper -->
@@ -159,6 +159,7 @@
                     </div>
                 </div>
             </div>
+            <a href="#intro" class="scroll-down" address="true"> </a>
         </div>
         <!-- end hero -->
         <!-- mobile navbar -->
@@ -394,13 +395,14 @@
                                 class="text-white text-lg text-center leading-relaxed mt-8 font-semibold"
                             >
                                 Since beginning my journey as a freelance
-                                webdeveloper nearly 3 years ago, I've done
+                                web developer nearly 2 years ago, I've done
                                 remote work for agencies, consulted for
                                 startups, and collaborated with talented people
                                 to create digital products for both business and
-                                consumer use. I'm quietly confident, naturally
-                                curious, and perpetually working on improving my
-                                chops one design problem at a time.
+                                consumer use. I'm a quiet confident person who
+                                is naturally curious and is constantly working
+                                on improving my skills one development problem
+                                at a time.
                             </p>
                         </div>
                     </div>
@@ -858,7 +860,9 @@
                             Fdata-aos-easing="ease-in-out"
                         >
                             <img
-                                v-bind:src="'/images/projects/' + 'Courier.webp'"
+                                v-bind:src="
+                                    '/images/projects/' + 'Courier.webp'
+                                "
                                 alt="image"
                                 class="w-full"
                             />
@@ -2551,6 +2555,68 @@
     background-color: #48bb78;
     transition: transform 0.3s linear;
 }
+
+/* Scroll down */
+
+.scroll-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #FFF;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  transform: scale(1)
+}
+
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
 </style>
 
 <script>
@@ -2561,15 +2627,13 @@ import JetInputError from "@/Jetstream/InputError.vue";
 import JetLabel from "@/Jetstream/Label.vue";
 import BackToTop from "@/Jetstream/BackToTop.vue";
 
-
 export default defineComponent({
     components: {
         Head,
         JetInput,
         JetInputError,
         JetLabel,
-        BackToTop
-
+        BackToTop,
     },
 
     props: {

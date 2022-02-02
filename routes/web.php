@@ -24,7 +24,7 @@ Route::post('/contact', [HomeController::class , 'store'])->name('saveContact');
 
 
 //Sitemap
-Route::get('sitemap.xml', [HomeController::class, 'sitemap']);
+Route::get('/sitemap.xml', [HomeController::class, 'sitemap']);
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return Inertia::render('Dashboard');
