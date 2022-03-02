@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\NewContactMailNotify;
 
 class HomeController extends Controller
 {
@@ -45,13 +47,16 @@ class HomeController extends Controller
         $contact->save();
 
         //Send by Mail
-        // $admin = User::first();
-        // $mailData = [
-        //     'title' => 'Contact Message!',
-        //     'name' => $request['name'],
-        //     'email' => $request['email'],
-        //     'message' => $request['message'],
-        // ];
+        $admin = User::first();
+        $mailData = [
+            'title' => 'Contact Message!',
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'message' => $request['message'],
+        ];
+        Notification::send($admin, new NewContactMailNotify($mailData));
+
+
         // Mail::to($admin->email)->send(new EmailContact($mailData));
 
         return back(303);
