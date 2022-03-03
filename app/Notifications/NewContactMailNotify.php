@@ -31,7 +31,7 @@ class NewContactMailNotify extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail', 'database'];
     }
 
     /**
@@ -42,10 +42,12 @@ class NewContactMailNotify extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
+        $details = $this->maildata;
         return (new MailMessage)
-                    ->line('JMM')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->subject($details['title'])
+            ->greeting('konnichiwa!')
+            ->line('I am ' . $details['name'] .' and my email is ' . $details['email'])
+            ->line('Message: ' . $details['message']);
     }
 
     /**

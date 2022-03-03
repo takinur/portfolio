@@ -1,6 +1,4 @@
 <template>
-    <Head title="Takinur -PHP Web Developer" />
-
     <div class="wrapper">
         <!-- header -->
         <header
@@ -175,7 +173,7 @@
             <transition name="slide-fade">
                 <!-- navbar wrapper -->
                 <div
-                    class="navbar-wrapper fixed md:hidden top-0 left-0 h-full bg-white z-30 w-64 shadow-lg p-5"
+                    class="navbar-wrapper fixed md:hidden top-0 left-0 h-full bg-white dark:bg-slate-900 z-30 w-64 shadow-lg p-5"
                     v-show="showNav"
                 >
                     <div class="close">
@@ -184,7 +182,7 @@
                             @click="toggleNav"
                         >
                             <svg
-                                class="w-6 h-6"
+                                class="w-6 h-6 dark:text-white"
                                 fill="none"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
@@ -206,35 +204,35 @@
                             </button>
                             <a
                                 href="#intro"
-                                class="my-4 inline-block active font-bold mt-8"
+                                class="my-4 inline-block active font-bold mt-8 dark:text-white"
                                 >Introduction</a
                             >
                         </li>
                         <li>
                             <a
                                 href="#projects"
-                                class="my-4 inline-block hover:text-orange-500"
+                                class="my-4 inline-block hover:text-orange-500 dark:text-white"
                                 >Porfolio</a
                             >
                         </li>
                         <li>
                             <a
                                 href="#frameworks"
-                                class="my-4 inline-block hover:text-orange-500"
+                                class="my-4 inline-block hover:text-orange-500 dark:text-white"
                                 >Frameworks</a
                             >
                         </li>
                         <li>
                             <a
                                 href="#tools"
-                                class="my-4 inline-block hover:text-orange-500"
+                                class="my-4 inline-block hover:text-orange-500 dark:text-white"
                                 >Tools</a
                             >
                         </li>
                         <li>
                             <a
                                 href="#other"
-                                class="my-4 inline-block hover:text-orange-500"
+                                class="my-4 inline-block hover:text-orange-500 dark:text-white"
                                 >Other</a
                             >
                         </li>
@@ -2718,12 +2716,7 @@ export default defineComponent({
         BackToTop,
     },
 
-    props: {
-        // canLogin: Boolean,
-        // canRegister: Boolean,
-        // isOpen: Boolean,
-        errors: Object,
-    },
+    props: ['data', 'errors'],
     data() {
         return {
             showNav: false,
@@ -2774,15 +2767,23 @@ export default defineComponent({
         },
         sayHello() {
             this.contactModal = true;
+            // form.reset();
             // this.isSucceed = false;
             // setTimeout(() => this.$refs.email.focus(), 250);
+        },
+        reset(){
+            this.form = {
+                name: "",
+                email: "",
+                message: "",
+            }
         },
         saveContact() {
             this.form.post(route("saveContact"), {
                 preserveScroll: true,
                 onSuccess: () => this.successModalClose(),
                 // onError: () => this.$refs.name.focus(),
-                // onFinish: () => this.form.reset(),
+                onFinish: () => this.form.reset(),
             });
         },
         closeModal() {

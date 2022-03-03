@@ -146,11 +146,11 @@ export default defineComponent({
         };
     },
     methods: {
-        deleteRow: function (data) {
-            if (!confirm("Are you sure want to remove?")) return;
-            data._method = "DELETE";
-            this.$inertia.post("/dashboard/" + data.id, data);
-        },
+        // deleteRow: function (data) {
+        //     if (!confirm("Are you sure want to remove?")) return;
+        //     data._method = "DELETE";
+        //     this.$inertia.post("/contact/" + data.id, data);
+        // },
     },
 });
 </script>

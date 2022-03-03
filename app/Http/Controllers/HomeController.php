@@ -49,15 +49,12 @@ class HomeController extends Controller
         //Send by Mail
         $admin = User::first();
         $mailData = [
-            'title' => 'Contact Message!',
+            'title' => 'You have a new Message!',
             'name' => $request['name'],
             'email' => $request['email'],
             'message' => $request['message'],
         ];
         Notification::send($admin, new NewContactMailNotify($mailData));
-
-
-        // Mail::to($admin->email)->send(new EmailContact($mailData));
 
         return back(303);
     }
