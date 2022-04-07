@@ -1,5 +1,6 @@
 <template>
     <div class="wrapper">
+        <Head title="Takinur M Web Developer" />
         <!-- header -->
         <header
             class="header py-4 h-16 md:top-0 md:z-50 bg-gray-200 opacity-100 dark:bg-slate-800"
@@ -2470,7 +2471,7 @@
         <div
             v-show="contactModal"
             @close="closeModal"
-            class="min-w-screen h-screen transition-all animated fadeIn faster fixed left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover"
+            class="min-w-screen  h-screen transition-all animated fadeIn faster fixed left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover"
             style="
                 transition-duration: 500ms;
                 background-image: url(https://images.unsplash.com/photo-1623600989906-6aae5aa131d4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1582&q=80);
@@ -2482,8 +2483,8 @@
                 class="absolute bg-black opacity-80 inset-0 z-0"
             ></div>
             <div
-                class="w-full max-w-2xl p-5 relative mx-auto my-auto rounded-xl shadow-lg bg-white"
-            >             <div class="close">
+                class="w-full max-w-2xl max-h-screen p-5 relative mx-auto my-auto rounded-xl shadow-lg bg-white"
+            >       <div class="close">
                         <button
                             class="absolute top-0 right-0 mt-4 mr-4"
                             @click="closeModal"
@@ -2503,6 +2504,7 @@
                     </div>
                <!--content-->
                 <div class="eh">
+                    <!--Form -->
                     <template v-if="isSucceed === false">
                         <!--body-->
                         <div class="p-5 justify-center">
@@ -2524,11 +2526,11 @@
                                     />
                                     <jet-input-error
                                         :message="form.errors.name"
-                                        class="mt-2"
+                                        class="mt-2 h-1"
                                     />
                                 </div>
 
-                                <div class="mt-4">
+                                <div class="mt-8">
                                     <jet-label for="email" value="Email" />
                                     <jet-input
                                         id="email"
@@ -2539,7 +2541,7 @@
                                     />
                                     <jet-input-error
                                         :message="form.errors.email"
-                                        class="mt-2"
+                                        class="mt-2 h-1"
                                     />
                                 </div>
                                 <div>
@@ -2556,7 +2558,7 @@
                                         ></textarea>
                                         <jet-input-error
                                             :message="form.errors.message"
-                                            class="mt-2"
+                                            class="mt-2 h-1"
                                         />
                                     </div>
                                 </div>
@@ -2618,6 +2620,7 @@
         <back-to-top />
     </div>
     <!-- end Main Wrapper -->
+
 </template>
 
 <style scoped>
@@ -2714,6 +2717,7 @@ export default defineComponent({
         JetInputError,
         JetLabel,
         BackToTop,
+
     },
 
     props: ['data', 'errors'],
@@ -2723,6 +2727,7 @@ export default defineComponent({
             isDark: false,
             isSucceed: false,
             contactModal: false,
+
 
             form: this.$inertia.form({
                 name: "",
@@ -2767,16 +2772,9 @@ export default defineComponent({
         },
         sayHello() {
             this.contactModal = true;
-            // form.reset();
+            // this.form.reset();
             // this.isSucceed = false;
             // setTimeout(() => this.$refs.email.focus(), 250);
-        },
-        reset(){
-            this.form = {
-                name: "",
-                email: "",
-                message: "",
-            }
         },
         saveContact() {
             this.form.post(route("saveContact"), {
@@ -2787,8 +2785,9 @@ export default defineComponent({
             });
         },
         closeModal() {
+
             this.contactModal = false;
-            // this.form.reset();
+
         },
         successModalClose() {
             this.isSucceed = true;

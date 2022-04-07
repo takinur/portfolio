@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title inertia>Takinur -PHP Web Developer</title>
+    <title inertia></title>
     <meta name="description" content="A portfolio website of Takinur">
     <link rel="canonical" href="https://www.takinur.com/" />
     <!-- Fonts -->
