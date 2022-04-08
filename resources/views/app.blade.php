@@ -17,7 +17,7 @@
     <!-- Scripts -->
     @routes
     <script src="{{ mix('js/app.js') }}" defer></script>
-    <style>
+    <style scoped>
         /* Scrollbar Styling */
         ::-webkit-scrollbar {
             width: 10px;

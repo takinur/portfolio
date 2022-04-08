@@ -37,7 +37,17 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request)
     {
         return array_merge(parent::share($request), [
-            //
+            'flash' => [
+                'message' => session('message')
+            ]
         ]);
+
+
+        /* Font-END
+        <div v-if="$page.props.flash.message" class="text-red-400">
+
+        {{  $page.props.flash.message }}
+
+        </div> */
     }
 }

@@ -54,9 +54,9 @@ class HomeController extends Controller
             'email' => $request['email'],
             'message' => $request['message'],
         ];
-        Notification::send($admin, new NewContactMailNotify($mailData));
+        Notification::send($admin->email, new NewContactMailNotify($mailData));
 
-        return back(303);
+        return back(303)->with('message', 'Saved Successfully');
     }
 
     /**

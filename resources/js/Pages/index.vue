@@ -2471,7 +2471,7 @@
         <div
             v-show="contactModal"
             @close="closeModal"
-            class="min-w-screen  h-screen transition-all animated fadeIn faster fixed left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover"
+            class="min-w-screen h-screen transition-all animated fadeIn faster fixed left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover"
             style="
                 transition-duration: 500ms;
                 background-image: url(https://images.unsplash.com/photo-1623600989906-6aae5aa131d4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1582&q=80);
@@ -2482,7 +2482,7 @@
                 @click="closeModal"
                 class="absolute bg-black opacity-80 inset-0 z-0"
             ></div>
-            <div
+            <div :key="ModalReKey"
                 class="w-full max-w-2xl max-h-screen p-5 relative mx-auto my-auto rounded-xl shadow-lg bg-white"
             >       <div class="close">
                         <button
@@ -2554,7 +2554,7 @@
                                             type="text"
                                             v-model="form.message"
                                             required
-                                            class="h-40 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                                            class="h-20 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
                                         ></textarea>
                                         <jet-input-error
                                             :message="form.errors.message"
@@ -2622,6 +2622,106 @@
     <!-- end Main Wrapper -->
 
 </template>
+
+
+<script>
+import { defineComponent } from "vue";
+import { Head } from "@inertiajs/inertia-vue3";
+import JetInput from "@/Jetstream/Input.vue";
+import JetInputError from "@/Jetstream/InputError.vue";
+import JetLabel from "@/Jetstream/Label.vue";
+import BackToTop from "@/Jetstream/BackToTop.vue";
+
+export default defineComponent({
+    components: {
+        Head,
+        JetInput,
+        JetInputError,
+        JetLabel,
+        BackToTop,
+
+    },
+    props: ['data', 'errors'],
+    data() {
+        return {
+            showNav: false,
+            isDark: false,
+            isSucceed: false,
+            contactModal: false,
+
+            form: this.$inertia.form({
+                name: "",
+                email: "",
+                message: "",
+            }),
+        };
+    },
+    mounted() {
+        //Vanila JS
+
+        // // Dark Mode Toggler
+        const checkbox = document.querySelector("#toggleDark");
+        const html = document.querySelector("html");
+        const toggleDarkMode = function () {
+            if (checkbox.checked) {
+                html.classList.add("dark");
+            } else {
+                html.classList.remove("dark");
+            }
+        };
+        //calling the function directly
+        toggleDarkMode();
+        checkbox.addEventListener("click", toggleDarkMode);
+
+        //
+    },
+    methods: {
+        toggleNav: function () {
+            this.showNav = !this.showNav;
+        },
+        isMobile() {
+            if (
+                /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                    navigator.userAgent
+                )
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        sayHello() {
+            this.contactModal = true;
+            // this.form.reset();
+            // this.isSucceed = false;
+            // setTimeout(() => this.$refs.email.focus(), 250);
+        },
+        saveContact() {
+            this.form.post(route("saveContact"), {
+                preserveScroll: true,
+                onSuccess: () => this.successModalClose(),
+                // onError: () => this.$refs.name.focus(),
+                onFinish: () => this.form.reset(),
+            });
+        },
+        closeModal() {
+            this.contactModal = false;
+        },
+        successModalClose() {
+            this.isSucceed = true;
+            //Close Modal After Few Seconds
+            setTimeout(() => this.closeModal(), 4000);
+        },
+        scrollToElement(section) {
+            let el = this.$refs[section];
+            if (el) {
+                // Smooth scroll to the element
+                el.scrollIntoView({ behavior: "smooth" });
+            }
+        },
+    },
+});
+</script>
 
 <style scoped>
 .slide-fade-enter-active {
@@ -2701,106 +2801,3 @@
     }
 }
 </style>
-
-<script>
-import { defineComponent } from "vue";
-import { Head } from "@inertiajs/inertia-vue3";
-import JetInput from "@/Jetstream/Input.vue";
-import JetInputError from "@/Jetstream/InputError.vue";
-import JetLabel from "@/Jetstream/Label.vue";
-import BackToTop from "@/Jetstream/BackToTop.vue";
-
-export default defineComponent({
-    components: {
-        Head,
-        JetInput,
-        JetInputError,
-        JetLabel,
-        BackToTop,
-
-    },
-
-    props: ['data', 'errors'],
-    data() {
-        return {
-            showNav: false,
-            isDark: false,
-            isSucceed: false,
-            contactModal: false,
-
-
-            form: this.$inertia.form({
-                name: "",
-                email: "",
-                message: "",
-            }),
-        };
-    },
-    mounted() {
-        //Vanila JS
-
-        // // Dark Mode Toggler
-        const checkbox = document.querySelector("#toggleDark");
-        const html = document.querySelector("html");
-        const toggleDarkMode = function () {
-            if (checkbox.checked) {
-                html.classList.add("dark");
-            } else {
-                html.classList.remove("dark");
-            }
-        };
-        //calling the function directly
-        toggleDarkMode();
-        checkbox.addEventListener("click", toggleDarkMode);
-
-        //
-    },
-    methods: {
-        toggleNav: function () {
-            this.showNav = !this.showNav;
-        },
-        isMobile() {
-            if (
-                /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-                    navigator.userAgent
-                )
-            ) {
-                return true;
-            } else {
-                return false;
-            }
-        },
-        sayHello() {
-            this.contactModal = true;
-            // this.form.reset();
-            // this.isSucceed = false;
-            // setTimeout(() => this.$refs.email.focus(), 250);
-        },
-        saveContact() {
-            this.form.post(route("saveContact"), {
-                preserveScroll: true,
-                onSuccess: () => this.successModalClose(),
-                // onError: () => this.$refs.name.focus(),
-                onFinish: () => this.form.reset(),
-            });
-        },
-        closeModal() {
-
-            this.contactModal = false;
-
-        },
-        successModalClose() {
-            this.isSucceed = true;
-            //Close Modal After Few Seconds
-            setTimeout(() => this.closeModal(), 4000);
-        },
-        scrollToElement(section) {
-            let el = this.$refs[section];
-            if (el) {
-                // Smooth scroll to the element
-                el.scrollIntoView({ behavior: "smooth" });
-            }
-        },
-    },
-});
-</script>
