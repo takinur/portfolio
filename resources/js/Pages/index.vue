@@ -133,7 +133,7 @@
                             data-aos-easing="ease-in-out"
                             class="font-bold uppercase text-4xl md:text-5xl max-w-xl text-gray-900 leading-tight dark:text-gray-300"
                         >
-                            Full-Stack PHP Web Developer
+                            Full-Stack Web Developer
                         </h1>
                         <hr
                             class="w-12 h-1 bg-gray-500 rounded-full mt-8 dark:bg-white"
@@ -213,7 +213,7 @@
                             <a
                                 href="#projects"
                                 class="my-4 inline-block hover:text-orange-500 dark:text-white"
-                                >Porfolio</a
+                                >Portfolio</a
                             >
                         </li>
                         <li>
@@ -408,7 +408,7 @@
                                 digital products for both business and consumer
                                 use. I'm a quiet confident person who is
                                 naturally curious and is constantly working on
-                                improving my skills one development problem at a
+                                improving my skills resolving one development problem at a
                                 time.
                             </p>
                         </div>
