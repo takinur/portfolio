@@ -27,12 +27,13 @@ Route::post('/contact', [HomeController::class, 'store'])->name('saveContact');
 //Sitemap
 Route::get('/sitemap.xml', [HomeController::class, 'sitemap']);
 
+//Admin Route dashboard
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
 
-//Admin Route
+//Admin Route --Remove later
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::resource('/dashboard', DashboardController::class, [
         'names' => [
@@ -41,6 +42,12 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
         ]
     ]);
 });
+
+//Test Route
+Route::get('/test', function () {
+    return Inertia::render('PrivacyPolicy');
+})->name('test');
+
 
 //Clear Cache facade value:
 Route::get('/clear-cache', function () {

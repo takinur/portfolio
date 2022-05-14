@@ -30,6 +30,8 @@
         "vue-loader": "^16.1.2"
     },
     "dependencies": {
-        "aos": "^2.3.4"
+        "aos": "^2.3.4",
+        "vue-agile": "^2.0.0",
+        "vue-kinesis": "^2.0.5"
     }
 }
