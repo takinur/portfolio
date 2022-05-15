@@ -2503,7 +2503,7 @@
                         </button>
                     </div>
                <!--content-->
-                <div class="eh">
+                <div class="modalContent">
                     <!--Form -->
                     <template v-if="isSucceed === false">
                         <!--body-->
