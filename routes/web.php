@@ -45,7 +45,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
 //Test Route
 Route::get('/test', function () {
-    return Inertia::render('PrivacyPolicy');
+    return Inertia::render('TestSubjectWraith');
 })->name('test');
 
 

@@ -10,21 +10,21 @@
         <div
           class="overlay"
           :style="{
-            background: `linear-gradient(0deg, #1d1e21 9%, #212225e3 42%, rgba(34, 35, 38, 0) 156% ), url(${
+            background: `linear-gradient(0deg, #1d1e21 9%, #212225e3 42%, rgba(34, 35, 38, 0) 146% ), url(${
               hover ? item.images[0].img : item.images[1].img
             }) top center/cover`,
           }"
         ></div>
         <div class="info">
           <kinesis-element :strength="2" type="depth_inv">
-            <h3>{{ item.titel }}</h3>
+            <h3 class=" text-slate-100 font-semibold">{{ item.title }}</h3>
           </kinesis-element>
-          <div class="tags">
-            <span v-for="tag in item.tags" :key="tag">{{ tag }}</span>
+          <div class="tags mt-3">
+            <span class="capitalize text-xs font-bold mr-2 text-slate-400" v-for="tag in item.tags" :key="tag">{{ tag }}</span>
           </div>
           <div class="tags links">
-            <a :href="item.demo" v-if="item.demo.length > 1">Demo</a>
-            <a :href="item.source">Source</a>
+            <a :href="item.demo" v-if="item.demo.length > 1">Visit Site</a>
+            <a :href="item.source" v-if="item.source.length > 1">Source</a>
           </div>
         </div>
       </div>

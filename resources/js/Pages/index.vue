@@ -2630,7 +2630,7 @@ import { Head } from "@inertiajs/inertia-vue3";
 import JetInput from "@/Jetstream/Input.vue";
 import JetInputError from "@/Jetstream/InputError.vue";
 import JetLabel from "@/Jetstream/Label.vue";
-import BackToTop from "@/Jetstream/BackToTop.vue";
+import BackToTop from "../Components/BackToTop.vue";
 
 export default defineComponent({
     components: {

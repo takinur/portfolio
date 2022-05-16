@@ -1,29 +1,18 @@
 <template>
     <Head title="Test Page" />
 
-    <section id="Projekte" aria-labelledby="projekte-heading">
-        <h2 id="projekte-heading">Projekte</h2>
-        <div class="cards">
-            <div class="card-col">
-                <CardVue :item="projects[0]" :txt="select" />
-                <CardVue :item="projects[1]" :txt="select" />
-            </div>
-            <div class="card-col">
-                <CardVue :item="projects[2]" :txt="select" />
-                <CardVue :item="projects[3]" :txt="select" />
-            </div>
-        </div>
-    </section>
-    <PopOver :selected="selected" :closeWindow="closePopOver" />
+    <ProjectsVue :projects="projects"/>
 </template>
 
 <script>
 import { defineComponent } from "vue";
 import { Head } from "@inertiajs/inertia-vue3";
 import JetAuthenticationCardLogo from "@/Jetstream/AuthenticationCardLogo.vue";
-import CardVue from "../Jetstream/Card.vue";
-import Fa from "../Jetstream/FontIcon.vue";
-import PopOver from "../Jetstream/PopupModal.vue";
+import ProjectsVue from "../Components/Sections/Projects.vue";
+// import CardVue from "../Components/ShadowCard.vue";
+// import Fa from "../Components/FontIcon.vue";
+// import PopOver from "../Components/PopProjectDetails.vue";
+
 
 export default defineComponent({
     props: ["policy"],
@@ -31,14 +20,15 @@ export default defineComponent({
     components: {
         Head,
         JetAuthenticationCardLogo,
-        CardVue,
-        Fa,
-        PopOver,
+        // CardVue,
+        // Fa,
+        // PopOver,
+        ProjectsVue,
     },
 
     data() {
         return {
-            selected: null,
+            // selectedProject: null,
             projects: [
                 {
                     id: 0,
@@ -65,7 +55,7 @@ export default defineComponent({
                             img: "https://smesnoj.com/images/03.png",
                         },
                     ],
-                    titel: "Semantic Form Application",
+                    title: "Semantic Form Application",
                     tags: ["VueJS", "NodeJS", "mongoDB"],
                     demo: "https://diprella-login.herokuapp.com/",
                     source: "https://github.com/w-smesnoj/diprella-login",
@@ -104,13 +94,13 @@ export default defineComponent({
         };
     },
     //Methods
-    methods: {
-        select: function (id) {
-            this.selected = this.projects.find((x) => x.id === id);
+    methods: { /*
+        viewProject: function (id) {
+            this.selectedProject = this.projects.find((x) => x.id === id);
         },
         closePopOver() {
-            this.selected = null;
-        },
+            this.selectedProject = null;
+        }, /*
         scrollcalc() {
             let mainNavLinks = document.querySelectorAll(".xx a");
             let fromTop = document.documentElement.scrollTop;
@@ -137,7 +127,7 @@ export default defineComponent({
                     link.classList.remove("current");
                 }
             });
-        },
+        },*/
     },
 });
 </script>
@@ -310,7 +300,7 @@ img {
 }
 </style>
 
-<style lang="scss" scoped>
+<!-- <style lang="scss" scoped>
 .card-col:nth-child(2) {
     margin-top: 5rem;
 }
@@ -520,4 +510,4 @@ div > .main {
 #intro {
     opacity: 100;
 }
-</style>
+</style> -->
