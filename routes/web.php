@@ -3,6 +3,8 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectImageController;
+use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -28,10 +30,11 @@ Route::post('/contact', [HomeController::class, 'store'])->name('saveContact');
 Route::get('/sitemap.xml', [HomeController::class, 'sitemap']);
 
 //Admin Route dashboard
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->name('dashboard');
 
+Route::post('image-upload', [ProjectImageController::class, 'store']);
 
 //Admin Route --Remove later
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
@@ -39,6 +42,11 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
         'names' => [
             'index' => 'dashboard',
             // 'store' => 'faq.new',.
+        ]
+    ]);
+    Route::resource('/projects', ProjectsController::class, [
+        'names' => [
+            'index' => 'pro.index'
         ]
     ]);
 });

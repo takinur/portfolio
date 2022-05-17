@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title inertia></title>
     <meta name="description" content="A portfolio website of Takinur">
     <link rel="canonical" href="https://www.takinur.com/" />

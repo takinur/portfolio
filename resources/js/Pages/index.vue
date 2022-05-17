@@ -328,242 +328,7 @@
         <!--Skills Section-->
         <skills-vue />
         <!--Project Section-->
-        <section id="projects"  ref="projects" class="py-24 bg-gray-200 dark:bg-slate-800">
-            <div
-                class="container px-2 py-10 mx-auto md:mt-11 bg-gray-200 rounded-2xl w-4/5 pb-9 dark:bg-slate-800"
-            >
-                <h1
-                    class="text-dark text-3xl text-center mb-7 dark:text-gray-200"
-                >
-                    MY RECENT WORKS
-                </h1>
-                <div class="flex flex-wrap -mx-4">
-                    <div
-                        class="w-full md:w-1/2 xl:w-1/3 px-4"
-                        data-aos="zoom-in-left"
-                        data-aos-once="false"
-                        data-aos-delay="50"
-                        data-aos-duration="600"
-                        Fdata-aos-easing="ease-in-out"
-                    >
-                        <div class="bg-white rounded-lg overflow-hidden mb-10">
-                            <img
-                                v-bind:src="
-                                    '/images/projects/' + 'portfolio.webp'
-                                "
-                                alt="image"
-                                class="w-full"
-                            />
-                            <div
-                                class="p-8 sm:p-9 md:p-7 xl:p-9 text-center cursor-default mt-1"
-                            >
-                                <h3>
-                                    <p
-                                        class="capitalize font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
-                                    >
-                                        A portfolio website with dark mode
-                                    </p>
-                                </h3>
-
-                                <a
-                                    href="https://www.takinur.com/"
-                                    class="disabled:cursor-default mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
-                                >
-                                    Visit Website
-                                    <i class="fas fa-chevron-right ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="w-full md:w-1/2 xl:w-1/3 px-4"
-                        data-aos="zoom-in-left"
-                        data-aos-once="false"
-                        data-aos-delay="50"
-                        data-aos-duration="600"
-                        Fdata-aos-easing="ease-in-out"
-                    >
-                        <div class="bg-white rounded-lg overflow-hidden mb-10">
-                            <img
-                                v-bind:src="
-                                    '/images/projects/' + 'driverless01.webp'
-                                "
-                                alt="image"
-                                class="w-full"
-                            />
-                            <div
-                                class="p-8 sm:p-9 md:p-7 xl:p-9 text-center cursor-default mt-2"
-                            >
-                                <h3>
-                                    <p
-                                        class="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
-                                    >
-                                        Dynamic Website For Driverless Company
-                                    </p>
-                                </h3>
-
-                                <a
-                                    href="javascript:void(0)"
-                                    class="disabled:cursor-default mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
-                                >
-                                    Visit Website
-                                    <i class="fas fa-chevron-right ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 px-4">
-                        <div
-                            class="bg-white rounded-lg overflow-hidden mb-10"
-                            data-aos="zoom-in-left"
-                            data-aos-once="false"
-                            data-aos-delay="50"
-                            data-aos-duration="600"
-                            Fdata-aos-easing="ease-in-out"
-                        >
-                            <img
-                                v-bind:src="
-                                    '/images/projects/' + 'axietech.webp'
-                                "
-                                alt="image"
-                                class="w-full"
-                            />
-                            <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
-                                <h3>
-                                    <p
-                                        href="https://www.axietech.com/"
-                                        target="_blank"
-                                        class="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
-                                    >
-                                        Developed a Complete E-Commerce Website
-                                        with Advance SEO
-                                    </p>
-                                </h3>
-                                <a
-                                    href="https://www.axietech.com/"
-                                    target="_blank"
-                                    class="mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
-                                >
-                                    Visit Website
-                                    <i class="fas fa-chevron-right ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 px-4">
-                        <div
-                            class="bg-white rounded-lg overflow-hidden mb-10"
-                            data-aos="zoom-in-left"
-                            data-aos-once="false"
-                            data-aos-delay="50"
-                            data-aos-duration="600"
-                            Fdata-aos-easing="ease-in-out"
-                        >
-                            <img
-                                v-bind:src="
-                                    '/images/projects/' + 'job-platform.webp'
-                                "
-                                alt="image"
-                                class="w-full"
-                            />
-                            <div
-                                class="p-8 sm:p-9 md:p-7 xl:p-9 text-center cursor-default mt-6"
-                            >
-                                <h3>
-                                    <p
-                                        class="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
-                                    >
-                                        A job platform for an consultancy farm
-                                    </p>
-                                </h3>
-                                <a
-                                    href="javascript:void(0)"
-                                    class="disabled:cursor-default mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
-                                >
-                                    Visit Website
-                                    <i class="fas fa-chevron-right ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 px-4">
-                        <div
-                            class="bg-white rounded-lg overflow-hidden mb-10"
-                            data-aos="zoom-in-left"
-                            data-aos-once="false"
-                            data-aos-delay="50"
-                            data-aos-duration="600"
-                            Fdata-aos-easing="ease-in-out"
-                        >
-                            <img
-                                v-bind:src="
-                                    '/images/projects/' + 'art_site.webp'
-                                "
-                                alt="image"
-                                class="w-full"
-                            />
-                            <div
-                                class="p-8 sm:p-9 md:p-7 xl:p-9 text-center cursor-default mt-2"
-                            >
-                                <h3>
-                                    <p
-                                        class="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
-                                    >
-                                        Art Website with wordpress CMS
-                                    </p>
-                                </h3>
-                                <a
-                                    href="https://originalpaintingsoilcanvas.com/"
-                                    target="_blank"
-                                    class="disabled:cursor-default mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
-                                >
-                                    Visit Website
-                                    <i class="fas fa-chevron-right ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 px-4">
-                        <div
-                            class="bg-white rounded-lg overflow-hidden mb-10"
-                            data-aos="zoom-in-left"
-                            data-aos-once="false"
-                            data-aos-delay="50"
-                            data-aos-duration="600"
-                            Fdata-aos-easing="ease-in-out"
-                        >
-                            <img
-                                v-bind:src="
-                                    '/images/projects/' + 'Courier.webp'
-                                "
-                                alt="image"
-                                class="w-full"
-                            />
-                            <div
-                                class="p-8 sm:p-9 md:p-7 xl:p-9 text-center cursor-default mt-2"
-                            >
-                                <h3>
-                                    <p
-                                        class="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
-                                    >
-                                        E-courier Web application with booking
-                                        and payments
-                                    </p>
-                                </h3>
-                                <a
-                                    href="http://courierinmoscow.com/"
-                                    target="_blank"
-                                    class="disabled:cursor-default mx-auto opacity-75 py-2 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
-                                >
-                                    Visit Website
-                                    <i class="fas fa-chevron-right ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <Projects-vue :projects="projects" />
         <!--Frameworks Section-->
         <Frameworks-vue />
         <!-- TOOls Section-->
@@ -571,9 +336,9 @@
         <!-- other Section-->
         <Other-vue />
         <!-- Contact Section -->
-         <Contact :sayHello="sayHello" />
+        <Contact :sayHello="sayHello" />
         <!-- Footer Section -->
-         <Footer />
+        <Footer />
         <!-- Modal for Contact -->
         <div
             v-show="contactModal"
@@ -589,27 +354,29 @@
                 @click="closeModal"
                 class="absolute bg-black opacity-80 inset-0 z-0"
             ></div>
-            <div :key="ModalReKey"
+            <div
+                :key="ModalReKey"
                 class="w-full max-w-2xl max-h-screen p-5 relative mx-auto my-auto rounded-xl shadow-lg bg-white"
-            >       <div class="close">
-                        <button
-                            class="absolute top-0 right-0 mt-4 mr-4"
-                            @click="closeModal"
+            >
+                <div class="close">
+                    <button
+                        class="absolute top-0 right-0 mt-4 mr-4"
+                        @click="closeModal"
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
                         >
-                            <svg
-                                class="w-6 h-6"
-                                fill="none"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
-                    </div>
-               <!--content-->
+                            <path d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <!--content-->
                 <div class="modalContent">
                     <!--Form -->
                     <template v-if="isSucceed === false">
@@ -716,7 +483,6 @@
                                     >
                                         Message Received Thank you!
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -727,9 +493,7 @@
         <back-to-top />
     </div>
     <!-- end Main Wrapper -->
-
 </template>
-
 
 <script>
 import { defineComponent } from "vue";
@@ -738,7 +502,6 @@ import JetInput from "@/Jetstream/Input.vue";
 import JetInputError from "@/Jetstream/InputError.vue";
 import JetLabel from "@/Jetstream/Label.vue";
 import BackToTop from "../Components/BackToTop.vue";
-import HeaderVue from "../Components/header.vue";
 import IntroVue from "../Components/Sections/Intro.vue";
 import SkillsVue from "../Components/Sections/Skills.vue";
 import FrameworksVue from "../Components/Sections/Frameworks.vue";
@@ -747,25 +510,26 @@ import OtherVue from "../Components/Sections/Other.vue";
 import Contact from "../Components/Sections/Contact.vue";
 import Footer from "../Components/Sections/Footer.vue";
 import Hero from "../Components/Hero.vue";
+import ProjectsVue from "../Components/Sections/Projects.vue";
 
 export default defineComponent({
     components: {
-    Head,
-    JetInput,
-    JetInputError,
-    JetLabel,
-    BackToTop,
-    HeaderVue,
-    IntroVue,
-    SkillsVue,
-    FrameworksVue,
-    ToolsVue,
-    OtherVue,
-    Contact,
-    Footer,
-    Hero
-},
-    props: ['data', 'errors'],
+        Head,
+        JetInput,
+        JetInputError,
+        JetLabel,
+        BackToTop,
+        ProjectsVue,
+        IntroVue,
+        SkillsVue,
+        FrameworksVue,
+        ToolsVue,
+        OtherVue,
+        Contact,
+        Footer,
+        Hero,
+    },
+    props: ["data", "errors"],
     data() {
         return {
             showNav: false,
@@ -778,6 +542,68 @@ export default defineComponent({
                 email: "",
                 message: "",
             }),
+            projects: [
+                {
+                    id: 0,
+                    images: [
+                        {
+                            img: "/images/demo-nuance-small.gif",
+                        },
+                        {
+                            img: "/images/01.png",
+                        },
+                    ],
+                    titel: "Social Networking Plattform",
+                    tags: ["VueJS", "NodeJS", "mongoDB"],
+                    demo: "",
+                    source: "https://github.com/w-smesnoj/BehanceApp",
+                },
+                {
+                    id: 1,
+                    images: [
+                        {
+                            img: "https://smesnoj.com/images/demo-diprella-cropped.gif",
+                        },
+                        {
+                            img: "https://smesnoj.com/images/03.png",
+                        },
+                    ],
+                    title: "Semantic Form Application",
+                    tags: ["VueJS", "NodeJS", "mongoDB"],
+                    demo: "https://diprella-login.herokuapp.com/",
+                    source: "https://github.com/w-smesnoj/diprella-login",
+                },
+                {
+                    id: 2,
+                    images: [
+                        {
+                            img: "/images/demo-parallax.gif",
+                        },
+                        {
+                            img: "/images/02.png",
+                        },
+                    ],
+                    titel: "CMS Frontend Webstore",
+                    tags: ["VueJS", "Contentful"],
+                    demo: "https://fierce-island-96798.herokuapp.com/",
+                    source: "https://github.com/w-smesnoj/parallax-swipe",
+                },
+                {
+                    id: 3,
+                    images: [
+                        {
+                            img: "/images/04.png",
+                        },
+                        {
+                            img: "/images/04.png",
+                        },
+                    ],
+                    titel: "Whiteboard Collaboration App",
+                    tags: ["React", "NodeJS", "PostgreSQL", "WebSockets"],
+                    demo: "",
+                    source: "https://github.com/w-smesnoj/visual-collaboration-platform",
+                },
+            ],
         };
     },
     mounted() {
@@ -872,6 +698,4 @@ export default defineComponent({
     background-color: #48bb78;
     transition: transform 0.3s linear;
 }
-
-
 </style>
