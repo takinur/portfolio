@@ -44,11 +44,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
             // 'store' => 'faq.new',.
         ]
     ]);
-    Route::resource('/projects', ProjectsController::class, [
-        'names' => [
-            'index' => 'pro.index'
-        ]
-    ]);
+    Route::resource('/projects', ProjectsController::class);
 });
 
 //Test Route

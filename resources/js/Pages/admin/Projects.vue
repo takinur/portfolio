@@ -6,51 +6,44 @@
             </h2>
         </template>
 
-        <file-pond
-         :server="{
-          url: '/image-upload',
-            headers: {
-              'X-CSRF-TOKEN': csrf
-            }
-        }"/>
+        <add-project-form />
+
+
+
     </app-layout>
 </template>
 
 <script>
 import { defineComponent } from "vue";
 import AppLayout from "@/Layouts/AppLayout.vue";
-import vueFilePond, { setOptions } from "vue-filepond";
-import "filepond/dist/filepond.min.css";
-import FilePondPluginImagePreview from "filepond-plugin-image-preview";
-import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
+// import vueFilePond, { setOptions } from "vue-filepond";
+// import "filepond/dist/filepond.min.css";
+// import FilePondPluginImagePreview from "filepond-plugin-image-preview";
+// import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
+import AddProjectForm from '@/Pages/Admin/Partials/AddProjectForm.vue'
 
-const FilePond = vueFilePond(FilePondPluginImagePreview);
-setOptions({
-    // server: {
-    //     url: "/image-upload",
-    //     headers: {
-    //          "X-CSRF-TOKEN": 'Pf',
-    //     },
-    // },
-    name: "projectImage",
-    className: "imageUpload",
-    allowMultiple: true,
-    allowReorder: true,
-    credits: "",
-});
+// const FilePond = vueFilePond(FilePondPluginImagePreview);
+// setOptions({
+//     // server: {
+//     //     url: "/image-upload",
+//     //     headers: {
+//     //          "X-CSRF-TOKEN": 'Pf',
+//     //     },
+//     // },
+//     name: "projectImage",
+//     className: "imageUpload",
+//     allowMultiple: true,
+//     allowReorder: true,
+//     credits: "",
+// });
 
 export default defineComponent({
     components: {
         AppLayout,
         // FilePond,
-        // FilePond: vueFilePond(FilePondPluginImagePreview),
-        FilePond,
-
+        AddProjectForm,
     },
     props: ["data", "errors"],
-    created() {
-
-    },
     data: () => ({
         csrf: document
             .querySelector('meta[name="csrf-token"]')
@@ -69,5 +62,6 @@ export default defineComponent({
 <style>
 /* a.filepond--credits {
     display: none;
-} */
+}
+*/
 </style>
