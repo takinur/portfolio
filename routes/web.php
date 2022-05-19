@@ -34,7 +34,7 @@ Route::get('/sitemap.xml', [HomeController::class, 'sitemap']);
 //     return Inertia::render('Dashboard');
 // })->name('dashboard');
 
-Route::post('image-upload', [ProjectImageController::class, 'store']);
+Route::post('/image-upload', [ProjectImageController::class, 'store']);
 
 //Admin Route --Remove later
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {

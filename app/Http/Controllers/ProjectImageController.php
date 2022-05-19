@@ -21,7 +21,7 @@ class ProjectImageController extends Controller
             $file = $request->file('projectImage');
             $filename = $file->getClientOriginalName();
             $folder = uniqid() . '-' . now()->timestamp;
-            $file->storeAs('images/' . $folder, $filename);
+            $file->storeAs('images/tmp/' . $folder, $filename);
 
             return $folder;
         }

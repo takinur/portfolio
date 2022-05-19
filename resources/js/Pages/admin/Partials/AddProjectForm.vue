@@ -83,8 +83,21 @@
                             headers: {
                                 'X-CSRF-TOKEN': csrf,
                             },
+                            process: {
+                                onload: (res) => {
+                                    // select the right value in the response here and return
+                                    return res;
+                                },
+                            },
                         }"
+                        v-on:processfile="handleProcessFile"
+                        v-on:init="handleFilePondInit"
+                        v-bind:files="myFiles"
+
                     />
+                </div>
+                <div v-for="(item, index) in myFiles" v-bind:key="index">
+                    <input asp-for="filenames[i]" v-bind="item" type="text" />
                 </div>
             </div>
         </template>
@@ -125,7 +138,6 @@ import "filepond/dist/filepond.min.css";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
 
-
 const FilePond = vueFilePond(FilePondPluginImagePreview);
 setOptions({
     // server: {
@@ -153,19 +165,23 @@ export default defineComponent({
         JetLabel,
         JetActionMessage,
         FilePond,
-
     },
 
     data() {
         return {
             addProjectModal: false,
-
+            myFiles: [],
+            uploadedFiles: [],
+            formData: {
+                username: "",
+                email: "",
+            },
             form: this.$inertia.form({
                 title: "",
                 demo: "",
                 source: "",
                 description: "",
-                image: "",
+                image: [],
             }),
 
             csrf: document
@@ -175,6 +191,18 @@ export default defineComponent({
     },
 
     methods: {
+        handleProcessFile: function (error, file) {
+            // var json = response;
+            // var obj = JSON.parse(json);
+            // var id = obj.assetId;
+            // var input = document.createElement("input");
+            // input.type = "hidden";
+            // input.name = "fields[cover][]";
+            // input.value = id;
+            // document.getElementById("entry-form").appendChild(input);
+
+            console.log("done", file);
+        },
         showModal() {
             this.addProjectModal = true;
 
@@ -182,13 +210,20 @@ export default defineComponent({
         },
 
         addNewProject() {
-            console.log(this.form);
-            this.form.post(route("projects.store"), {
-                preserveScroll: true,
-                onSuccess: () => this.closeModal(),
-                // onError: () => this.$refs.password.focus(),
-                onFinish: () => this.form.reset(),
-            });
+            // const formData = new FormData();
+            // //Set all files to formData
+            // for (var i = 0; i < this.myFiles.length; i++) {
+            //     let file = this.myFiles[i];
+            //     console.log(file);
+            // }
+
+            console.log(this.myFiles);
+            // this.form.post(route("projects.store"), {
+            //     preserveScroll: true,
+            //     onSuccess: () => this.closeModal(),
+            //     // onError: () => this.$refs.password.focus(),
+            //     onFinish: () => this.form.reset(),
+            // });
         },
 
         closeModal() {
@@ -196,6 +231,26 @@ export default defineComponent({
 
             this.form.reset();
         },
+        //Set Images to Array
+        // handleFilePondUpdateFile(files) {
+        //     this.myFiles = files.map((files) => files.file);
+        // },
+        handleFilePondInit: function () {
+            console.log("FilePond has initialized");
+        },
+        // handleFilePondProcessfile: function (error, file) {
+        //     console.log("FilePond succesfully processed file " + file);
+        //     this.uploadedFiles.push(file.filename);
+        //     this.$nextTick();
+        // },
+        // handleFilePondRemovefile: function (file) {
+        //     console.log("FilePond deleted file " + file.filename);
+        //     var index = this.myFiles.indexOf(file.filename);
+        //     if (index > -1) {
+        //         this.uploadedFiles.splice(index, 1);
+        //         this.$nextTick();
+        //     }
+        // },
     },
 });
 </script>
