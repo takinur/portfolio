@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ProjectImage;
+use App\Models\TemporaryFile;
 use Illuminate\Http\Request;
 
 class ProjectImageController extends Controller
@@ -21,9 +22,16 @@ class ProjectImageController extends Controller
             $file = $request->file('projectImage');
             $filename = $file->getClientOriginalName();
             $folder = uniqid() . '-' . now()->timestamp;
-            $file->storeAs('images/tmp/' . $folder, $filename);
+            $file->storeAs('public/images/tmp/' . $folder, $filename);
 
-            return $folder;
+            TemporaryFile::create([
+                'folder' => $folder,
+                'filename' => $filename
+            ]);
+
+
+            return response()->json($folder);
+            // return $folder;
         }
 
         return '';

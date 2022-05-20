@@ -8,8 +8,7 @@
 
         <add-project-form />
 
-
-
+        <button @click="test">Click</button>
     </app-layout>
 </template>
 
@@ -28,6 +27,7 @@ export default defineComponent({
     props: ["data", "errors"],
     data: () => ({
 
+
     }),
     methods: {
         // deleteRow: function (data) {
@@ -35,10 +35,11 @@ export default defineComponent({
         //     data._method = "DELETE";
         //     this.$inertia.post("/dashboard/" + data.id, data);
         // },
+          test: function () {
+            console.log('data' );
+        },
     },
 });
 </script>
 
-<style>
-
-</style>
+<style></style>

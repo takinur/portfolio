@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\ProjectImage;
+use App\Models\TemporaryFile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 
 class ProjectsController extends Controller
@@ -15,7 +18,23 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $data = 'die';
+        $data = Project::with('media')->get();
+
+
+        // $project->getMedoa();
+        // $data->getFirstMediaUrl();
+        dd($data);
+        foreach($data->media as $key=>$item)
+        {
+            $media = $item;
+            // $media = $item->getUrl('projectImages', 'thumb');
+            dd($media);
+        }
+
+        //  dd($data);
+
+
+
         // $data = Contact::orderByDesc('created_at')->get();
         return Inertia::render('Admin/Projects', [
             'data' => $data,
@@ -31,7 +50,47 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+
+        // dd($request->all());
+        // Validator::make($request->all(), [
+        //     'title' => ['required', 'max:50'],
+        //     // 'email' => ['required', 'max:50', 'email'],
+        //     // 'message' => ['required', 'max:200'],
+        // ])->validate();
+
+
+        $project = Project::create([
+            'title' => $request->title,
+            'demo' => $request->demo,
+            'source' => $request->source,
+            'description' => $request->description,
+
+        ]);
+        //Store each images to Spatie Collection
+        for ($i = 0; $i < count($request->images); $i++) {
+
+
+            $folder = $request->images[$i];
+
+            $temporaryFile = TemporaryFile::where('folder', $folder)->first();
+
+
+            if ($temporaryFile) {
+               $updatedFile= $project->addMedia(storage_path('app/public/images/tmp/' . $folder . '/' . $temporaryFile->filename))->toMediaCollection('projectImages');
+
+                rmdir(storage_path('app/public/images/tmp/' . $folder));
+                $temporaryFile->delete();
+                //Store to Image Table
+                ProjectImage::create([
+                    'image' => $updatedFile->getUrl(),
+                    'project_id' => $project->id,
+                ]);
+
+            }
+        }
+
+        return back(303)->with('message', 'Saved Successfully');
+
     }
 
     /**
