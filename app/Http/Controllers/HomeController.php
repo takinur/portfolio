@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\EmailContact;
 use App\Models\Contact;
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -21,7 +22,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $data = Project::with('images')->orderBy('created_at', 'DESC')->get();
         return Inertia::render('index', [
+            'data' => $data,
             // 'canLogin' => Route::has('login'),
             // 'canRegister' => Route::has('register'),
         ]);

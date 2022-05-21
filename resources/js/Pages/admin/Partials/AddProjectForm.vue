@@ -112,14 +112,11 @@ import JetInputError from "@/Jetstream/InputError.vue";
 import JetSecondaryButton from "@/Jetstream/SecondaryButton.vue";
 import JetLabel from "@/Jetstream/Label.vue";
 import JetActionMessage from "@/Jetstream/ActionMessage.vue";
-import { Inertia } from "@inertiajs/inertia";
-import { useForm } from "@inertiajs/inertia-vue3";
 
 import vueFilePond, { setOptions } from "vue-filepond";
 import "filepond/dist/filepond.min.css";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
-import { objectExpression } from "@babel/types";
 
 const csrf = document
     .querySelector('meta[name="csrf-token"]')
@@ -148,7 +145,7 @@ setOptions({
 
 export default defineComponent({
     props: {
-         errors: Object,
+        errors: Object,
     },
 
     components: {
@@ -165,7 +162,6 @@ export default defineComponent({
     data() {
         return {
             addProjectModal: false,
-            proImages: [],
             form: this.$inertia.form({
                 title: "",
                 demo: "",
@@ -195,7 +191,7 @@ export default defineComponent({
             console.log("FilePond has initialized");
         },
         handleProcessFile: function (error, file) {
-            //Add each images to Arrary
+            //Add each images to Arrary for submit
             this.form.images.push(file.serverId);
             console.log("Procceed files");
         },
@@ -204,30 +200,16 @@ export default defineComponent({
         },
 
         addNewProject() {
-            //Assign all fields to formData to send via post
-            // const formData = new FormData();
-
-
-            // formData.append("title", this.form.title);
-            // // formData.append("demo", this.formData.email);
-            // // formData.append("source", this.formData.email);
-
-            // //Set all files to formData
-            // for (var i = 0; i < this.proImages.length; i++) {
-            //     let file = this.proImages[i];
-            //     formData.append("images[" + i + "]", file);
-            //     // this.form.images.push("images[" + i + "]", file);
-            // }
-            //  this.$inertia.post(route("projects.store"), formData)
-            // Inertia.post(route("projects.store"), this.form);
-
-            // console.log(this.form);
-            this.form.post(route("projects.store"), {
-                preserveScroll: true,
-                onSuccess: () => this.closeModal(),
-                // onError: () => this.$refs.password.focus(),
-                onFinish: () => this.form.reset(),
-            });
+            if (this.form.images == "") {
+                alert("Samurai, You forgot to upload images!");
+            } else {
+                this.form.post(route("projects.store"), {
+                    preserveScroll: true,
+                    onSuccess: () => this.closeModal(),
+                    // onError: () => this.$refs.password.focus(),
+                    onFinish: () => this.form.reset(),
+                });
+            }
         },
     },
 });

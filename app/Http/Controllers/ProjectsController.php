@@ -6,8 +6,10 @@ use App\Models\Project;
 use App\Models\ProjectImage;
 use App\Models\TemporaryFile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
+use Illuminate\Support\Str;
 
 class ProjectsController extends Controller
 {
@@ -18,26 +20,16 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $data = Project::with('media')->get();
+        $projects = Project::with('images')->orderBy('created_at', 'DESC')->get();
 
-
-        // $project->getMedoa();
-        // $data->getFirstMediaUrl();
-        dd($data);
-        foreach($data->media as $key=>$item)
-        {
-            $media = $item;
-            // $media = $item->getUrl('projectImages', 'thumb');
-            dd($media);
-        }
-
-        //  dd($data);
-
-
+        $data = [
+            'hello',
+        ];
 
         // $data = Contact::orderByDesc('created_at')->get();
         return Inertia::render('Admin/Projects', [
             'data' => $data,
+            'projects' => $projects,
         ]);
     }
 
@@ -76,21 +68,37 @@ class ProjectsController extends Controller
 
 
             if ($temporaryFile) {
-               $updatedFile= $project->addMedia(storage_path('app/public/images/tmp/' . $folder . '/' . $temporaryFile->filename))->toMediaCollection('projectImages');
+                //Spatie
+                $updatedFile= $project->addMedia(storage_path('app/public/images/tmp/' . $folder . '/' . $temporaryFile->filename))->toMediaCollection('projectImages');
+                $path = $updatedFile->getUrl();
 
-                rmdir(storage_path('app/public/images/tmp/' . $folder));
+                //Traditional Laravel Way
+                // $currentFile = storage_path('app/public/images/tmp/' . $folder . '/' . $temporaryFile->filename);
+
+                //Store to Public Dir
+                // $path = Storage::putFileAs(
+                //     'public/images/projects',
+                //     $currentFile,
+                //     $temporaryFile->filename
+                // );
+
+                //change path for public Access
+                // $path = Str::replace('public', 'storage', $path);
+
+                //remove Temporary Files
+                Storage::deleteDirectory('/public/images/tmp/' . $folder);
+
                 $temporaryFile->delete();
+
                 //Store to Image Table
                 ProjectImage::create([
-                    'image' => $updatedFile->getUrl(),
+                    'image' => $path,
                     'project_id' => $project->id,
                 ]);
-
             }
         }
 
         return back(303)->with('message', 'Saved Successfully');
-
     }
 
     /**

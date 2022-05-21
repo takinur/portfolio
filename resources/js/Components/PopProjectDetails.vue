@@ -29,8 +29,8 @@
             >
                 <img
                     v-for="img in selectedProject.images"
-                    :key="img.img"
-                    :src="img.img"
+                    :key="img.id"
+                    :src="img.image"
                     alt=""
                     class="slide object-contain"
                 />

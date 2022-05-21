@@ -328,7 +328,7 @@
         <!--Skills Section-->
         <skills-vue />
         <!--Project Section-->
-        <Projects-vue :projects="projects" />
+        <Projects-vue :projects="data" />
         <!--Frameworks Section-->
         <Frameworks-vue />
         <!-- TOOls Section-->
@@ -542,68 +542,6 @@ export default defineComponent({
                 email: "",
                 message: "",
             }),
-            projects: [
-                {
-                    id: 0,
-                    images: [
-                        {
-                            img: "/images/demo-nuance-small.gif",
-                        },
-                        {
-                            img: "/images/01.png",
-                        },
-                    ],
-                    titel: "Social Networking Plattform",
-                    tags: ["VueJS", "NodeJS", "mongoDB"],
-                    demo: "",
-                    source: "https://github.com/w-smesnoj/BehanceApp",
-                },
-                {
-                    id: 1,
-                    images: [
-                        {
-                            img: "https://smesnoj.com/images/demo-diprella-cropped.gif",
-                        },
-                        {
-                            img: "https://smesnoj.com/images/03.png",
-                        },
-                    ],
-                    title: "Semantic Form Application",
-                    tags: ["VueJS", "NodeJS", "mongoDB"],
-                    demo: "https://diprella-login.herokuapp.com/",
-                    source: "https://github.com/w-smesnoj/diprella-login",
-                },
-                {
-                    id: 2,
-                    images: [
-                        {
-                            img: "/images/demo-parallax.gif",
-                        },
-                        {
-                            img: "/images/02.png",
-                        },
-                    ],
-                    titel: "CMS Frontend Webstore",
-                    tags: ["VueJS", "Contentful"],
-                    demo: "https://fierce-island-96798.herokuapp.com/",
-                    source: "https://github.com/w-smesnoj/parallax-swipe",
-                },
-                {
-                    id: 3,
-                    images: [
-                        {
-                            img: "/images/04.png",
-                        },
-                        {
-                            img: "/images/04.png",
-                        },
-                    ],
-                    titel: "Whiteboard Collaboration App",
-                    tags: ["React", "NodeJS", "PostgreSQL", "WebSockets"],
-                    demo: "",
-                    source: "https://github.com/w-smesnoj/visual-collaboration-platform",
-                },
-            ],
         };
     },
     mounted() {
