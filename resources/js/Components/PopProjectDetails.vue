@@ -1,13 +1,13 @@
 <template>
     <div class="popover fixed md:h-full w-full overflow-auto flex top-0" v-if="selectedProject">
-        <div class="bg-[#1d1e21] md:max-w-xl md:m-auto m-4 rounded-lg ">
+        <div class="bg-white md:max-w-xl md:m-auto m-4 rounded-lg ">
             <div class="relative mb-4 h-8">
                 <span
                     class="absolute top-2 right-2 cursor-pointer"
                     @click="closeWindow"
                 >
                     <svg
-                        class="w-6 h-6 text-gray-400"
+                        class="w-6 h-6 text-gray-900"
                         fill="none"
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -36,23 +36,25 @@
                 />
             </VueAgile>
             <div class="pt-0 pb-8 px-5">
-                <h3 class="text-2xl text-gray-200 font-bold">{{ selectedProject.title }}</h3>
-                <div class="flex font-medium text-base text-gray-400">
+                <h3 class="text-2xl text-slate-800 font-bold">{{ selectedProject.title }}</h3>
+                <div class="flex font-medium text-base text-slate-700">
                     <span class="py-1 capitalize text-xs font-bold mr-3" v-for="tag in selectedProject.tags" :key="tag">{{
                         tag
-                    }}</span>
+                    }}</span> dd
                 </div>
                 <div class="mt-4">
                     <a :href="selectedProject.demo" class="mr-3 disabled:cursor-default mx-auto opacity-75 py-1 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100" v-if="selectedProject.demo.length > 1"
-                        >Visit Live <i class="fas fa-chevron-right ml-2"></i></a
+                        >Visit Live <i class="fas fa-external-link-alt"></i></a
                     >
-                    <a :href="selectedProject.source" class="disabled:cursor-default mx-auto opacity-75 py-1 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100">Source</a>
+                    <a :href="selectedProject.source" class="disabled:cursor-default md:my-0 my-4 mx-auto opacity-75 py-1 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100">Source  <i class="fab fa-github"></i></a>
                 </div>
-                <div class="description"></div>
+                <div class="text-slate-600 text-base mt-4">
+                    {{ selectedProject.description }}
+                </div>
             </div>
         </div>
         <!--Trick the browser to Close-->
-        <div class=" w-full h-full fixed -z-50 top-0" @click="closeWindow"></div>
+        <div class="w-full h-full fixed -z-50 top-0" @click="closeWindow"></div>
     </div>
 </template>
 

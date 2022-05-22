@@ -8,8 +8,6 @@
 
         <add-project-form />
 
-        <button @click="test">Click  </button>
-
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
@@ -97,7 +95,7 @@
                                                     />
                                                 </svg>
                                             </div>
-                                            <div
+                                            <div @click="deleteRow(row)"
                                                 class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110"
                                             >
                                                 <svg
@@ -123,8 +121,6 @@
                 </div>
             </div>
         </div>
-
-        <Projects-vue :projects="projects" />
     </app-layout>
 </template>
 
@@ -132,26 +128,20 @@
 import { defineComponent } from "vue";
 import AppLayout from "@/Layouts/AppLayout.vue";
 import AddProjectForm from "@/Pages/Admin/Partials/AddProjectForm.vue";
-import ProjectsVue from "../../Components/Sections/Projects.vue";
 
 export default defineComponent({
     components: {
         AppLayout,
         AddProjectForm,
-        ProjectsVue,
     },
     props: ["data", "errors", "projects"],
     data: () => ({
         // projects: this.data,
     }),
     methods: {
-        // deleteRow: function (data) {
-        //     if (!confirm("Are you sure want to remove?")) return;
-        //     data._method = "DELETE";
-        //     this.$inertia.post("/dashboard/" + data.id, data);
-        // },
-        test: function () {
-            console.log(this.data);
+        deleteRow: function (data) {
+            if (!confirm("Are you sure want to remove?")) return;
+            this.$inertia.delete(route("projects.destroy", data.id, data) );
         },
     },
 });

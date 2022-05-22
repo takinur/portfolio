@@ -10,7 +10,7 @@
                 <div
                     class="overlay"
                     :style="{
-                        background: `linear-gradient(0deg, #1d1e21 9%, #212225e3 42%, rgba(34, 35, 38, 0) 146% ), url(${
+                        background: `linear-gradient(0deg, #1d1e21 9%, rgb(66 68 76 / 35%) 42%, rgba(34, 35, 38, 0) 146% ), url(${
                             hover ? item.images[0].image : item.images[1].image
                         }) top center/cover`,
                     }"
@@ -37,7 +37,7 @@
                             v-if="item.demo.length > 1"
                             >Visit Site</a
                         >
-                        <a :href="item.source" v-if="item.source.length > 1"
+                        <a :href="item.source" target="blank" v-if="item.source.length > 1"
                             >Source</a
                         >
                     </div>
@@ -88,7 +88,7 @@ export default {
         position: absolute;
         transform: scale(1.02);
         border-radius: 1rem;
-        box-shadow: inset 0px 0px 0px 0px #2e2f31;
+        box-shadow: inset 0px 0px 0px 0px #92959a;
         opacity: 0.7;
     }
 

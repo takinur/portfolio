@@ -75,6 +75,9 @@
                         </div>
                     </div>
                     <div class="w-full mt-4">
+                            Tags
+                    </div>
+                    <div class="w-full mt-4">
                         <file-pond
                             v-on:processfile="handleProcessFile"
                             v-on:init="handleFilePondInit"
@@ -112,16 +115,15 @@ import JetInputError from "@/Jetstream/InputError.vue";
 import JetSecondaryButton from "@/Jetstream/SecondaryButton.vue";
 import JetLabel from "@/Jetstream/Label.vue";
 import JetActionMessage from "@/Jetstream/ActionMessage.vue";
-
 import vueFilePond, { setOptions } from "vue-filepond";
 import "filepond/dist/filepond.min.css";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
-
+//GET Laravel CSRF
 const csrf = document
     .querySelector('meta[name="csrf-token"]')
     .getAttribute("content");
-
+//Init Filepond
 const FilePond = vueFilePond(FilePondPluginImagePreview);
 setOptions({
     server: {
@@ -162,10 +164,12 @@ export default defineComponent({
     data() {
         return {
             addProjectModal: false,
+            tag: "",
+            tags: ["hello", "world"],
             form: this.$inertia.form({
                 title: "",
-                demo: "",
-                source: "",
+                demo: "https://www.",
+                source: "https://www.github.com/takinur/",
                 description: "",
                 images: [],
             }),
@@ -203,14 +207,50 @@ export default defineComponent({
             if (this.form.images == "") {
                 alert("Samurai, You forgot to upload images!");
             } else {
-                this.form.post(route("projects.store"), {
-                    preserveScroll: true,
-                    onSuccess: () => this.closeModal(),
-                    // onError: () => this.$refs.password.focus(),
-                    onFinish: () => this.form.reset(),
-                });
+                // this.form.post(route("projects.store"), {
+                //     preserveScroll: true,
+                //     onSuccess: () => this.closeModal(),
+                //     // onError: () => this.$refs.password.focus(),
+                //     onFinish: () => this.form.reset(),
+                // });
+                console.log("Tags", $this.tags);
             }
         },
     },
 });
 </script>
+
+<style scoped>
+.tag-input {
+    width: 100%;
+    border: 1px solid #eee;
+    font-size: 0.9em;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.tag-input__tag {
+    height: 30px;
+    float: left;
+    margin-right: 10px;
+    background-color: #eee;
+    margin-top: 10px;
+    line-height: 30px;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+.tag-input__tag > span {
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+.tag-input__text {
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+    line-height: 50px;
+    background: none;
+}
+</style>
