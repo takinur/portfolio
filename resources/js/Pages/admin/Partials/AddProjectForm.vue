@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center mt-5">
+    <div class="flex items-center justify-center mt-5">
         <jet-button @click="showModal"> Add New Project </jet-button>
 
         <jet-action-message :on="form.recentlySuccessful" class="ml-3">
