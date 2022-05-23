@@ -23,6 +23,7 @@ class HomeController extends Controller
     public function index()
     {
         $data = Project::with('images')->orderBy('created_at', 'DESC')->get();
+
         return Inertia::render('index', [
             'data' => $data,
             // 'canLogin' => Route::has('login'),

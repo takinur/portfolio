@@ -207,12 +207,12 @@ export default defineComponent({
             if (this.form.images == "") {
                 alert("Samurai, You forgot to upload images!");
             } else {
-                // this.form.post(route("projects.store"), {
-                //     preserveScroll: true,
-                //     onSuccess: () => this.closeModal(),
-                //     // onError: () => this.$refs.password.focus(),
-                //     onFinish: () => this.form.reset(),
-                // });
+                this.form.post(route("projects.store"), {
+                    preserveScroll: true,
+                    onSuccess: () => this.closeModal(),
+                    // onError: () => this.$refs.password.focus(),
+                    onFinish: () => this.form.reset(),
+                });
                 console.log("Tags", $this.tags);
             }
         },
