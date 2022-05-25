@@ -27,7 +27,7 @@
                             class="capitalize text-xs font-bold mr-2 text-slate-400"
                             v-for="tag in item.tags"
                             :key="tag"
-                            >{{ tag }}</span
+                            >{{ tag.name }}</span
                         >
                     </div>
                     <div class="tags links">

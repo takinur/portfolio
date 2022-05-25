@@ -114,7 +114,7 @@
         </header>
         <!-- end header -->
         <!-- hero -->
-        <Hero :scrollToElement="scrollToElement" />
+        <hero-vue :scrollToElement="scrollToElement" />
         <!-- end hero -->
         <!-- mobile navbar -->
         <div class="mobile-navbar">
@@ -531,7 +531,7 @@ import ToolsVue from "../Components/Sections/Tools.vue";
 import OtherVue from "../Components/Sections/Other.vue";
 import Contact from "../Components/Sections/Contact.vue";
 import Footer from "../Components/Sections/Footer.vue";
-import Hero from "../Components/Hero.vue";
+import HeroVue from "../Components/Sections/Hero.vue";
 import ProjectsVue from "../Components/Sections/Projects.vue";
 
 export default defineComponent({
@@ -549,7 +549,7 @@ export default defineComponent({
         OtherVue,
         Contact,
         Footer,
-        Hero,
+        HeroVue,
     },
     props: ["data", "errors"],
     data() {

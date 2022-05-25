@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Models\ProjectImage;
+use App\Models\Tags;
 use App\Models\TemporaryFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -20,7 +21,10 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $projects = Project::with('images')->orderBy('created_at', 'DESC')->get();
+        $projects = Project::with('images')
+            ->with('tags')
+            ->orderBy('created_at', 'DESC')
+            ->get();
 
         $data = [
             'hello',
@@ -43,13 +47,13 @@ class ProjectsController extends Controller
     public function store(Request $request)
     {
 
-        // dd($request->all());
-        // Validator::make($request->all(), [
-        //     'title' => ['required', 'max:50'],
-        //     // 'email' => ['required', 'max:50', 'email'],
-        //     // 'message' => ['required', 'max:200'],
-        // ])->validate();
-
+        $request->validate([
+            'title' => ['required', 'max:50'],
+            'demo' => ['required', 'max:100'],
+            'source' => ['required', 'max:100'],
+            'description' => ['required', 'max:300'],
+            'tags' => ['required'],
+        ]);
 
         $project = Project::create([
             'title' => $request->title,
@@ -58,6 +62,13 @@ class ProjectsController extends Controller
             'description' => $request->description,
 
         ]);
+        //Add tags
+        foreach ($request->tags as $tag) {
+            Tags::create([
+                'name' => $tag,
+                'project_id' => $project->id,
+            ]);
+        }
         //Store each images to Spatie Collection
         for ($i = 0; $i < count($request->images); $i++) {
 
@@ -69,7 +80,7 @@ class ProjectsController extends Controller
 
             if ($temporaryFile) {
                 //Spatie
-                $updatedFile= $project->addMedia(storage_path('app/public/images/tmp/' . $folder . '/' . $temporaryFile->filename))->toMediaCollection('projectImages');
+                $updatedFile = $project->addMedia(storage_path('app/public/images/tmp/' . $folder . '/' . $temporaryFile->filename))->toMediaCollection('projectImages');
                 $path = $updatedFile->getUrl();
 
                 //Traditional Laravel Way

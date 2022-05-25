@@ -22,7 +22,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data = Project::with('images')->orderBy('created_at', 'DESC')->get();
+        $data = Project::with('images')
+        ->with('tags')
+        ->orderBy('created_at', 'DESC')
+        ->get();
 
         return Inertia::render('index', [
             'data' => $data,

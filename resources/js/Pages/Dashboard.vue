@@ -134,7 +134,7 @@ export default defineComponent({
     },
     props: ["data", "errors"],
 
-    data(){
+    data() {
         return {
             // editMode: false,
             // isOpen: false,
@@ -149,7 +149,7 @@ export default defineComponent({
         deleteRow: function (data) {
             if (!confirm("Are you sure want to remove?")) return;
             data._method = "DELETE";
-             this.$inertia.delete(route("dashboard.destroy", data.id, data) );
+            this.$inertia.delete(route("dashboard.destroy", data.id, data));
         },
     },
 });

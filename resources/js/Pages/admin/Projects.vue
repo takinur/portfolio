@@ -21,6 +21,7 @@
                                     <th class="px-4 py-3">Name</th>
                                     <th class="px-4 py-3">Message</th>
                                     <th class="px-4 py-3">Email</th>
+                                    <th class="px-4 py-3">Tags</th>
                                     <th class="px-4 py-3">Time</th>
                                     <th class="px-4 py-3">Actions</th>
                                 </tr>
@@ -47,6 +48,9 @@
                                     </td>
                                     <td class="px-4 py-3 border">
                                         {{ row.source }}
+                                    </td>
+                                    <td class="px-4 py-3 border">
+                                        <span v-for="tag in row.tags" :key="tag"> {{ tag.name }} </span>
                                     </td>
                                     <td class="px-4 py-3 text-sm border">
                                         {{ row.created_at }}
@@ -95,7 +99,8 @@
                                                     />
                                                 </svg>
                                             </div>
-                                            <div @click="deleteRow(row)"
+                                            <div
+                                                @click="deleteRow(row)"
                                                 class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110"
                                             >
                                                 <svg
@@ -141,7 +146,7 @@ export default defineComponent({
     methods: {
         deleteRow: function (data) {
             if (!confirm("Are you sure want to remove?")) return;
-            this.$inertia.delete(route("projects.destroy", data.id, data) );
+            this.$inertia.delete(route("projects.destroy", data.id, data));
         },
     },
 });

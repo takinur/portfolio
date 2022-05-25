@@ -42,7 +42,7 @@
                     </h1>
 
                     <p class="text-gray-500 dark:text-gray-300 text-center">
-                        I use PHP 7 language to develop web applications
+                        I use PHP 8 language to develop web applications
                     </p>
                 </div>
                 <!--end Card Item -->

@@ -56,6 +56,14 @@
                             class="mt-2 h-1"
                         />
                     </div>
+                    <div class="w-full mt-4">
+                        <jet-label for="tags" value="Tags" />
+                        <tag-input-vue v-model="form.tags" :showCount="true" />
+                         <jet-input-error
+                            :message="form.errors.tags"
+                            class="mt-2 h-1"
+                        />
+                    </div>
                     <div>
                         <div class="w-full flex flex-col mt-4">
                             <label
@@ -75,13 +83,14 @@
                         </div>
                     </div>
                     <div class="w-full mt-4">
-                            Tags
-                    </div>
-                    <div class="w-full mt-4">
                         <file-pond
                             v-on:processfile="handleProcessFile"
                             v-on:init="handleFilePondInit"
                             v-on:updatefiles="handleFilePondUpdateFile"
+                        />
+                         <jet-input-error
+                            :message="form.errors.images"
+                            class="mt-2 h-1"
                         />
                     </div>
                 </div>
@@ -115,6 +124,8 @@ import JetInputError from "@/Jetstream/InputError.vue";
 import JetSecondaryButton from "@/Jetstream/SecondaryButton.vue";
 import JetLabel from "@/Jetstream/Label.vue";
 import JetActionMessage from "@/Jetstream/ActionMessage.vue";
+import TagInputVue from "../../../Components/TagInput.vue";
+
 import vueFilePond, { setOptions } from "vue-filepond";
 import "filepond/dist/filepond.min.css";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
@@ -159,19 +170,19 @@ export default defineComponent({
         JetLabel,
         JetActionMessage,
         FilePond,
+        TagInputVue,
     },
 
     data() {
         return {
             addProjectModal: false,
-            tag: "",
-            tags: ["hello", "world"],
             form: this.$inertia.form({
                 title: "",
                 demo: "https://www.",
                 source: "https://www.github.com/takinur/",
                 description: "",
                 images: [],
+                tags: [],
             }),
         };
     },
@@ -213,44 +224,8 @@ export default defineComponent({
                     // onError: () => this.$refs.password.focus(),
                     onFinish: () => this.form.reset(),
                 });
-                console.log("Tags", $this.tags);
             }
         },
     },
 });
 </script>
-
-<style scoped>
-.tag-input {
-    width: 100%;
-    border: 1px solid #eee;
-    font-size: 0.9em;
-    height: 50px;
-    box-sizing: border-box;
-    padding: 0 10px;
-}
-
-.tag-input__tag {
-    height: 30px;
-    float: left;
-    margin-right: 10px;
-    background-color: #eee;
-    margin-top: 10px;
-    line-height: 30px;
-    padding: 0 5px;
-    border-radius: 5px;
-}
-
-.tag-input__tag > span {
-    cursor: pointer;
-    opacity: 0.75;
-}
-
-.tag-input__text {
-    border: none;
-    outline: none;
-    font-size: 0.9em;
-    line-height: 50px;
-    background: none;
-}
-</style>

@@ -19,6 +19,10 @@ class Project extends Model implements HasMedia
     {
         return $this->hasMany(ProjectImage::class);
     }
+    public function tags()
+    {
+        return $this->hasMany(Tags::class);
+    }
 
     /**
      * Get the Created Date.
