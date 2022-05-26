@@ -18,4 +18,7 @@ createInertiaApp({
 });
 
 InertiaProgress.init({ color: '#4B5563' });
-
+//Disable DEV TOOL
+Vue.config.devtools = false
+Vue.config.debug = false
+Vue.config.silent = true
