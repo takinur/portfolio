@@ -23,9 +23,9 @@ class HomeController extends Controller
     public function index()
     {
         $data = Project::with('images')
-        ->with('tags')
-        ->orderBy('created_at', 'DESC')
-        ->get();
+            ->with('tags')
+            ->orderBy('created_at', 'DESC')
+            ->get();
 
         return Inertia::render('index', [
             'data' => $data,
@@ -46,7 +46,7 @@ class HomeController extends Controller
         Validator::make($request->all(), [
             'name' => ['required', 'max:50'],
             'email' => ['required', 'max:50', 'email'],
-            'message' => ['required', 'max:200'],
+            'message' => ['required', 'max:500'],
         ])->validate();
 
         //Save To Database
@@ -56,12 +56,13 @@ class HomeController extends Controller
         //Send by Mail
         $admin = User::first();
         $mailData = [
-            'title' => 'You have a new Message!',
+            'title' => 'Takinur, You have a new Essence!',
             'name' => $request['name'],
             'email' => $request['email'],
             'message' => $request['message'],
         ];
-        Notification::send($admin->email, new NewContactMailNotify($mailData));
+        Notification::route('mail', $admin->email)
+            ->notify(new NewContactMailNotify($mailData));
 
         return back(303)->with('message', 'Saved Successfully');
     }

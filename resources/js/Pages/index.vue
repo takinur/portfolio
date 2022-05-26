@@ -285,7 +285,7 @@ import FooterSection from "../Components/Sections/Footer.vue";
 import HeroVue from "../Components/Sections/Hero.vue";
 import ProjectsVue from "../Components/Sections/Projects.vue";
 import ToggleDarkModeVue from "../Components/ToggleDarkMode.vue";
-import AddContactFormVue from "./Admin/Partials/AddContactForm.vue";
+import AddContactFormVue from "../Components/AddContactForm.vue";
 
 export default defineComponent({
     components: {

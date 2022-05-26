@@ -16,7 +16,7 @@ import { defineComponent } from "vue";
 import { Head } from "@inertiajs/inertia-vue3";
 import JetAuthenticationCardLogo from "@/Jetstream/AuthenticationCardLogo.vue";
 import TagInputVue from "../Components/TagInput.vue";
-import AddContactFormVue from "./Admin/Partials/AddContactForm.vue";
+import AddContactFormVue from "../Components/AddContactForm.vue";
 
 export default defineComponent({
     props: ["policy"],

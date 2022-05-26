@@ -11,7 +11,7 @@ class NewContactMailNotify extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    private $maildata;
+    public $maildata;
 
     /**
      * Create a new notification instance.
@@ -45,9 +45,9 @@ class NewContactMailNotify extends Notification implements ShouldQueue
         $details = $this->maildata;
         return (new MailMessage)
             ->subject($details['title'])
-            ->greeting('konnichiwa!')
+            ->greeting('Konnichiwa!')
             ->line('I am ' . $details['name'] .' and my email is ' . $details['email'])
-            ->line('Message: ' . $details['message']);
+            ->line('My message: ' . $details['message']);
     }
 
     /**
