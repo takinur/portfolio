@@ -144,9 +144,9 @@ export default defineComponent({
         // projects: this.data,
     }),
     methods: {
-        deleteRow: function (data) {
+        deleteRow: function (project) {
             if (!confirm("Are you sure want to remove?")) return;
-            this.$inertia.delete(route("projects.destroy", data.id, data));
+            this.$inertia.delete(route("projects.destroy", project.id, project));
         },
     },
 });

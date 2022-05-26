@@ -86,7 +86,6 @@
                         <file-pond
                             v-on:processfile="handleProcessFile"
                             v-on:init="handleFilePondInit"
-                            v-on:updatefiles="handleFilePondUpdateFile"
                         />
                          <jet-input-error
                             :message="form.errors.images"
@@ -210,10 +209,6 @@ export default defineComponent({
             this.form.images.push(file.serverId);
             console.log("Procceed files");
         },
-        handleFilePondUpdateFile(files) {
-            // this.proImages = files.map((files) => files.file);
-        },
-
         addNewProject() {
             if (this.form.images == "") {
                 alert("Samurai, You forgot to upload images!");

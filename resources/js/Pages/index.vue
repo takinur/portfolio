@@ -44,59 +44,7 @@
                                     v-if="!isMobile()"
                                     class="flex items-center justify-center w-full"
                                 >
-                                    <label
-                                        for="toggleDark"
-                                        class="flex items-center cursor-pointer"
-                                    >
-                                        <span class="mr-2">
-                                            <svg
-                                                class="h-6 w-6 text-yellow-600 dark:text-white"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                                                />
-                                            </svg>
-                                        </span>
-                                        <!-- toggle -->
-                                        <div class="relative">
-                                            <!-- input -->
-                                            <input
-                                                type="checkbox"
-                                                id="toggleDark"
-                                                class="sr-only"
-                                            />
-                                            <!-- line -->
-                                            <div
-                                                class="block bg-gray-700 w-16 h-7 rounded-full"
-                                            ></div>
-                                            <!-- dot -->
-                                            <div
-                                                class="dot absolute left-1 top-1 bg-white w-5 h-5 rounded-full transition"
-                                            ></div>
-                                        </div>
-                                        <span class="ml-2">
-                                            <svg
-                                                class="h-6 w-6 text-gray-500 dark:text-cyan-400"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </label>
-                                    <!-- label -->
+                                    <toggle-dark-mode-vue />
                                 </div>
                             </li>
                             <li>
@@ -144,12 +92,6 @@
                     </div>
                     <ul class="divide-y">
                         <li>
-                            <button
-                                @click="sayHello"
-                                class="-mt-2 py-1 px-6 text-[#7510F7] rounded-full border-2 border-[#7510F7] shadow-lg block hover:text-white md:inline-block hover:bg-[#7510F7]"
-                            >
-                                Say Hello
-                            </button>
                             <a
                                 href="#intro"
                                 class="my-4 inline-block active font-bold mt-8 dark:text-white"
@@ -185,64 +127,20 @@
                             >
                         </li>
                         <li>
-                            <!-- Toggle Dark -->
                             <div
-                                class="flex items-center justify-center w-full mt-4"
+                                class="flex items-center justify-center w-full mt-8"
                             >
-                                <label
-                                    for="toggleDark"
-                                    class="flex items-center cursor-pointer"
+                                <toggle-dark-mode-vue />
+                            </div>
+                            <div
+                                class="flex items-center justify-center w-full mt-6"
+                            >
+                                <button
+                                    @click="sayHello"
+                                    class="mt-2 py-1 px-6 text-[#7510F7] dark:text-slate-100 dark:border-slate-200 rounded-full border-2 border-[#7510F7] shadow-lg block hover:text-white md:inline-block hover:bg-[#7510F7]"
                                 >
-                                    <span class="mr-2">
-                                        <svg
-                                            class="h-6 w-6 text-yellow-600 dark:text-gray-400"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                                            />
-                                        </svg>
-                                    </span>
-                                    <!-- toggle -->
-                                    <div class="relative">
-                                        <!-- input -->
-                                        <input
-                                            type="checkbox"
-                                            id="toggleDark"
-                                            class="sr-only"
-                                        />
-                                        <!-- line -->
-                                        <div
-                                            class="block bg-gray-700 w-16 h-7 rounded-full"
-                                        ></div>
-                                        <!-- dot -->
-                                        <div
-                                            id="mobileDot"
-                                            class="dot absolute left-1 top-1 bg-white w-5 h-5 rounded-full transition"
-                                        ></div>
-                                    </div>
-                                    <span class="ml-2">
-                                        <svg
-                                            class="h-6 w-6 text-gray-500 dark:text-cyan-400"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                                            />
-                                        </svg>
-                                    </span>
-                                </label>
-                                <!-- label -->
+                                    Say Hello
+                                </button>
                             </div>
                         </li>
                     </ul>
@@ -358,160 +256,13 @@
         <!-- other Section-->
         <Other-vue />
         <!-- Contact Section -->
-        <Contact :sayHello="sayHello" />
+        <contact-section :sayHello="sayHello" />
         <!-- Footer Section -->
-        <Footer />
+        <footer-section />
         <!-- Modal for Contact -->
-        <div
-            v-show="contactModal"
-            @close="closeModal"
-            class="min-w-screen h-screen transition-all animated fadeIn faster fixed left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover"
-            style="
-                transition-duration: 500ms;
-                background-image: url(https://images.unsplash.com/photo-1623600989906-6aae5aa131d4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1582&q=80);
-            "
-            id="modal-id"
-        >
-            <div
-                @click="closeModal"
-                class="absolute bg-black opacity-80 inset-0 z-0"
-            ></div>
-            <div
-                :key="ModalReKey"
-                class="w-full max-w-2xl max-h-screen p-5 relative mx-auto my-auto rounded-xl shadow-lg bg-white"
-            >
-                <div class="close">
-                    <button
-                        class="absolute top-0 right-0 mt-4 mr-4"
-                        @click="closeModal"
-                    >
-                        <svg
-                            class="w-6 h-6"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <!--content-->
-                <div class="modalContent">
-                    <!--Form -->
-                    <template v-if="isSucceed === false">
-                        <!--body-->
-                        <div class="p-5 justify-center">
-                            <h2 class="text-3xl font-bold py-2 text-center">
-                                Thanks for taking the time to reach out. How can
-                                I help you today?
-                            </h2>
-                            <div class="mt-8">
-                                <div class="">
-                                    <jet-label for="name" value="Name" />
-                                    <jet-input
-                                        id="name"
-                                        type="text"
-                                        class="mt-1 block w-full"
-                                        v-model="form.name"
-                                        required
-                                        autofocus
-                                        autocomplete="name"
-                                    />
-                                    <jet-input-error
-                                        :message="form.errors.name"
-                                        class="mt-2 h-1"
-                                    />
-                                </div>
+        <add-contact-form-vue ref="contactModal" />
 
-                                <div class="mt-8">
-                                    <jet-label for="email" value="Email" />
-                                    <jet-input
-                                        id="email"
-                                        type="email"
-                                        class="mt-1 block w-full"
-                                        v-model="form.email"
-                                        required
-                                    />
-                                    <jet-input-error
-                                        :message="form.errors.email"
-                                        class="mt-2 h-1"
-                                    />
-                                </div>
-                                <div>
-                                    <div class="w-full flex flex-col mt-8">
-                                        <label
-                                            class="font-medium text-sm text-gray-700 leading-none"
-                                            >Message</label
-                                        >
-                                        <textarea
-                                            type="text"
-                                            v-model="form.message"
-                                            required
-                                            class="h-20 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                                        ></textarea>
-                                        <jet-input-error
-                                            :message="form.errors.message"
-                                            class="mt-2 h-1"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--footer-->
-                        <div class="p-3 mt-2 text-center space-x-4 md:block">
-                            <button
-                                @click="closeModal"
-                                class="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-gray-600 rounded-full hover:shadow-lg hover:bg-gray-100"
-                            >
-                                Cancel
-                            </button>
-                            <button
-                                @click="saveContact"
-                                class="mb-2 md:mb-0 bg-white border border-[#7510F7] px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-[#7510F7] rounded-full hover:shadow-lg hover:bg-[#7510F7] hover:text-white"
-                            >
-                                Submit
-                            </button>
-                        </div>
-                    </template>
-                    <!--Success Message -->
-                    <template v-else>
-                        <div class="">
-                            <div
-                                class="alert flex flex-row items-center gbg-green-200 p-5 rounded border-b-2 border-green-300"
-                            >
-                                <div
-                                    class="alert-icon flex items-center gbg-green-100 border-2 border-green-500 justify-center h-10 w-10 flex-shrink-0 rounded-full"
-                                >
-                                    <span class="text-green-500">
-                                        <svg
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            class="h-6 w-6"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                    </span>
-                                </div>
-                                <div class="alert-content ml-4">
-                                    <div
-                                        class="alert-title font-semibold text-3xl text-green-800"
-                                    >
-                                        Message Received Thank you!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </template>
-                </div>
-            </div>
-        </div>
+        <!-- Back to top -->
         <back-to-top />
     </div>
     <!-- end Main Wrapper -->
@@ -529,10 +280,12 @@ import SkillsVue from "../Components/Sections/Skills.vue";
 import FrameworksVue from "../Components/Sections/Frameworks.vue";
 import ToolsVue from "../Components/Sections/Tools.vue";
 import OtherVue from "../Components/Sections/Other.vue";
-import Contact from "../Components/Sections/Contact.vue";
-import Footer from "../Components/Sections/Footer.vue";
+import ContactSection from "../Components/Sections/Contact.vue";
+import FooterSection from "../Components/Sections/Footer.vue";
 import HeroVue from "../Components/Sections/Hero.vue";
 import ProjectsVue from "../Components/Sections/Projects.vue";
+import ToggleDarkModeVue from "../Components/ToggleDarkMode.vue";
+import AddContactFormVue from "./Admin/Partials/AddContactForm.vue";
 
 export default defineComponent({
     components: {
@@ -547,9 +300,11 @@ export default defineComponent({
         FrameworksVue,
         ToolsVue,
         OtherVue,
-        Contact,
-        Footer,
+        ContactSection,
+        FooterSection,
         HeroVue,
+        ToggleDarkModeVue,
+        AddContactFormVue,
     },
     props: ["data", "errors"],
     data() {
@@ -567,22 +322,6 @@ export default defineComponent({
         };
     },
     mounted() {
-        //Vanila JS
-
-        // // Dark Mode Toggler
-        const checkbox = document.querySelector("#toggleDark");
-        const html = document.querySelector("html");
-        const toggleDarkMode = function () {
-            if (checkbox.checked) {
-                html.classList.add("dark");
-            } else {
-                html.classList.remove("dark");
-            }
-        };
-        //calling the function directly
-        toggleDarkMode();
-        checkbox.addEventListener("click", toggleDarkMode);
-
         //
     },
     methods: {
@@ -601,27 +340,9 @@ export default defineComponent({
             }
         },
         sayHello() {
-            this.contactModal = true;
-            // this.form.reset();
-            // this.isSucceed = false;
-            // setTimeout(() => this.$refs.email.focus(), 250);
+            this.$refs.contactModal.showModal();
         },
-        saveContact() {
-            this.form.post(route("saveContact"), {
-                preserveScroll: true,
-                onSuccess: () => this.successModalClose(),
-                // onError: () => this.$refs.name.focus(),
-                onFinish: () => this.form.reset(),
-            });
-        },
-        closeModal() {
-            this.contactModal = false;
-        },
-        successModalClose() {
-            this.isSucceed = true;
-            //Close Modal After Few Seconds
-            setTimeout(() => this.closeModal(), 4000);
-        },
+
         scrollToElement(section) {
             let elementToScroll = document.getElementById(section);
             console.log(elementToScroll);
@@ -635,6 +356,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
+/* Mobile Nav Animation */
 .slide-fade-enter-active {
     transition: all 0.5s ease 0s;
     -webkit-transition: all 0.5s ease 0s;
@@ -650,12 +372,5 @@ export default defineComponent({
 .slide-fade-leave-to {
     transform: translate3d(-100%, 0px, 0px);
     opacity: 0;
-}
-
-/* Toggle DARK MODE */
-#toggleDark:checked ~ .dot {
-    transform: translateX(36px);
-    background-color: #48bb78;
-    transition: transform 0.3s linear;
 }
 </style>

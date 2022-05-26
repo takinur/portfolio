@@ -50,21 +50,22 @@
                         >{{ tag.name }}</span
                     >
                 </div>
+
+                <div class="text-slate-600 text-base mt-4">
+                    {{ selectedProject.description }}
+                </div>
                 <div class="mt-4">
                     <a
-                        :href="selectedProject.demo"
+                        :href="selectedProject.demo" target="blank"
                         class="mr-3 disabled:cursor-default mx-auto opacity-75 py-1 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
                         v-if="selectedProject.demo.length > 1"
                         >Visit Live <i class="fas fa-external-link-alt"></i
                     ></a>
                     <a
-                        :href="selectedProject.source"
+                        :href="selectedProject.source" target="blank"
                         class="disabled:cursor-default md:my-0 my-4 mx-auto opacity-75 py-1 px-6 text-[#7510F7] font-semibold rounded-full border-2 border-[#7510F7] shadow-lg block md:inline-block hover:bg-[#7510F7] hover:text-gray-100"
                         >Source <i class="fab fa-github"></i
                     ></a>
-                </div>
-                <div class="text-slate-600 text-base mt-4">
-                    {{ selectedProject.description }}
                 </div>
             </div>
         </div>
