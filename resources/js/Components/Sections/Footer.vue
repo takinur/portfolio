@@ -20,9 +20,9 @@
                     </p>
                 </div>
                 <div
-                    class="mt-12 md:justify-center items-center text-center text-sm text-gray-400"
+                    class="mt-12 px-10 justify-center items-center text-center text-sm text-gray-400"
                 >
-                    <div class="flex items-center justify-center space-x-3">
+                    <div class="grid grid-cols-2 gap-4 md:flex md:items-center justify-center md:space-x-3">
                         <a
                             href="https://www.github.com/takinur"
                             target="blank"

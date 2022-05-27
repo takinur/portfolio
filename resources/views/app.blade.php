@@ -37,7 +37,7 @@
     </style>
 </head>
 
-<body class="font-sans antialiased bg-gray-200 dark:bg-slate-800">
+<body class="font-sans antialiased bg-gray-200 dark:bg-slate-800 overflow-x-auto">
     @inertia
     @env ('local')
     <script src="http://localhost:3000/browser-sync/browser-sync-client.js"></script>
