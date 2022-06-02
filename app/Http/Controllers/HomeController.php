@@ -22,6 +22,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $data = Project::with('images')
             ->with('tags')
             ->orderBy('created_at', 'DESC')
