@@ -21,10 +21,10 @@ use Inertia\Inertia;
 */
 //Home
 Route::get('/', [HomeController::class, 'index']);
+Route::redirect('/admin', '/dashboard', 301);
 
 //Store Contact Message
 Route::post('/contact', [HomeController::class, 'store'])->name('saveContact');
-
 
 //Sitemap
 Route::get('/sitemap.xml', [HomeController::class, 'sitemap']);

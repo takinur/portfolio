@@ -60,6 +60,13 @@ class NewContactMailNotify extends Notification implements ShouldQueue
     {
         return [
             // 'contact_id' => $this->maildata['title']
+            //Return contact_id to be used in the database
+            // 'contact_id' => $this->maildata['id'],
+            // 'title' => $this->maildata['title'],
+            // 'name' => $this->maildata['name'],
+            // 'email' => $this->maildata['email'],
+            // 'message' => $this->maildata['message'],
+            // 'created_at' => $this->maildata['created_at'],
         ];
     }
 }

@@ -18,7 +18,11 @@ createInertiaApp({
 });
 
 InertiaProgress.init({ color: '#4B5563' });
+
+
 //Disable DEV TOOL
-Vue.config.devtools = false
-Vue.config.debug = false
-Vue.config.silent = true
+if (process.env.MIX_APP_ENV === 'production') {
+    Vue.config.devtools = false;
+    Vue.config.debug = false;
+    Vue.config.silent = true;
+}
