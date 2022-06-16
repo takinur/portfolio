@@ -1,5 +1,5 @@
 <template>
-    <app-layout title="Dashboard">
+    <app-layout title="Projects -Dashboard">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Projects
@@ -10,18 +10,18 @@
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
-                    <div class="w-full overflow-x-hidden">
+                <div class="w-full mb-8 overflow-auto rounded-lg shadow-lg">
+                    <div class="w-full overflow-x-auto">
                         <table class="w-full">
                             <thead>
                                 <tr
                                     class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-200 uppercase border-b border-gray-600"
                                 >
                                     <th class="py-3 px-3">ID</th>
-                                    <th class="px-4 py-3">Name</th>
-                                    <th class="px-4 py-3">Message</th>
-                                    <th class="px-4 py-3">Email</th>
-                                    <th class="px-4 py-3">Tags</th>
+                                    <th class="px-4 py-3">Title</th>
+                                    <th class="px-4 py-3">Demo</th>
+                                    <th class="px-4 py-3">Source</th>
+                                    <th class="px-4 py-3">Tag</th>
                                     <th class="px-4 py-3">Time</th>
                                     <th class="px-4 py-3">Actions</th>
                                 </tr>
@@ -41,7 +41,7 @@
 
                                     <td class="px-4 py-3 text-xs border">
                                         <span
-                                            class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"
+                                            class="px-2  py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"
                                         >
                                             {{ row.demo }}
                                         </span>
@@ -50,7 +50,7 @@
                                         {{ row.source }}
                                     </td>
                                     <td class="px-4 py-3 border">
-                                        <span v-for="tag in row.tags" :key="tag"> {{ tag.name }} </span>
+                                        <span class="mx-1" v-for="tag in row.tags" :key="tag"> {{ tag.name }} </span>
                                     </td>
                                     <td class="px-4 py-3 text-sm border">
                                         {{ row.created_at }}

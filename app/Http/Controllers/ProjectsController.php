@@ -51,7 +51,7 @@ class ProjectsController extends Controller
             'title' => ['required', 'max:50'],
             'demo' => ['required', 'max:100'],
             'source' => ['required', 'max:100'],
-            'description' => ['required', 'max:300'],
+            'description' => ['required', 'max:500'],
             'tags' => ['required'],
         ]);
 
