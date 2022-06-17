@@ -7,11 +7,20 @@
                 @mouseover="hover = true"
                 @mouseleave="hover = false"
             >
-                <div
+                <div v-if="item.images.length > 1"
                     class="overlay"
                     :style="{
                         background: `linear-gradient(0deg, #1d1e21 9%, rgb(66 68 76 / 35%) 42%, rgba(34, 35, 38, 0) 146% ), url(${
                             hover ? item.images[0].image : item.images[1].image
+                        }) top center/cover`,
+                    }"
+
+                ></div>
+                <div v-else
+                    class="overlay"
+                    :style="{
+                        background: `linear-gradient(0deg, #1d1e21 9%, rgb(66 68 76 / 35%) 42%, rgba(34, 35, 38, 0) 146% ), url(${
+                            item.images[0].image
                         }) top center/cover`,
                     }"
                 ></div>

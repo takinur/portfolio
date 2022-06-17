@@ -8,7 +8,6 @@ use App\Models\Tags;
 use App\Models\TemporaryFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
 
@@ -30,7 +29,6 @@ class ProjectsController extends Controller
             'hello',
         ];
 
-        // $data = Contact::orderByDesc('created_at')->get();
         return Inertia::render('Admin/Projects', [
             'data' => $data,
             'projects' => $projects,

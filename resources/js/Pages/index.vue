@@ -33,9 +33,6 @@
 import { defineComponent } from "vue";
 import { Head } from "@inertiajs/inertia-vue3";
 import HeaderVue from "../Components/Header.vue";
-import JetInput from "@/Jetstream/Input.vue";
-import JetInputError from "@/Jetstream/InputError.vue";
-import JetLabel from "@/Jetstream/Label.vue";
 import BackToTop from "../Components/BackToTop.vue";
 import IntroVue from "../Components/Sections/Intro.vue";
 import SkillsVue from "../Components/Sections/Skills.vue";
@@ -52,9 +49,6 @@ export default defineComponent({
     components: {
         Head,
         HeaderVue,
-        JetInput,
-        JetInputError,
-        JetLabel,
         BackToTop,
         ProjectsVue,
         IntroVue,
@@ -70,16 +64,7 @@ export default defineComponent({
     props: ["data", "errors"],
     data() {
         return {
-            showNav: false,
-            isDark: false,
-            isSucceed: false,
-            contactModal: false,
-
-            form: this.$inertia.form({
-                name: "",
-                email: "",
-                message: "",
-            }),
+            //
         };
     },
     mounted() {
@@ -92,7 +77,7 @@ export default defineComponent({
         //Scroll to element
         scrollToElement(section) {
             let elementToScroll = document.getElementById(section);
-            console.log(elementToScroll);
+            // console.log(elementToScroll);
             if (elementToScroll) {
                 // Smooth scroll to the element
                 elementToScroll.scrollIntoView({ behavior: "smooth" });
