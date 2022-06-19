@@ -45,7 +45,7 @@ class HomeController extends Controller
     {
 
         Validator::make($request->all(), [
-            'name' => ['required', 'max:2'],
+            'name' => ['required', 'max:70'],
             'email' => ['required', 'max:80', 'email'],
             'message' => ['required', 'max:1000'],
         ])->validate();

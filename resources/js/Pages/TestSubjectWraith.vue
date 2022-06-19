@@ -1,12 +1,12 @@
 <template>
     <Head title="Test Page" />
-
+    <particles />
     <div class="p-8 bg-gray-200 min-h-screen">
         Hola
        <button class="bg-red-400" @click="seehow" > Hola</button>
 
 
-        <add-contact-form-vue ref="contactModal"/>
+
     </div>
 
 </template>
@@ -14,18 +14,15 @@
 <script>
 import { defineComponent } from "vue";
 import { Head } from "@inertiajs/inertia-vue3";
-import JetAuthenticationCardLogo from "@/Jetstream/AuthenticationCardLogo.vue";
-import TagInputVue from "../Components/TagInput.vue";
-import AddContactFormVue from "../Components/AddContactForm.vue";
+import Particles from "../Components/Particles.vue";
 
 export default defineComponent({
     props: ["policy"],
 
     components: {
         Head,
-        JetAuthenticationCardLogo,
-        TagInputVue,
-        AddContactFormVue,
+        Particles,
+
     },
 
     data() {
@@ -37,7 +34,7 @@ export default defineComponent({
     //Methods
     methods: {
         seehow(){
-            this.$refs.contactModal.showModal();
+            alert('Hola');
         }
 
     },

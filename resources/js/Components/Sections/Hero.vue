@@ -1,7 +1,8 @@
 <template>
       <div
-            class="hero bg-gray-200 pb-24 pt-28 md:h-screen dark:bg-slate-800 relative"
+            class="hero pb-24 pt-28 md:h-screen relative border-2 border-red-600 bg-gradient-to-br from-[#512DA8] via-purple-500 to-purple-800 dark:bg-gradient-to-r dark:from-gray-700 dark:via-gray-900 dark:to-black "
         >
+        <particles-vue  />
             <!-- container -->
             <div class="container px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
                 <!-- hero wrapper -->
@@ -57,8 +58,12 @@
 
 <script>
 import { defineComponent } from "vue";
+import ParticlesVue from "../Particles.vue";
 
 export default defineComponent({
+    components: {
+        ParticlesVue
+    },
     props: {
         scrollToElement: Function,
     },
