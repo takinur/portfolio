@@ -78,8 +78,8 @@
                     email: '',
                     password: '',
                     remember: false
-                })
-            }
+                }),
+            };
         },
 
         methods: {

@@ -23,64 +23,66 @@
         </template>
         <template #content>
             <!--Form -->
-            <template v-if="isSucceed === false">
+            <template v-if="!isSucceed">
                 <!--body-->
                 <div class="p-5 justify-center">
                     <h2 class="text-3xl font-bold py-2 text-center">
                         Thanks for taking the time to reach out. How can I help
                         you today?
                     </h2>
-                    <div class="mt-8">
-                        <div class="">
-                            <jet-label for="name" value="Name" />
-                            <jet-input
-                                id="name"
-                                type="text"
-                                class="mt-1 block w-full"
-                                v-model="form.name"
-                                required
-                                autofocus
-                                autocomplete="name"
-                            />
-                            <jet-input-error
-                                :message="form.errors.name"
-                                class="mt-2 h-1"
-                            />
-                        </div>
-
+                    <form @submit.prevent="submit">
                         <div class="mt-8">
-                            <jet-label for="email" value="Email" />
-                            <jet-input
-                                id="email"
-                                type="email"
-                                class="mt-1 block w-full"
-                                v-model="form.email"
-                                required
-                            />
-                            <jet-input-error
-                                :message="form.errors.email"
-                                class="mt-2 h-1"
-                            />
-                        </div>
-                        <div>
-                            <div class="w-full flex flex-col mt-8">
-                                <label
-                                    class="font-medium text-sm text-gray-700 leading-none"
-                                    >Message</label
-                                >
-                                <textarea
+                            <div class="">
+                                <jet-label for="name" value="Name" />
+                                <jet-input
+                                    id="name"
                                     type="text"
-                                    v-model="form.message"
+                                    class="mt-1 block w-full"
+                                    v-model="form.name"
                                     required
-                                    class="h-20 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                                ></textarea>
+                                    autofocus
+                                    autocomplete="name"
+                                />
                                 <jet-input-error
-                                    :message="form.errors.message"
+                                    :message="form.errors.name"
                                     class="mt-2 h-1"
                                 />
                             </div>
+
+                            <div class="mt-8">
+                                <jet-label for="email" value="Email" />
+                                <jet-input
+                                    id="email"
+                                    type="email"
+                                    class="mt-1 block w-full"
+                                    v-model="form.email"
+                                    required
+                                />
+                                <jet-input-error
+                                    :message="form.errors.email"
+                                    class="mt-2 h-1"
+                                />
+                            </div>
+                            <div>
+                                <div class="w-full flex flex-col mt-8">
+                                    <label
+                                        class="font-medium text-sm text-gray-700 leading-none"
+                                        >Message</label
+                                    >
+                                    <textarea
+                                        type="text"
+                                        v-model="form.message"
+                                        required
+                                        class="h-20 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                                    ></textarea>
+                                    <jet-input-error
+                                        :message="form.errors.message"
+                                        class="mt-2 h-1"
+                                    />
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <!--footer-->
                 <div class="p-3 mt-2 text-center space-x-4 md:block">
@@ -148,7 +150,6 @@ import JetActionMessage from "@/Jetstream/ActionMessage.vue";
 export default defineComponent({
     props: {
         errors: Object,
-        // contactModal: Boolean,
     },
 
     components: {
@@ -165,14 +166,15 @@ export default defineComponent({
         return {
             contactModal: false,
             isSucceed: false,
-
             form: this.$inertia.form({
                 name: "",
                 email: "",
                 message: "",
+                remember: true,
             }),
         };
     },
+
     methods: {
         showModal() {
             this.contactModal = true;
@@ -180,21 +182,60 @@ export default defineComponent({
         },
         closeModal() {
             this.contactModal = false;
-            this.form.reset();
+            this.isSucceed = false;
+            // Clear all errors
+            this.form.clearErrors();
         },
 
         saveContact() {
-            this.form.post(route("saveContact"), {
-                preserveScroll: true,
-                onSuccess: () => this.showSuccessMessage(),
-                // onError: () => this.$refs.name.focus(),
-                onFinish: () => this.form.reset(),
-            });
+            this.form
+                .transform((data) => ({
+                    ...data,
+                    remember: this.form.remember ? "on" : "",
+                }))
+                .post(route("saveContact"), {
+                    preserveScroll: true,
+                    onSuccess: () => this.showSuccessMessage(),
+                    // onError: () => this.$refs.name.focus(),
+                    // onFinish: () => this.form.reset(),
+                });
         },
         showSuccessMessage() {
+            this.form.reset();
             this.isSucceed = true;
             //Close Modal After Few Seconds
             setTimeout(() => this.closeModal(), 4000);
+        },
+    },
+    watch: {
+        //Name Validation
+        "form.name": function (val) {
+            if (val.length < 3) {
+                this.form.errors.name = "Name must be at least 3 characters";
+            } else {
+                this.form.errors.name = "";
+            }
+        },
+        //Email Validation
+        "form.email": function (val) {
+            if (
+                !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+                    val
+                )
+            ) {
+                this.form.errors.email = "Please enter a valid email";
+            } else {
+                this.form.errors.email = "";
+            }
+        },
+        //Message Validation
+        "form.message": function (val) {
+            if (val.length < 4) {
+                this.form.errors.message =
+                    "Message must be at least 4 characters";
+            } else {
+                this.form.errors.message = "";
+            }
         },
     },
 });
