@@ -6,7 +6,7 @@
             </h2>
         </template>
 
-        <add-project-form />
+        <add-project-form ref="projects_form"/>
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -41,7 +41,7 @@
 
                                     <td class="px-4 py-3 text-xs border">
                                         <span
-                                            class="px-2  py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"
+                                            class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"
                                         >
                                             {{ row.demo }}
                                         </span>
@@ -50,7 +50,13 @@
                                         {{ row.source }}
                                     </td>
                                     <td class="px-4 py-3 border">
-                                        <span class="mx-1" v-for="tag in row.tags" :key="tag"> {{ tag.name }} </span>
+                                        <span
+                                            class="mx-1"
+                                            v-for="tag in row.tags"
+                                            :key="tag"
+                                        >
+                                            {{ tag.name }}
+                                        </span>
                                     </td>
                                     <td class="px-4 py-3 text-sm border">
                                         {{ row.created_at }}
@@ -83,6 +89,7 @@
                                                 </svg>
                                             </div>
                                             <div
+                                                @click="editRow(row)"
                                                 class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110"
                                             >
                                                 <svg
@@ -146,7 +153,13 @@ export default defineComponent({
     methods: {
         deleteRow: function (project) {
             if (!confirm("Are you sure want to remove?")) return;
-            this.$inertia.delete(route("projects.destroy", project.id, project));
+            this.$inertia.delete(
+                route("projects.destroy", project.id, project)
+            );
+        },
+        editRow(project) {
+            let data = Object.assign({}, project);
+            this.$refs.projects_form.setEditMode(data);
         },
     },
 });

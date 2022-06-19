@@ -175,6 +175,7 @@ export default defineComponent({
     data() {
         return {
             addProjectModal: false,
+            editMode : false,
             form: this.$inertia.form({
                 title: "",
                 demo: "https://www.",
@@ -186,16 +187,25 @@ export default defineComponent({
         };
     },
     setup() {
-        //
+    //
     },
 
     methods: {
         showModal() {
             this.addProjectModal = true;
 
-            // setTimeout(() => this.$refs.password.focus(), 250);
         },
-
+        setEditMode(data){
+            this.editMode = true;
+            // console.log(data.tags)
+            this.form.title = data.title;
+            this.form.demo = data.demo;
+            this.form.source = data.source;
+            this.form.description = data.description;
+            // this.form.images = data.images;
+            this.form.tags = data.tags.name;
+            this.showModal();
+        },
         closeModal() {
             this.addProjectModal = false;
 
@@ -207,7 +217,7 @@ export default defineComponent({
         handleProcessFile: function (error, file) {
             //Add each images to Arrary for submit
             this.form.images.push(file.serverId);
-            console.log("Procceed files");
+            // console.log("Procceed files");
         },
         addNewProject() {
             if (this.form.images == "") {
