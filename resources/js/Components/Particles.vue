@@ -13,7 +13,7 @@ export default defineComponent({
     props: {
         particleClass: {
             type: String,
-            default: " text-white w-full h-full absolute top-0 left-0",
+            default: "text-white w-full h-full absolute top-0 left-0",
         },
     },
     mounted() {
