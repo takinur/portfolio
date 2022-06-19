@@ -1,27 +1,27 @@
 <template>
-    <app-layout title="Dashboard">
+    <app-layout title="Projects -Dashboard">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Projects
             </h2>
         </template>
 
-        <add-project-form />
+        <add-project-form ref="projects_form"/>
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
-                    <div class="w-full overflow-x-hidden">
+                <div class="w-full mb-8 overflow-auto rounded-lg shadow-lg">
+                    <div class="w-full overflow-x-auto">
                         <table class="w-full">
                             <thead>
                                 <tr
                                     class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-200 uppercase border-b border-gray-600"
                                 >
                                     <th class="py-3 px-3">ID</th>
-                                    <th class="px-4 py-3">Name</th>
-                                    <th class="px-4 py-3">Message</th>
-                                    <th class="px-4 py-3">Email</th>
-                                    <th class="px-4 py-3">Tags</th>
+                                    <th class="px-4 py-3">Title</th>
+                                    <th class="px-4 py-3">Demo</th>
+                                    <th class="px-4 py-3">Source</th>
+                                    <th class="px-4 py-3">Tag</th>
                                     <th class="px-4 py-3">Time</th>
                                     <th class="px-4 py-3">Actions</th>
                                 </tr>
@@ -50,7 +50,13 @@
                                         {{ row.source }}
                                     </td>
                                     <td class="px-4 py-3 border">
-                                        <span v-for="tag in row.tags" :key="tag"> {{ tag.name }} </span>
+                                        <span
+                                            class="mx-1"
+                                            v-for="tag in row.tags"
+                                            :key="tag"
+                                        >
+                                            {{ tag.name }}
+                                        </span>
                                     </td>
                                     <td class="px-4 py-3 text-sm border">
                                         {{ row.created_at }}
@@ -83,6 +89,7 @@
                                                 </svg>
                                             </div>
                                             <div
+                                                @click="editRow(row)"
                                                 class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110"
                                             >
                                                 <svg
@@ -146,7 +153,13 @@ export default defineComponent({
     methods: {
         deleteRow: function (project) {
             if (!confirm("Are you sure want to remove?")) return;
-            this.$inertia.delete(route("projects.destroy", project.id, project));
+            this.$inertia.delete(
+                route("projects.destroy", project.id, project)
+            );
+        },
+        editRow(project) {
+            let data = Object.assign({}, project);
+            this.$refs.projects_form.setEditMode(data);
         },
     },
 });

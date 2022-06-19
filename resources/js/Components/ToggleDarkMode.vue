@@ -72,7 +72,7 @@ export default {
             this.html.classList.remove("dark");
             this.isDark = false;
         }
-        console.log("current theme: ", localStorage.theme);
+        // console.log("current theme: ", localStorage.theme);
     },
 
     methods: {

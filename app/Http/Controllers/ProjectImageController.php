@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProjectImage;
 use App\Models\TemporaryFile;
 use Illuminate\Http\Request;
 

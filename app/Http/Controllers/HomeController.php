@@ -45,16 +45,16 @@ class HomeController extends Controller
     {
 
         Validator::make($request->all(), [
-            'name' => ['required', 'max:50'],
-            'email' => ['required', 'max:50', 'email'],
-            'message' => ['required', 'max:500'],
+            'name' => ['required', 'max:70'],
+            'email' => ['required', 'max:80', 'email'],
+            'message' => ['required', 'max:1000'],
         ])->validate();
 
         //Save To Database
         $contact = new Contact($request->all());
         $contact->save();
 
-        //Send by Mail
+        //Send Notification Mail
         $admin = User::first();
         $mailData = [
             'title' => 'Takinur, You have a new Essence!',
