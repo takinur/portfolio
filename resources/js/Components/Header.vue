@@ -47,7 +47,7 @@
                             }"
                         >
                             <a href="#intro" class="page-scroll text-md"
-                                >Introduction</a
+                                >About</a
                             >
                         </li>
                         <li
@@ -58,7 +58,7 @@
                             }"
                         >
                             <a href="#projects" class="page-scroll text-md"
-                                >Projects</a
+                                >Work</a
                             >
                         </li>
                         <li
@@ -91,7 +91,7 @@
                             }"
                         >
                             <a href="#other" class="page-scroll text-md"
-                                >Others</a
+                                >Contact</a
                             >
                         </li>
                         <li>
