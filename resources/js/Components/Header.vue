@@ -1,7 +1,10 @@
 <template>
     <header
-        :class="{ scrolled: !view.atTopOfPage }"
-        class="header py-4 h-16 md:top-0 md:sticky top-0 z-50 bg-gray-200 opacity-100 dark:bg-slate-800"
+        :class="{
+            'md:!py-4 md:bg-slate-50 dark:bg-slate-800 shadow-2xl ':
+                !view.atTopOfPage,
+        }"
+        class="header md:py-10 py-4 h-16 md:top-0 md:left-0 w-full z-50 md:fixed opacity-100 md:transition-all duration-300 ease-in-out"
     >
         <!-- container -->
         <div class="container px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
@@ -35,9 +38,61 @@
                 </div>
                 <!-- Navbar -->
                 <nav class="navbar hidden md:block">
-                    <ul class="flex space-x-8 text-sm font-semibold">
-                        <li>
-                            <a href="#intro" class="page-scroll">Home</a>
+                    <ul class="flex space-x-8 font-semibold">
+                        <li
+                            class="items-center justify-center m-auto text-slate-50 hover:text-slate-300 dark:!text-slate-400 dark:hover:!text-slate-100"
+                            :class="{
+                                '!text-gray-500 hover:!text-gray-900 ':
+                                    !view.atTopOfPage,
+                            }"
+                        >
+                            <a href="#intro" class="page-scroll text-md"
+                                >Introduction</a
+                            >
+                        </li>
+                        <li
+                            class="items-center justify-center m-auto text-slate-50 hover:text-slate-300 dark:!text-slate-400 dark:hover:!text-slate-100"
+                            :class="{
+                                '!text-gray-500 hover:!text-gray-900 ':
+                                    !view.atTopOfPage,
+                            }"
+                        >
+                            <a href="#projects" class="page-scroll text-md"
+                                >Projects</a
+                            >
+                        </li>
+                        <li
+                            class="items-center justify-center m-auto text-slate-50 hover:text-slate-300 dark:!text-slate-400 dark:hover:!text-slate-100"
+                            :class="{
+                                '!text-gray-500 hover:!text-gray-900 ':
+                                    !view.atTopOfPage,
+                            }"
+                        >
+                            <a href="#frameworks" class="page-scroll text-md"
+                                >Frameworks</a
+                            >
+                        </li>
+                        <li
+                            class="items-center justify-center m-auto text-slate-50 hover:text-slate-300 dark:!text-slate-400 dark:hover:!text-slate-100"
+                            :class="{
+                                '!text-gray-500 hover:!text-gray-900 ':
+                                    !view.atTopOfPage,
+                            }"
+                        >
+                            <a href="#tools" class="page-scroll text-md"
+                                >Tools</a
+                            >
+                        </li>
+                        <li
+                            class="items-center justify-center m-auto text-slate-50 hover:text-slate-300 dark:!text-slate-400 dark:hover:!text-slate-100"
+                            :class="{
+                                '!text-gray-500 hover:!text-gray-900 ':
+                                    !view.atTopOfPage,
+                            }"
+                        >
+                            <a href="#other" class="page-scroll text-md"
+                                >Others</a
+                            >
                         </li>
                         <li>
                             <!-- Toggle Dark -->
@@ -51,7 +106,10 @@
                         <li>
                             <button
                                 @click="sayHello"
-                                class="-mt-1 py-2 px-6 text-[#7510F7] dark:text-white rounded-full border-2 border-[#7510F7] shadow-md block hover:text-white md:inline-block hover:bg-[#7510F7]"
+                                :class="{
+                                    '!text-[#7510F7]': !view.atTopOfPage,
+                                }"
+                                class="-mt-1 py-2 px-6 text-sm text-slate-50 font-semibold dark:!text-white rounded-full border-2 border-[#7510F7] shadow-md block hover:!text-white md:inline-block hover:bg-[#7510F7]"
                             >
                                 Say Hello
                             </button>
@@ -175,6 +233,61 @@ export default defineComponent({
     beforeMount() {
         window.addEventListener("scroll", this.handleScroll);
     },
+    mounted() {
+        //Scroll to element
+        var pageLink = document.querySelectorAll(".page-scroll");
+
+        pageLink.forEach((elem) => {
+            console.log(elem);
+            elem.addEventListener("click", (e) => {
+                e.preventDefault();
+                document
+                    .querySelector(elem.getAttribute("href"))
+                    .scrollIntoView({
+                        behavior: "smooth",
+                        offsetTop: 1 - 60,
+                    });
+            });
+        });
+        // section menu active
+        function onScroll(event) {
+            var sections = document.querySelectorAll(".page-scroll");
+            var scrollPos =
+                window.pageYOffset ||
+                document.documentElement.scrollTop ||
+                document.body.scrollTop;
+
+            for (var i = 0; i < sections.length; i++) {
+                var currLink = sections[i];
+                var val = currLink.getAttribute("href");
+                var refElement = document.querySelector(val);
+                var scrollTopMinus = scrollPos + 73;
+                if (
+                    refElement.offsetTop <= scrollTopMinus &&
+                    refElement.offsetTop + refElement.offsetHeight >
+                        scrollTopMinus
+                ) {
+                    document
+                        .querySelector(".page-scroll")
+                        .classList.remove(
+                            "text-slate-900",
+                            "dark:text-slate-50"
+                        );
+                    currLink.classList.add(
+                        "text-slate-900",
+                        "dark:text-slate-50"
+                    );
+                } else {
+                    currLink.classList.remove(
+                        "text-slate-900",
+                        "dark:text-slate-50"
+                    );
+                }
+            }
+        }
+
+        window.document.addEventListener("scroll", onScroll);
+    },
     methods: {
         // the function to call when the user scrolls, added as a method
         handleScroll() {
@@ -222,13 +335,5 @@ export default defineComponent({
 .slide-fade-leave-to {
     transform: translate3d(-100%, 0px, 0px);
     opacity: 0;
-}
-</style>
-
-<style lang="scss" scoped>
-//apply class to header
-header.scrolled {
-    background-color: #fafafa;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 </style>
