@@ -1,5 +1,5 @@
 <template>
-   <section id="frameworks" class="pb-24 bg-gray-100 dark:bg-gray-700">
+   <section id="frameworks" class="pb-20 pt-6 bg-gray-100 dark:bg-gray-700">
             <div
                 class="container px-6 py-10 mx-auto md:mt-11 bg-gray-100 rounded-2xl w-4/5 pb-9 dark:bg-gray-700"
             >

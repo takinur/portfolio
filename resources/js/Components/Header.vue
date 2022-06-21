@@ -90,7 +90,7 @@
                                     !view.atTopOfPage,
                             }"
                         >
-                            <a href="#other" class="page-scroll text-md"
+                            <a href="#contact" class="page-scroll text-md"
                                 >Contact</a
                             >
                         </li>

@@ -1,5 +1,5 @@
 <template>
-  <section class="md:-mt-32 -mt-20">
+  <section id="contact" class="md:-mt-32 -mt-20">
             <div
                 class="container px-6 py-10 mx-auto shadow-lg md:mt-11 bg-[#141c3a] rounded-2xl w-4/5 pb-9"
             >

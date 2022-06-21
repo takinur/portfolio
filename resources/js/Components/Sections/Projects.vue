@@ -1,7 +1,7 @@
 <template>
-    <section id="projects" class="py-24 bg-gray-200 dark:bg-slate-800">
+    <section id="projects" class="py-24 bg-gray-200 dark:bg-slate-800 ">
         <div
-            class="container px-2 py-10 mx-auto md:mt-11 bg-gray-200 rounded-2xl w-4/5 pb-9 dark:bg-slate-800"
+            class="container px-2 py-10 mx-auto md:mt-2 bg-gray-200 rounded-2xl md:w-4/5 pb-9 dark:bg-slate-800"
         >
             <h1 class="text-dark text-3xl text-center mb-7 dark:text-gray-200">
                 MY RECENT WORKS

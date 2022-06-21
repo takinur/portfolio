@@ -1,5 +1,5 @@
 <template>
-    <section id="tools" class="pb-24 bg-gray-200 dark:bg-gray-800">
+    <section id="tools" class="pb-20 pt-6 bg-gray-200 dark:bg-gray-800">
             <div class="container px-6 py-10 mx-auto md:mt-1 w-4/5 pb-9">
                 <h1 class="text-dark text-3xl text-center dark:text-zinc-200">
                     TOOLS AND PRINCIPLES
