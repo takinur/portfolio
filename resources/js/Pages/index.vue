@@ -41,7 +41,7 @@
 <script>
 import { defineComponent, defineAsyncComponent } from "vue";
 import { Head } from "@inertiajs/inertia-vue3";
-import HeaderVue from "../Components/Header.vue";
+import HeaderVue from "../Components/Sections/Header.vue";
 import BackToTop from "../Components/BackToTop.vue";
 import IntroVue from "../Components/Sections/Intro.vue";
 import SkillsVue from "../Components/Sections/Skills.vue";
@@ -51,7 +51,6 @@ import OtherVue from "../Components/Sections/Other.vue";
 import ContactSection from "../Components/Sections/Contact.vue";
 import FooterSection from "../Components/Sections/Footer.vue";
 import HeroVue from "../Components/Sections/Hero.vue";
-// import ProjectsVue from "../Components/Sections/Projects.vue";
 import AddContactFormVue from "../Components/AddContactForm.vue";
 import Loading from "../Components/Loading.vue";
 

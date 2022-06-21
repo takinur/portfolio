@@ -211,7 +211,7 @@
 
 <script>
 import { defineComponent } from "vue";
-import ToggleDarkModeVue from "../Components/ToggleDarkMode.vue";
+import ToggleDarkModeVue from "../ToggleDarkMode.vue";
 
 export default defineComponent({
     components: {

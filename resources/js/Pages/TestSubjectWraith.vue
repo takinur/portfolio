@@ -1,16 +1,10 @@
 <template>
     <Head title="Test Page" />
-     <header-vue :scrollToElement="scrollToElement"/>
-    <div class="h-screen font-bold">
-        DD
+
+    <div class="h-screen font-bold bg-gray-200 text-red-600">
+        <skills-sphere-vue />
     </div>
 
-     <intro-vue />
-        <!--Skills Section-->
-    <skills-vue />
-    <div class="h1 font-semibold">
-        Hello
-    </div>
 </template>
 
 <script>
@@ -18,8 +12,9 @@ import { defineComponent } from "vue";
 import { Head } from "@inertiajs/inertia-vue3";
 import Particles from "../Components/Particles.vue";
 import IntroVue from "../Components/Sections/Intro.vue";
-import HeaderVue from "../Components/Header.vue";
+import HeaderVue from "../Components/Sections/Header.vue";
 import SkillsVue from "../Components/Sections/Skills.vue";
+import SkillsSphereVue from "../Components/SkillsSphere.vue";
 
 export default defineComponent({
     props: [],
@@ -30,6 +25,7 @@ export default defineComponent({
         IntroVue,
         HeaderVue,
         SkillsVue,
+        SkillsSphereVue,
     },
     data() {
         return {
@@ -57,8 +53,6 @@ export default defineComponent({
 });
 </script>
 
-<style>
-.active {
-    color: red;
-}
+<style scoped>
+
 </style>
