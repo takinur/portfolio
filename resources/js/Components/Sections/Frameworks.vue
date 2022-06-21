@@ -1,5 +1,5 @@
 <template>
-   <section id="frameworks" class="pb-24 bg-gray-100 dark:bg-gray-700">
+   <section id="frameworks" class="pb-20 pt-6 bg-gray-100 dark:bg-gray-700">
             <div
                 class="container px-6 py-10 mx-auto md:mt-11 bg-gray-100 rounded-2xl w-4/5 pb-9 dark:bg-gray-700"
             >
@@ -100,7 +100,7 @@
                         <p
                             class="text-gray-500 dark:text-gray-300 text-center text-sm"
                         >
-                            HTML, CSS and JS library
+                            HTML, CSS library
                         </p>
                     </div>
                     <!-- END card ITEM -->
@@ -162,7 +162,6 @@
                         </p>
                     </div>
                     <!-- END card ITEM -->
-
                     <!--Card Item-->
                     <div
                         class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
@@ -173,27 +172,26 @@
                         Fdata-aos-easing="ease-in-out"
                     >
                         <div
-                            class="bg-cover mt-5 h-18 w-28 md:w-32 mx-auto md:grayscale hover:grayscale-0 dark:grayscale-0"
+                            class="bg-cover h-18 w-20 md:mt-4 mx-auto md:grayscale hover:grayscale-0 dark:grayscale-0"
                         >
                             <img
-                                v-bind:src="
-                                    '/images/icons/' + 'laravel-livewire.png'
-                                "
+                                v-bind:src="'/images/icons/' + 'Nuxt.png'"
                                 alt=""
                             />
                         </div>
                         <h1
-                            class="mt-7 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
+                            class="mt-3 text-2xl text-center font-semibold text-gray-900 capitalize dark:text-white"
                         >
-                            Livewire
+                            Nuxt.JS
                         </h1>
                         <p
                             class="text-gray-500 dark:text-gray-300 text-center text-sm"
                         >
-                            Laravel library
+                            Vue Framework
                         </p>
                     </div>
                     <!-- END card ITEM -->
+
                 </div>
                 <!--End Card Body -->
             </div>

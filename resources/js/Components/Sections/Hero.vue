@@ -1,6 +1,6 @@
 <template>
     <div
-        class="hero pb-24 pt-28 md:h-screen relative border-2 border-red-600 bg-gradient-to-br from-[#512DA8] via-purple-500 to-purple-800 dark:bg-gradient-to-r dark:from-gray-700 dark:via-gray-900 dark:to-black"
+        class="hero pb-24 pt-28 md:h-screen relative bg-gradient-to-br from-[#512DA8] via-purple-500 to-purple-800 dark:bg-gradient-to-r dark:from-gray-700 dark:via-gray-900 dark:to-black"
     >
         <particles-vue />
         <!-- container -->
@@ -17,16 +17,16 @@
                         data-aos-delay="50"
                         data-aos-duration="600"
                         data-aos-easing="ease-in-out"
-                        class="font-bold uppercase text-4xl md:text-5xl max-w-xl text-slate-200 leading-tight dark:text-gray-300"
+                        class="font-bold uppercase text-4xl md:text-5xl max-w-xl text-slate-100 leading-tight dark:text-gray-300"
                     >
                         Full-Stack Web Developer
                     </h1>
                     <hr
-                        class="w-12 h-1 bg-slate-300 rounded-full mt-8 dark:bg-white"
+                        class="w-12 h-1 bg-slate-100 rounded-full mt-8 dark:bg-white"
                     />
                     <p
                         data-aos="zoom-out-up"
-                        class="text-slate-200 text-base leading-relaxed mt-8 font-semibold dark:text-gray-100"
+                        class="text-slate-100 text-base leading-relaxed mt-8 font-semibold dark:text-gray-100"
                     >
                         I develop Modern, Responsive and SEO Friendly Websites
                         with clean code, and I love what I do.

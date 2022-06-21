@@ -1,16 +1,10 @@
 <template>
     <Head title="Test Page" />
-     <header-vue :scrollToElement="scrollToElement"/>
-    <div class="h-screen">
-        DD
+
+    <div class="h-screen font-bold bg-gray-200 text-red-600">
+        <skills-sphere-vue />
     </div>
 
-     <intro-vue />
-        <!--Skills Section-->
-    <skills-vue />
-    <div class="h1">
-        Hello
-    </div>
 </template>
 
 <script>
@@ -18,8 +12,9 @@ import { defineComponent } from "vue";
 import { Head } from "@inertiajs/inertia-vue3";
 import Particles from "../Components/Particles.vue";
 import IntroVue from "../Components/Sections/Intro.vue";
-import HeaderVue from "../Components/Header.vue";
+import HeaderVue from "../Components/Sections/Header.vue";
 import SkillsVue from "../Components/Sections/Skills.vue";
+import SkillsSphereVue from "../Components/SkillsSphere.vue";
 
 export default defineComponent({
     props: [],
@@ -30,6 +25,7 @@ export default defineComponent({
         IntroVue,
         HeaderVue,
         SkillsVue,
+        SkillsSphereVue,
     },
     data() {
         return {
@@ -38,49 +34,7 @@ export default defineComponent({
         };
     },
     mounted() {
-        //Scroll to element
-        var pageLink = document.querySelectorAll(".page-scroll");
 
-        pageLink.forEach((elem) => {
-            elem.addEventListener("click", (e) => {
-                e.preventDefault();
-                document
-                    .querySelector(elem.getAttribute("href"))
-                    .scrollIntoView({
-                        behavior: "smooth",
-                        offsetTop: 1 - 60,
-                    });
-            });
-        });
-        // section menu active
-        function onScroll(event) {
-            var sections = document.querySelectorAll(".page-scroll");
-            var scrollPos =
-                window.pageYOffset ||
-                document.documentElement.scrollTop ||
-                document.body.scrollTop;
-
-            for (var i = 0; i < sections.length; i++) {
-                var currLink = sections[i];
-                var val = currLink.getAttribute("href");
-                var refElement = document.querySelector(val);
-                var scrollTopMinus = scrollPos + 73;
-                if (
-                    refElement.offsetTop <= scrollTopMinus &&
-                    refElement.offsetTop + refElement.offsetHeight >
-                        scrollTopMinus
-                ) {
-                    document
-                        .querySelector(".page-scroll")
-                        .classList.remove("active");
-                    currLink.classList.add("active");
-                } else {
-                    currLink.classList.remove("active");
-                }
-            }
-        }
-
-        window.document.addEventListener("scroll", onScroll);
     },
     methods: {
         seehow() {
@@ -99,8 +53,6 @@ export default defineComponent({
 });
 </script>
 
-<style>
-.active {
-    color: red;
-}
+<style scoped>
+
 </style>

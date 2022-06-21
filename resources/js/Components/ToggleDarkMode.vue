@@ -3,7 +3,7 @@
         <label for="toggleDark" class="flex items-center cursor-pointer">
             <span class="mr-2">
                 <svg
-                    class="h-6 w-6 text-yellow-600 dark:text-white"
+                    class="h-6 w-6 text-yellow-500 dark:text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -34,7 +34,7 @@
             </div>
             <span class="ml-2">
                 <svg
-                    class="h-6 w-6 text-gray-500 dark:text-cyan-400"
+                    class="h-6 w-6 text-gray-700 dark:text-cyan-400"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

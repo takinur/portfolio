@@ -2,7 +2,7 @@
     <div class="wrapper">
         <Head title="Takinur M Web Developer" />
         <!-- header -->
-        <header-vue  :sayHello="sayHello" :scrollToElement="scrollToElement"/>
+        <header-vue :sayHello="sayHello" :scrollToElement="scrollToElement" />
         <!-- hero -->
         <hero-vue :scrollToElement="scrollToElement" />
         <!-- Intro Section-->
@@ -10,7 +10,16 @@
         <!--Skills Section-->
         <skills-vue />
         <!--Project Section-->
-        <Projects-vue :projects="data" />
+        <section id="projects" class="py-24 bg-gray-200 dark:bg-slate-800 ">
+            <Suspense>
+                <template #default>
+                    <projects-vue :projects="data" />
+                </template>
+                <template #fallback>
+                    Loading Projects.............
+                </template>
+            </Suspense>
+        </section>
         <!--Frameworks Section-->
         <Frameworks-vue />
         <!-- TOOls Section-->
@@ -30,9 +39,9 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, defineAsyncComponent } from "vue";
 import { Head } from "@inertiajs/inertia-vue3";
-import HeaderVue from "../Components/Header.vue";
+import HeaderVue from "../Components/Sections/Header.vue";
 import BackToTop from "../Components/BackToTop.vue";
 import IntroVue from "../Components/Sections/Intro.vue";
 import SkillsVue from "../Components/Sections/Skills.vue";
@@ -42,8 +51,18 @@ import OtherVue from "../Components/Sections/Other.vue";
 import ContactSection from "../Components/Sections/Contact.vue";
 import FooterSection from "../Components/Sections/Footer.vue";
 import HeroVue from "../Components/Sections/Hero.vue";
-import ProjectsVue from "../Components/Sections/Projects.vue";
 import AddContactFormVue from "../Components/AddContactForm.vue";
+import Loading from "../Components/Loading.vue";
+
+const ProjectsVue = defineAsyncComponent({
+    loader: () =>
+        import(
+            "../Components/Sections/Projects.vue" /* webpackChunkName: "Projects" */
+        ),
+    // loadingComponent: () => Loading,
+    delay: 200,
+    // suspensible: false,
+});
 
 export default defineComponent({
     components: {
@@ -86,4 +105,3 @@ export default defineComponent({
     },
 });
 </script>
-
