@@ -13,7 +13,7 @@
             </h1>
             <!-- CARD BODY-->
             <div
-                class="grid place-items-center text-dark dark:text-slate-50 overflow-hidden"
+                class="grid place-items-center text-slate-900 font-semibold dark:text-slate-50 overflow-hidden"
             >
                <skills-sphere-vue />
             </div>

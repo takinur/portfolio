@@ -10,18 +10,19 @@ export default defineComponent({
     name: "skills-sphere",
     mounted() {
         const myTags = [
-            "InertiaJS",
+
             "JavaScript",
             "HTML",
             "CSS",
             "PHP",
             "Laravel",
             "Vue.js",
+            "TailwindCSS",
+            "InertiaJS",
             "Python",
             "Django",
-            "mySql",
+            "MySQL",
             "Node.js",
-            "TailwindCSS",
             "Bootstrap",
             "Json",
             "Nuxt.js",
