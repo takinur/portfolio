@@ -100,7 +100,7 @@
                         <p
                             class="text-gray-500 dark:text-gray-300 text-center text-sm"
                         >
-                            HTML, CSS and JS library
+                            HTML, CSS library
                         </p>
                     </div>
                     <!-- END card ITEM -->
