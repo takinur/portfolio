@@ -238,7 +238,7 @@ export default defineComponent({
         var pageLink = document.querySelectorAll(".page-scroll");
 
         pageLink.forEach((elem) => {
-            console.log(elem);
+            // console.log(elem);
             elem.addEventListener("click", (e) => {
                 e.preventDefault();
                 document

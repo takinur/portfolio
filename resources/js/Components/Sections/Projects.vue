@@ -1,5 +1,4 @@
 <template>
-    <section id="projects" class="py-24 bg-gray-200 dark:bg-slate-800 ">
         <div
             class="container px-2 py-10 mx-auto md:mt-2 bg-gray-200 rounded-2xl md:w-4/5 pb-9 dark:bg-slate-800"
         >
@@ -21,7 +20,6 @@
                     </div>
             </div>
         </div>
-    </section>
     <PopOver :selectedProject="selectedProject" :closeWindow="closePopOver" />
 </template>
 
