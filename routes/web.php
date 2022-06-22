@@ -47,7 +47,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::resource('/projects', ProjectsController::class);
 });
 
-//Test Route
+//Test Route //Disable this on Production
 Route::get('/test', function () {
     return Inertia::render('TestSubjectWraith');
 })->name('test');
