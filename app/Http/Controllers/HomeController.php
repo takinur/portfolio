@@ -23,8 +23,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $data = Project::with('images')
-            ->with('tags')
+        $data = Project::with(['images', 'tags'])
             ->orderBy('created_at', 'DESC')
             ->get();
 
