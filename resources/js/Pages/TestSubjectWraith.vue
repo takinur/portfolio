@@ -2,7 +2,10 @@
     <Head title="Test Page" />
 
     <div class="h-screen font-bold bg-gray-200 text-red-600">
-        <skills-sphere-vue />
+        <!-- <skills-sphere-vue /> -->
+        <h1 class="text-lg text-green-600 font-serif font-semibold" @click="seehow">
+            Just say Hello World.
+        </h1>
     </div>
 
 </template>
@@ -10,22 +13,22 @@
 <script>
 import { defineComponent } from "vue";
 import { Head } from "@inertiajs/inertia-vue3";
-import Particles from "../Components/Particles.vue";
-import IntroVue from "../Components/Sections/Intro.vue";
-import HeaderVue from "../Components/Sections/Header.vue";
-import SkillsVue from "../Components/Sections/Skills.vue";
-import SkillsSphereVue from "../Components/SkillsSphere.vue";
+// import Particles from "../Components/Particles.vue";
+// import IntroVue from "../Components/Sections/Intro.vue";
+// import HeaderVue from "../Components/Sections/Header.vue";
+// import SkillsVue from "../Components/Sections/Skills.vue";
+// import SkillsSphereVue from "../Components/SkillsSphere.vue";
 
 export default defineComponent({
     props: [],
 
     components: {
         Head,
-        Particles,
-        IntroVue,
-        HeaderVue,
-        SkillsVue,
-        SkillsSphereVue,
+        // Particles,
+        // IntroVue,
+        // HeaderVue,
+        // SkillsVue,
+        // SkillsSphereVue,
     },
     data() {
         return {

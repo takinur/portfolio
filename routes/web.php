@@ -21,9 +21,7 @@ use Inertia\Inertia;
 */
 //Home
 Route::get('/', [HomeController::class, 'index']);
-// Route::get('/', function () {
-//     return view('app');
-// });
+
 Route::redirect('/admin', '/dashboard', 301);
 
 //Store Contact Message

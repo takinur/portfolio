@@ -4,7 +4,7 @@
         <!-- header -->
         <header-vue :sayHello="sayHello" :scrollToElement="scrollToElement" />
         <!-- hero -->
-        <hero-vue :scrollToElement="scrollToElement" />
+        <!-- <hero-vue :scrollToElement="scrollToElement" /> -->
         <!-- Intro Section-->
         <intro-vue />
         <!--Skills Section-->
