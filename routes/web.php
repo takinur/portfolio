@@ -21,6 +21,7 @@ use Inertia\Inertia;
 */
 //Home
 Route::get('/', [HomeController::class, 'index']);
+
 Route::redirect('/admin', '/dashboard', 301);
 
 //Store Contact Message
@@ -47,7 +48,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::resource('/projects', ProjectsController::class);
 });
 
-//Test Route
+//Test Route //Disable this on Production
 Route::get('/test', function () {
     return Inertia::render('TestSubjectWraith');
 })->name('test');

@@ -10,13 +10,10 @@
     <link rel="canonical" href="https://www.takinur.com/" />
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-    <!-- Scripts -->
+    <!-- Styles/Scripts -->
     @routes
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    @vite('resources/js/app.js')
+    @inertiaHead
     <style scoped>
         /* Scrollbar Styling */
         ::-webkit-scrollbar {
@@ -39,9 +36,6 @@
 
 <body class="font-sans antialiased bg-gray-200 dark:bg-slate-800">
     @inertia
-    @env ('local')
-    <script src="http://localhost:3000/browser-sync/browser-sync-client.js"></script>
-    @endenv
 </body>
 
 </html>

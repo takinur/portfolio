@@ -10,16 +10,7 @@
         <!--Skills Section-->
         <skills-vue />
         <!--Project Section-->
-        <section id="projects" class="py-24 bg-gray-200 dark:bg-slate-800 ">
-            <Suspense>
-                <template #default>
-                    <projects-vue :projects="data" />
-                </template>
-                <template #fallback>
-                    Loading Projects.............
-                </template>
-            </Suspense>
-        </section>
+        <projects-vue :projects="data" />
         <!--Frameworks Section-->
         <Frameworks-vue />
         <!-- TOOls Section-->
@@ -54,15 +45,17 @@ import HeroVue from "../Components/Sections/Hero.vue";
 import AddContactFormVue from "../Components/AddContactForm.vue";
 import Loading from "../Components/Loading.vue";
 
-const ProjectsVue = defineAsyncComponent({
-    loader: () =>
-        import(
-            "../Components/Sections/Projects.vue" /* webpackChunkName: "Projects" */
-        ),
-    // loadingComponent: () => Loading,
-    delay: 200,
-    // suspensible: false,
-});
+import ProjectsVue from "../Components/Sections/Projects.vue";
+
+// const ProjectsVue = defineAsyncComponent({
+//     loader: () =>
+//         import(
+//             "../Components/Sections/Projects.vue" /* webpackChunkName: "Projects" */
+//         ),
+//     // loadingComponent: () => Loading,
+//     delay: 200,
+//     // suspensible: false,
+// });
 
 export default defineComponent({
     components: {

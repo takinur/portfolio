@@ -1,6 +1,6 @@
 <template>
     <div
-        class="popover fixed md:h-full w-full overflow-auto flex top-0"
+        class="popover fixed md:h-full w-full overflow-auto flex top-0 z-[900]"
         v-if="selectedProject"
     >
         <div class="bg-white md:max-w-xl md:m-auto m-4 rounded-lg">
