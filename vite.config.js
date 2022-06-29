@@ -16,4 +16,5 @@ export default defineConfig({
             },
         }),
     ],
+    optimizeDeps: { include: [ 'lodash.throttle', 'lodash.orderby' ] },
 });

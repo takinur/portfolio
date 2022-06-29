@@ -1,4 +1,5 @@
 <template>
+    <section id="projects" class="py-24 bg-gray-200 dark:bg-slate-800">
         <div
             class="container px-2 py-10 mx-auto md:mt-2 bg-gray-200 rounded-2xl md:w-4/5 pb-9 dark:bg-slate-800"
         >
@@ -6,28 +7,28 @@
                 MY RECENT WORKS
             </h1>
             <div class="flex flex-wrap justify-center gap-x-6">
-                    <div
-                        v-for="(project, index) in projects"
-                        :key="index"
-                        class="mt-3"
-                        data-aos="zoom-in-left"
-                        data-aos-once="false"
-                        data-aos-delay="50"
-                        data-aos-duration="600"
-                        Fdata-aos-easing="ease-in-out"
-                    >
-                        <CardVue :item="project" :txt="viewProject" />
-                    </div>
+                <div
+                    v-for="(project, index) in projects"
+                    :key="index"
+                    class="mt-3"
+                    data-aos="zoom-in-left"
+                    data-aos-once="false"
+                    data-aos-delay="50"
+                    data-aos-duration="600"
+                    Fdata-aos-easing="ease-in-out"
+                >
+                    <CardVue :item="project" :txt="viewProject" />
+                </div>
             </div>
         </div>
-    <PopOver :selectedProject="selectedProject" :closeWindow="closePopOver" />
+        <PopOver :selectedProject="selectedProject" :closeWindow="closePopOver" />
+    </section>
 </template>
 
 <script>
 import { defineComponent } from "vue";
 import CardVue from "../ShadowCard.vue";
 import PopOver from "../PopProjectDetails.vue";
-
 
 export default defineComponent({
     props: {
