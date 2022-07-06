@@ -74,14 +74,6 @@ export default defineComponent({
         AddContactFormVue,
     },
     props: ["data", "errors"],
-    data() {
-        return {
-            //
-        };
-    },
-    mounted() {
-        //
-    },
     methods: {
         sayHello() {
             this.$refs.contactModal.showModal();
