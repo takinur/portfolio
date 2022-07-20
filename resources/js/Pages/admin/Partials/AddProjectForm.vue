@@ -82,7 +82,7 @@
                             />
                         </div>
                     </div>
-                    <div class="w-full mt-4">
+                    <!-- <div class="w-full mt-4">
                         <file-pond
                             v-on:processfile="handleProcessFile"
                             v-on:init="handleFilePondInit"
@@ -91,7 +91,7 @@
                             :message="form.errors.images"
                             class="mt-2 h-1"
                         />
-                    </div>
+                    </div> -->
                 </div>
                 <div class="p-3 mt-2 text-center space-x-4 md:block">
                     <button
@@ -125,35 +125,35 @@ import JetLabel from "@/Jetstream/Label.vue";
 import JetActionMessage from "@/Jetstream/ActionMessage.vue";
 import TagInputVue from "../../../Components/TagInput.vue";
 
-import vueFilePond, { setOptions } from "vue-filepond";
-import "filepond/dist/filepond.min.css";
-import FilePondPluginImagePreview from "filepond-plugin-image-preview";
-import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
+// import vueFilePond, { setOptions } from "vue-filepond";
+// import "filepond/dist/filepond.min.css";
+// import FilePondPluginImagePreview from "filepond-plugin-image-preview";
+// import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
 //GET Laravel CSRF
 const csrf = document
     .querySelector('meta[name="csrf-token"]')
     .getAttribute("content");
 //Init Filepond
-const FilePond = vueFilePond(FilePondPluginImagePreview);
-setOptions({
-    server: {
-        url: "/image-upload",
-        headers: {
-            "X-CSRF-TOKEN": csrf,
-        },
-        process: {
-            onload: (response) => {
-                response = JSON.parse(response);
-                return response;
-            },
-        },
-    },
-    name: "projectImage",
-    className: "imageUpload",
-    allowMultiple: true,
-    allowReorder: true,
-    credits: "",
-});
+// const FilePond = vueFilePond(FilePondPluginImagePreview);
+// setOptions({
+//     server: {
+//         url: "/image-upload",
+//         headers: {
+//             "X-CSRF-TOKEN": csrf,
+//         },
+//         process: {
+//             onload: (response) => {
+//                 response = JSON.parse(response);
+//                 return response;
+//             },
+//         },
+//     },
+//     name: "projectImage",
+//     className: "imageUpload",
+//     allowMultiple: true,
+//     allowReorder: true,
+//     credits: "",
+// });
 
 export default defineComponent({
     props: {
@@ -168,7 +168,7 @@ export default defineComponent({
         JetSecondaryButton,
         JetLabel,
         JetActionMessage,
-        FilePond,
+        // FilePond,
         TagInputVue,
     },
 

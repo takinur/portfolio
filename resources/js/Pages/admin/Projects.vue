@@ -6,7 +6,7 @@
             </h2>
         </template>
 
-        <add-project-form ref="projects_form"/>
+        <!-- <add-project-form ref="projects_form"/> -->
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -139,12 +139,12 @@
 <script>
 import { defineComponent } from "vue";
 import AppLayout from "@/Layouts/AppLayout.vue";
-import AddProjectForm from "@/Pages/Admin/Partials/AddProjectForm.vue";
+// import AddProjectForm from "@/Pages/Admin/Partials/AddProjectForm.vue";
 
 export default defineComponent({
     components: {
         AppLayout,
-        AddProjectForm,
+        // AddProjectForm,
     },
     props: ["data", "errors", "projects"],
     data: () => ({
@@ -165,4 +165,4 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+
