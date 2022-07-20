@@ -1,9 +1,13 @@
 import "./bootstrap";
 import "../css/app.css";
+
 import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 import '@fortawesome/fontawesome-free/scss/brands.scss';
 import '@fortawesome/fontawesome-free/scss/regular.scss';
 import '@fortawesome/fontawesome-free/scss/solid.scss';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 
@@ -31,6 +35,7 @@ createInertiaApp({
 });
 
 InertiaProgress.init({ color: "#4B5563" });
+AOS.init();
 
 //Disable DEV TOOL
 // if (process.env.MIX_APP_ENV === 'production') {
@@ -38,7 +43,3 @@ InertiaProgress.init({ color: "#4B5563" });
 //     Vue.config.debug = false;
 //     Vue.config.silent = true;
 // }
-
-
-// window.AOS = require('AOS');
-// AOS.init();
