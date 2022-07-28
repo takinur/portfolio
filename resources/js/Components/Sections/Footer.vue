@@ -65,7 +65,7 @@
                             <span>Linkedin</span>
                         </a>
                         <a href="https://twitter.com/_takinur" target="blank"
-                            class="bg-blue-300 px-4 py-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+                            class="bg-blue-400 px-4 py-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
                         >
                             <svg
                                 class="w-5 h-5 fill-current"
@@ -79,7 +79,7 @@
                             </svg>
                             <span>Twitter</span>
                         </a>
-                        <a href="https://www.reddit.com/user/t4kinur" target="blank"
+                        <!-- <a href="https://www.reddit.com/user/t4kinur" target="blank"
                             class="bg-red-500 px-4 py-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
                         >
                             <svg
@@ -93,7 +93,7 @@
                                 />
                             </svg>
                             <span>Reddit</span>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
                 <div
@@ -112,8 +112,6 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-    props: [],
-
-    methods: {},
+    name: 'Footer',
 });
 </script>

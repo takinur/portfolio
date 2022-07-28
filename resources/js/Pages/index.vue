@@ -4,7 +4,7 @@
         <!-- header -->
         <header-vue :sayHello="sayHello" :scrollToElement="scrollToElement" />
         <!-- hero -->
-        <hero-vue :scrollToElement="scrollToElement" />
+        <!-- <hero-vue :scrollToElement="scrollToElement" /> -->
         <!-- Intro Section-->
         <intro-vue />
         <!--Skills Section-->
@@ -74,14 +74,6 @@ export default defineComponent({
         AddContactFormVue,
     },
     props: ["data", "errors"],
-    data() {
-        return {
-            //
-        };
-    },
-    mounted() {
-        //
-    },
     methods: {
         sayHello() {
             this.$refs.contactModal.showModal();

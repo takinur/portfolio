@@ -16,10 +16,10 @@
                     <!--Card Item-->
                     <div
                         class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
-                        data-aos="flip-left"
+                        data-aos="zoom-in-up"
                         data-aos-once="false"
                         data-aos-delay="50"
-                        data-aos-duration="2000"
+                        data-aos-duration="1000"
                         Fdata-aos-easing="ease-in-out"
                     >
                         <div
@@ -45,10 +45,10 @@
                     <!--Card Item-->
                     <div
                         class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
-                        data-aos="flip-left"
+                        data-aos="zoom-in-up"
                         data-aos-once="false"
                         data-aos-delay="50"
-                        data-aos-duration="2000"
+                        data-aos-duration="1000"
                         Fdata-aos-easing="ease-in-out"
                     >
                         <div
@@ -76,10 +76,10 @@
                     <!--Card Item-->
                     <div
                         class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
-                        data-aos="flip-left"
+                        data-aos="zoom-in-up"
                         data-aos-once="false"
                         data-aos-delay="50"
-                        data-aos-duration="2000"
+                        data-aos-duration="1000"
                         Fdata-aos-easing="ease-in-out"
                     >
                         <div
@@ -107,10 +107,10 @@
                     <!--Card Item-->
                     <div
                         class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
-                        data-aos="flip-left"
+                        data-aos="zoom-in-up"
                         data-aos-once="false"
                         data-aos-delay="50"
-                        data-aos-duration="2000"
+                        data-aos-duration="1000"
                         Fdata-aos-easing="ease-in-out"
                     >
                         <div
@@ -136,10 +136,10 @@
                     <!--Card Item-->
                     <div
                         class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
-                        data-aos="flip-left"
+                        data-aos="zoom-in-up"
                         data-aos-once="false"
                         data-aos-delay="50"
-                        data-aos-duration="2000"
+                        data-aos-duration="1000"
                         Fdata-aos-easing="ease-in-out"
                     >
                         <div
@@ -165,10 +165,10 @@
                     <!--Card Item-->
                     <div
                         class="py-2 rounded-xl bg-white shadow-2xl dark:bg-gray-900"
-                        data-aos="flip-left"
+                        data-aos="zoom-in-up"
                         data-aos-once="false"
                         data-aos-delay="50"
-                        data-aos-duration="2000"
+                        data-aos-duration="1000"
                         Fdata-aos-easing="ease-in-out"
                     >
                         <div
@@ -202,8 +202,6 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-    props: [],
-
-    methods: {},
+    name: 'Frameworks',
 });
 </script>
