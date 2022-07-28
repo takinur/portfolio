@@ -23,8 +23,8 @@
                         <p
                             class="text-white text-lg text-center leading-relaxed mt-8 font-semibold"
                         >
-                            Since beginning my journey as a freelance web
-                            developer nearly 2 years ago, I've done remote work
+                            Since beginning my journey as a web
+                            developer nearly 3 years ago, I've done remote work
                             for agencies, consulted for startups, and
                             collaborated with talented people to create digital
                             products for both business and consumer use. I'm a
